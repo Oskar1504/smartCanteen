@@ -41,6 +41,10 @@
                 <ul>
                     <user v-for="user in users" v-bind:user="user" v-bind:functions="userfunctions"></user>
                 </ul>
+
+                <ul>
+                    <li v-for="product in products">{{product.name}}</li>
+                </ul>
             </div>
             <div v-if="pageName == 'vendors'" id="vendors">
                 <h2>Vendors page WIP</h2>

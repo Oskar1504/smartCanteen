@@ -1,4 +1,5 @@
 const express = require('express')
+const fetch = require('node-fetch');
 
 const router = express.Router();
 
@@ -13,8 +14,16 @@ const router = express.Router();
 
 router.get('/getProducts', async (req, res) => {
     try{
-        
-        res.json(["json","daw"])
+        //TODO make db host variable
+        fetch("http://localhost:8090/api/collections/products/records")
+            .then(r => r.json())
+            .then(d => {
+                console.log(d)
+                res.json(d.items)
+            })
+            .catch(e => {
+                res.json(e)
+            })
     }
     catch(e){
         res.json(e)
