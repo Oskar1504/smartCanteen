@@ -1,0 +1,54 @@
+[
+  {
+    "id": "qcage5ei69cqto7",
+    "name": "users",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "baszmjpt",
+        "name": "fistname",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "exqm3rrx",
+        "name": "lastname",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "lfew33kd",
+        "name": "balance",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null
+        }
+      }
+    ],
+    "listRule": null,
+    "viewRule": null,
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  }
+]
