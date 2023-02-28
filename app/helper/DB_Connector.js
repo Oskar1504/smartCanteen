@@ -30,4 +30,12 @@ module.exports = class db_Connector{
             throw new Error("no Entries to insert found")
         }
     }
+
+    updateOne(collectionName, id, update){
+        return fetch(`${this.host}/api/collections/${collectionName}/records/${id}`, {
+            method: 'patch',
+            body: JSON.stringify(update),
+            headers: {'Content-Type': 'application/json'}
+        });
+    }
 }
