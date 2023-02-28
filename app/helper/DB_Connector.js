@@ -28,7 +28,7 @@ module.exports = class db_Connector{
         })
     }
 
-    async inserMany(collectionName, entries ,debug = false){
+    async insertMany(collectionName, entries ,debug = false){
         let o = []
         if (Array.isArray(entries) && entries.length >= 1){
             for(let entry of entries){
