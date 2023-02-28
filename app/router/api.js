@@ -12,8 +12,12 @@ const router = express.Router();
 //     }
 // })
 
+
+
 router.get('/getProducts', async (req, res) => {
     try{
+        
+
 
         //TODO make db host variable
         fetch("http://localhost:8090/api/collections/products/records")
