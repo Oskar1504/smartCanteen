@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 module.exports = class db_Connector{
 
-    constructor(host){
+    constructor(host = "http://127.0.0.1:8090"){
         this.host = host
     }
 
@@ -25,14 +25,24 @@ module.exports = class db_Connector{
             method: 'post',
             body: JSON.stringify(entry),
             headers: {'Content-Type': 'application/json'}
-        });
+        })
     }
 
-    inserMany(collectionName, entries){
+    async inserMany(collectionName, entries ,debug = false){
+        let o = []
         if (Array.isArray(entries) && entries.length >= 1){
-            entries.forEach(entry => {
-                this.insertOne(collectionName, entry)
-            });
+            for(let entry of entries){
+                if(debug){
+                    await this.insertOne(collectionName, entry)
+                    .then(r => r.json())
+                    .then(d => {
+                        o.push(d)
+                    })
+                }else{
+                    await this.insertOne(collectionName, entry)
+                }
+            }
+            return o
         }
         else{
             throw new Error("no Entries to insert found")

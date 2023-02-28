@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Döner",
+        "price": 123,
+        "categorie": "türkisch,fleisch",
+        "vendor": "Vendor 1",
+        "tags": "döner,lecker",
+        "imageLink": "test"
+    },
+    {
+        "name": "Nudeln",
+        "price": 123.21,
+        "categorie": "chinesisch",
+        "vendor": "Vendor 2",
+        "tags": "essen,lecker",
+        "imageLink": "test"
+    },
+    {
+        "name": "Pizza",
+        "price": 2.5,
+        "categorie": "italienisch",
+        "vendor": "Vendor 2",
+        "tags": "döner,lecker",
+        "imageLink": "test"
+    },
+    {
+        "name": "Burger",
+        "price": 64.8,
+        "categorie": "burger,fleisch",
+        "vendor": "Vendor 1",
+        "tags": "burger,lecker",
+        "imageLink": "test"
+    }
+]
