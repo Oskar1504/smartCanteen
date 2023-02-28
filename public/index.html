@@ -5,18 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>smartCanteen</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="dep/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="outerWrap">
         <div id="app">
             <!-- {{ message }} -->
             <nav class="mainNavigation">
-                <ul class="nav-item-wrap">
-                    <li class="nav-item" @click="navTo('products')">Produkte</li>
-                    <li class="nav-item" @click="navTo('vendors')">Anbieter</li>
-                    <li class="nav-item" @click="navTo('checkout')">Warenkorb</li>
+                <ul class="nav-item-wrap d-flex justify-content-end list-unstyled m-0">
+                    <li class="nav-item rounded-pill" @click="navTo('products')">Produkte</li>
+                    <li class="nav-item rounded-pill" @click="navTo('profilePage')">Profil</li>
+                    <li class="nav-item rounded-pill" @click="navTo('checkout')">Warenkorb</li>
                 </ul>
             </nav>
             <main>
