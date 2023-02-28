@@ -24,7 +24,8 @@ module.exports = class UserCollection{
     checkCache(){
         let time = new Date().getTime()
         if(time - this.userLastFetched >= this.maxCacheMinutes){
-            console.log("WIP would reload userData")
+            console.log("[USERCOLLECTION] reloading user data")
+            this.loadUser()
         }
     }
 
