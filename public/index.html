@@ -22,33 +22,15 @@
             </nav>
             <main>
                 <div v-if="pageName == 'products'" id="products">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" v-model="showUsers" role="switch" id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
-                    </div>
-                    <div>
-                        <h2>Bearbeite message</h2>
-                        <button @click="changeMessage()">Button</button>
-                    </div>
-                    <button type="button" class="btn btn-primary position-relative">
-                        Cart
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            {{checkout.cart.length}}
-                            <span class="visually-hidden">products in checkout</span>
-                        </span>
-                    </button>
-                    
-                    <div v-if="showUsers == true">
-                        <ul>
-                            <user v-for="user in users" v-bind:user="user" v-bind:functions="userfunctions"></user>
-                        </ul>
+                    <div class="products-container">
+                        <span v-for="product in products">{{product.name}}</span>
                     </div>
                 </div>
-                <div v-if="pageName == 'vendors'" id="vendors">
-                    <h2>Vendors page WIP</h2>
+                <div v-if="pageName == 'profilePage'" id="profilePage">
+                    <h2>Profile page WIP</h2>
                 </div>
-                <div v-else>
-                    <h2>Pagename not known</h2>
+                <div v-if="pageName == 'checkout'" id="checkout">
+                    <h2>Checkout page WIP</h2>
                 </div>
             </main>
         </div>

@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require('express')
 const fetch = require('node-fetch');
 
@@ -11,25 +12,29 @@ const router = express.Router();
 
 router.use(function (req, res, next) {
     console.log(req.headers["ope-auth-username"])
-    if(req.headers["ope-auth-username"] != undefined){
-        if(req.headers["ope-auth-password"] != undefined){
-            try {
-                userCollection.login(req.headers["ope-auth-username"], req.headers["ope-auth-password"])
-                next()
-            } catch (error) {
-                res.json(error.toString())
+    if (process.env.MODE != "DEV") {
+        if(req.headers["ope-auth-username"] != undefined){
+            if(req.headers["ope-auth-password"] != undefined){
+                try {
+                    userCollection.login(req.headers["ope-auth-username"], req.headers["ope-auth-password"])
+                    next()
+                } catch (error) {
+                    res.json(error.toString())
+                }
+            }else{
+                res.json({
+                    status:500,
+                    message: "ope-auth-password header is missing in request"
+                })
             }
         }else{
             res.json({
                 status:500,
-                message: "ope-auth-password header is missing in request"
+                message: "ope-auth-username header is missing in request"
             })
         }
-    }else{
-        res.json({
-            status:500,
-            message: "ope-auth-username header is missing in request"
-        })
+    } else {
+        next();
     }
 })
 
