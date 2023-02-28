@@ -7,55 +7,52 @@
     <title>smartCanteen</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="dep/bootstrap.min.css">
-    <script src="dep/vue2.js"></script>
 </head>
 <body>
-    <div id="app">
-        {{ message }}
+    <div class="outerWrap">
+        <div id="app">
+            {{ message }}
+            <nav>
+                <button class="btn btn-outline-primary" @click="navTo('products')">products</button>
+                <button class="btn btn-outline-primary" @click="navTo('vendors')">vendors</button>
+            </nav>
+            <main>
+                <div v-if="pageName == 'products'" id="products">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" v-model="showUsers" role="switch" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+                    </div>
+                    <div>
+                        <h2>Bearbeite message</h2>
+                        <button @click="changeMessage()" >Button</button>
+                    </div>
+            
 
-        <nav>
-            <button class="btn btn-outline-primary" @click="navTo('products')">products</button>
-            <button class="btn btn-outline-primary" @click="navTo('vendors')">vendors</button>
-        </nav>
-        <main>
-            <div v-if="pageName == 'products'" id="products">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" v-model="showUsers" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+                    <button type="button" class="btn btn-primary position-relative">
+                        Cart
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{checkout.cart.length}}
+                            <span class="visually-hidden">products in checkout</span>
+                        </span>
+                    </button>
+                    
+                    <div v-if="showUsers == true">
+                        <ul>
+                            <user v-for="user in users" v-bind:user="user" v-bind:functions="userfunctions"></user>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <h2>Bearbeite message</h2>
-                    <button @click="changeMessage()" >Button</button>
+                <div v-if="pageName == 'vendors'" id="vendors">
+                    <h2>Vendors page WIP</h2>
                 </div>
-        
-
-                <button type="button" class="btn btn-primary position-relative">
-                    Cart
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        {{checkout.cart.length}}
-                        <span class="visually-hidden">products in checkout</span>
-                    </span>
-                </button>
-                
-                <div v-if="showUsers == true">
-                    <ul>
-                        <user v-for="user in users" v-bind:user="user" v-bind:functions="userfunctions"></user>
-                    </ul>
+                <div v-else>
+                    <h2>Pagename not known</h2>
                 </div>
-            </div>
-            <div v-if="pageName == 'vendors'" id="vendors">
-                <h2>Vendors page WIP</h2>
-            </div>
-            <div v-else>
-                <h2>Pagename not known</h2>
-            </div>
-        </main>
-
-
-   
-
+            </main>
+        </div>
     </div>
 
+    <script src="dep/vue2.js"></script>
     <script src="components/user.js"></script>
     <script src="main.js"></script>
 
