@@ -1,3 +1,23 @@
+/* Mobile and general stuff */
 body {
     background: #e8e8e8;
+}
+.outerWrap {
+    margin: 0 10px;
+}
+
+/* Tablet */
+@media(min-width: 768px)
+{
+    .outerWrap {
+        margin: 0 100px;
+    }
+}
+
+/* Desktop */
+@media(min-width: 992px)
+{
+    .outerWrap {
+        margin: 0 200px;
+    }
 }
