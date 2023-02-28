@@ -52,4 +52,39 @@ router.get('/getProducts', async (req, res) => {
     }
 })
 
+router.post('/insertOne/:CollectionName', async (req, res) => {
+    try{
+
+        db.insertOne("req.params.collectionName", req.body)
+            .then(d => {
+                console.log(d)
+                res.json(d)
+            })
+            .catch(e => {
+                res.json(e)
+            })
+    }
+    catch(e){
+        res.json(e)
+    }
+})
+
+router.post('/insertMany/:collectionName', async (req, res) => {
+    try{
+
+        db.insertMany(req.params.collectionName, req.body)
+            .then(d => {
+                console.log(d)
+                res.json(d)
+            })
+            .catch(e => {
+                res.json(e)
+            })
+    }
+    catch(e){
+        res.json(e)
+    }
+})
+
+
 module.exports = router;

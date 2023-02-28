@@ -9,11 +9,34 @@ module.exports = class db_Connector{
     getCollection(collectionName){
         return fetch(`${this.host}/api/collections/${collectionName}/records`)
             .then(r => r.json())
+
             .then(d => {
                 if(d.code == 403){
                     throw new Error("error" + d.message)
                 }
                 return d
             })
+
+    }
+
+    insertOne(collectionName, entry){
+        //TODO: Validate entry depending on collection
+        return fetch(`${this.host}/api/collections/${collectionName}/records`, {
+            method: 'post',
+            body: JSON.stringify(entry),
+            headers: {'Content-Type': 'application/json'}
+        });
+    }
+
+    inserMany(collectionName, entries){
+        if (Array.isArray(entries) && entries.length >= 1){
+            entries.forEach(entry => {
+                this.insertOne(collectionName, entry)
+            });
+        }
+        else{
+            throw new Error("no Entries to insert found")
+        }
+
     }
 }
