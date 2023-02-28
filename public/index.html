@@ -17,7 +17,15 @@
                     <li class="logo me-auto fw-bold">smartCanteen</li>
                     <li class="nav-item rounded-pill" @click="navTo('products')">Produkte</li>
                     <li class="nav-item rounded-pill" @click="navTo('profilePage')">Profil</li>
-                    <li class="nav-item rounded-pill" @click="navTo('checkout')">Warenkorb</li>
+                    <li class="nav-item rounded-pill" @click="navTo('checkout')">
+                        <div type="button" class="position-relative">
+                            Warenkorb
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                {{checkout.cart.length}}
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <main>
@@ -28,14 +36,18 @@
                                 <div class="product rounded">
                                     <img :src="product.imageLink" alt="" class="product-image">
                                     <div class="product-name ps-3">{{product.name}}</div>
-                                    <!-- <p>{{product.description}}</p> -->
-                                    <div class="amountAndAdd">
-
-                                    </div>
-                                    <div class="tags-wrap">
-                                        <span v-for="tag in product.tags" class="tags rounded fw-bold">
-                                            {{tag}}
-                                        </span>
+                                    <p class="product-description px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat asperiores impedit non dolore voluptatem voluptate consequuntur soluta vel! Eveniet ad a ut voluptas animi vel. Facere repudiandae temporibus tenetur sed.</p>
+                                    
+                                    <div class="bottom-container d-flex justify-content-between px-3">
+                                        <div class="quantity">
+                                            <input type="number" id="quantity" value="1" name="quantity" min="1" max="10">
+                                            <button @click="addToCard(product.id)" class="addToCard"></button>
+                                        </div>
+                                        <div class="tags-wrap">
+                                            <span v-for="tag in product.tags" class="tags rounded fw-bold">
+                                                {{tag}}
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
