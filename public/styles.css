@@ -59,8 +59,13 @@ body {
 .product-card:nth-of-type(even) {
     padding: 0 0 0 5px;
 }
-.tags {
+.product .tags-wrap {
+    margin: 0 0 5px auto;
+    width: fit-content;
+}
+.product .tags {
     font-size: 14px;
+    padding: 5px 10px;
     background: #e8e8e8;
     margin: 0 5px 5px auto;
     width: fit-content;
@@ -68,6 +73,9 @@ body {
 .product .product-image {
     width: 100%;
     height: auto;
+}
+.product .product-name {
+    margin: 15px 0;
 }
 
 /* Tablet */

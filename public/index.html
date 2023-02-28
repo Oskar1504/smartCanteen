@@ -32,8 +32,10 @@
                                     <div class="amountAndAdd">
 
                                     </div>
-                                    <div v-for="tag in product.tags" class="tags p-1 rounded">
-                                        {{tag}}
+                                    <div class="tags-wrap">
+                                        <span v-for="tag in product.tags" class="tags rounded fw-bold">
+                                            {{tag}}
+                                        </span>
                                     </div>
                                 </div>
                             </div>
