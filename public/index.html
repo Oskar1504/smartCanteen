@@ -11,10 +11,13 @@
 <body>
     <div class="outerWrap">
         <div id="app">
-            {{ message }}
-            <nav>
-                <button class="btn btn-outline-primary" @click="navTo('products')">products</button>
-                <button class="btn btn-outline-primary" @click="navTo('vendors')">vendors</button>
+            <!-- {{ message }} -->
+            <nav class="mainNavigation">
+                <ul class="nav-item-wrap">
+                    <li class="nav-item" @click="navTo('products')">Produkte</li>
+                    <li class="nav-item" @click="navTo('vendors')">Anbieter</li>
+                    <li class="nav-item" @click="navTo('checkout')">Warenkorb</li>
+                </ul>
             </nav>
             <main>
                 <div v-if="pageName == 'products'" id="products">
@@ -24,10 +27,8 @@
                     </div>
                     <div>
                         <h2>Bearbeite message</h2>
-                        <button @click="changeMessage()" >Button</button>
+                        <button @click="changeMessage()">Button</button>
                     </div>
-            
-
                     <button type="button" class="btn btn-primary position-relative">
                         Cart
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">

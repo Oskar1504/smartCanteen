@@ -1,9 +1,37 @@
 /* Mobile and general stuff */
+:root {
+    --white: #fff;
+    --black: #000;
+}
 body {
     background: #e8e8e8;
 }
 .outerWrap {
     margin: 0 10px;
+}
+.mainNavigation {
+    margin: 0 -10px;
+    border-bottom: 1px solid var(--black);
+}
+.nav-item-wrap {
+    list-style: none;
+    padding: 10px 10px;
+    margin: initial;
+    display: flex;
+    justify-content: end;
+}
+.nav-item-wrap .nav-item {
+    margin: 0 5px;
+    padding: 0 10px;
+    border: 1px solid var(--black);
+    background: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+.nav-item-wrap .nav-item:hover {
+    background: var(--black);
+    color: #fff;
 }
 
 /* Tablet */
@@ -12,6 +40,12 @@ body {
     .outerWrap {
         margin: 0 100px;
     }
+    .mainNavigation {
+        margin: 0 -100px;
+    }
+    .nav-item-wrap {
+        padding: 10px 100px;
+    }
 }
 
 /* Desktop */
@@ -19,5 +53,11 @@ body {
 {
     .outerWrap {
         margin: 0 200px;
+    }
+    .mainNavigation {
+        margin: 0 -200px;
+    }
+    .nav-item-wrap {
+        padding: 10px 200px;
     }
 }
