@@ -47,6 +47,19 @@ body {
     background: var(--black);
     color: var(--white);
 }
+.product {
+    padding: 50px;
+    background: #e8e8e8;
+}
+.product-card {
+    margin: 5px 0;
+}
+.product-card:nth-of-type(odd) {
+    padding: 0 5px 0 0;
+}
+.product-card:nth-of-type(even) {
+    padding: 0 0 0 5px;
+}
 
 /* Tablet */
 @media(min-width: 768px)

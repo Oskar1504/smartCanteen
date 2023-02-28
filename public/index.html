@@ -22,8 +22,15 @@
             </nav>
             <main>
                 <div v-if="pageName == 'products'" id="products">
-                    <div class="products-container">
-                        <span v-for="product in products">{{product.name}}</span>
+                    <div class="products-container container-fluid">
+                        <div class="row">
+                            <div v-for="product in products" class="product-card rounded col-12 col-md-6">
+                                <div class="product">
+                                    <img src="{{product.imageLink}}" alt="" class="product-image">
+                                    <span>{{product.name}}</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div v-if="pageName == 'profilePage'" id="profilePage">
