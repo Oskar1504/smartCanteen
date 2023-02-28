@@ -1,5 +1,4 @@
 require("dotenv").config()
-
 const express = require('express')
 const fetch = require('node-fetch');
 
@@ -54,7 +53,7 @@ router.use(function (req, res, next) {
             }
         } else {
             res.json({
-                status: 500,
+                status:500,
                 message: "ope-auth-username header is missing in request"
             })
         }

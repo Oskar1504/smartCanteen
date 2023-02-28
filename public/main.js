@@ -4,23 +4,7 @@ const HOST = "http://localhost:42069"
 var app = new Vue({
     el: '#app',
     data: {
-        message: 'dadwa Vue!',
-        showUsers: false,
         pageName: "products",
-        users: [
-            {
-                name: "oskar",
-                age: 21
-            },
-            {
-                name: "julian",
-                age: 221
-            },
-            {
-                name: "max",
-                age: 241
-            },
-        ],
         products:[],
         checkout: {
             cart: [
@@ -28,16 +12,6 @@ var app = new Vue({
                 "test",
                 "test",
             ]
-        },
-        userfunctions: {
-            test: function(){
-                console.log("test aus data")
-                console.log(app.checkout)
-            },
-            test2: function(){
-                console.log("test 2222aus data")
-                console.log(app.checkout)
-            }
         }
     },
     created(){
@@ -49,11 +23,12 @@ var app = new Vue({
             .then(r => r.json())
             .then(d => {
                 console.log(d)
-                this.products = d
+                this.products = d.map(product => {
+                    product.tags = product.tags.split(",");
+                    product.categorie = product.categorie.split(",");
+                    return product;
+                })
             })
-        },
-        changeMessage: function () {
-            this.message = "changed/edited Message"
         },
         navTo(pageName) {
             this.pageName = pageName

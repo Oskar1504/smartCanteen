@@ -1,3 +1,107 @@
+/* Mobile and general stuff */
+@font-face {
+    font-family: 'RobotoCondensed-Light';
+    src: url('font/RobotoCondensed-Light.ttf');
+    src: url('font/RobotoCondensed-Light.ttf') format('ttf'),
+}
+@font-face {
+    font-family: 'RobotoCondensed-Regular';
+    src: url('font/RobotoCondensed-Regular.ttf');
+    src: url('font/RobotoCondensed-Regular.ttf') format('ttf'),
+}
+@font-face {
+    font-family: 'RobotoCondensed-Bold';
+    src: url('font/RobotoCondensed-Bold.ttf');
+    src: url('font/RobotoCondensed-Bold.ttf') format('ttf'),
+}
+:root {
+    --white: #fff;
+    --black: #000;
+}
 body {
+    font-family: 'RobotoCondensed-Regular';
+    font-size: 18px;
+}
+.logo {
+    font-size: 24px;
+}
+.outerWrap {
+    margin: 0 10px;
+}
+.mainNavigation {
+    margin: 0 -10px;
+    border-bottom: 1px solid var(--black);
+}
+.nav-item-wrap {
+    padding: 15px 10px;
+}
+.nav-item-wrap .nav-item {
+    margin: 0 5px;
+    padding: 0 10px;
+    border: 1px solid var(--black);
+    background: var(--white);
+    cursor: pointer;
+    transition: .3s;
+}
+.nav-item-wrap .nav-item:hover {
+    background: var(--black);
+    color: var(--white);
+}
+.product {
+    border: 1px solid var(--black);
+}
+.product-card {
+    margin: 5px 0;
+}
+.product-card:nth-of-type(odd) {
+    padding: 0 5px 0 0;
+}
+.product-card:nth-of-type(even) {
+    padding: 0 0 0 5px;
+}
+.product .tags-wrap {
+    margin: 0 0 5px auto;
+    width: fit-content;
+}
+.product .tags {
+    font-size: 14px;
+    padding: 5px 10px;
     background: #e8e8e8;
+    margin: 0 5px 5px auto;
+    width: fit-content;
+}
+.product .product-image {
+    width: 100%;
+    height: auto;
+}
+.product .product-name {
+    margin: 15px 0;
+}
+
+/* Tablet */
+@media(min-width: 768px)
+{
+    .outerWrap {
+        margin: 0 100px;
+    }
+    .mainNavigation {
+        margin: 0 -100px;
+    }
+    .nav-item-wrap {
+        padding: 15px 100px;
+    }
+}
+
+/* Desktop */
+@media(min-width: 992px)
+{
+    .outerWrap {
+        margin: 0 200px;
+    }
+    .mainNavigation {
+        margin: 0 -200px;
+    }
+    .nav-item-wrap {
+        padding: 15px 200px;
+    }
 }
