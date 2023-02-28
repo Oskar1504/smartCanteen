@@ -34,24 +34,11 @@ router.use(function (req, res, next) {
     }
 })
 
-<<<<<<< HEAD
 
 router.get('/getCollection/:CollectionName', async (req, res) => {
     try {
 
         db.getCollection(req.params.CollectionName)
-=======
-
-
-router.get('/getProducts', async (req, res) => {
-    try{
-        
-
-
-        //TODO make db host variable
-        fetch("http://localhost:8090/api/collections/products/records")
-            .then(r => r.json())
->>>>>>> 8d9c7e74fffa6fdf313a12a42ef8ef9f036f3c67
             .then(d => {
                 console.log(d)
                 res.json(d.items)
