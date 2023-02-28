@@ -58,8 +58,7 @@ module.exports = class db_Connector{
     }
 
     deleteOne(collectionName, id){
-        console.log("asdasd")
-        return fetch(`${this.host}/api/collection/${collectionName}/records/${id}`,{
+        return fetch(`${this.host}/api/collections/${collectionName}/records/${id}`,{
             method: 'DELETE'
         });
     }

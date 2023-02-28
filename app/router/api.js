@@ -108,7 +108,6 @@ router.patch('/update/:collectionName/:id', async (req, res) => {
 
 router.delete('/delete/:collectionName/:id', async (req, res) => {
     try{
-        console.log("asds")
         db.deleteOne(req.params.collectionName, req.params.id)
             .then(d => {
                 console.log(d)
