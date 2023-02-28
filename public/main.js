@@ -23,7 +23,11 @@ var app = new Vue({
             .then(r => r.json())
             .then(d => {
                 console.log(d)
-                this.products = d
+                this.products = d.map(product => {
+                    product.tags = product.tags.split(",");
+                    product.categorie = product.categorie.split(",");
+                    return product;
+                })
             })
         },
         navTo(pageName) {

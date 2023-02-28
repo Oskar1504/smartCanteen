@@ -25,9 +25,16 @@
                     <div class="products-container container-fluid">
                         <div class="row">
                             <div v-for="product in products" class="product-card rounded col-12 col-md-6">
-                                <div class="product">
-                                    <img src="{{product.imageLink}}" alt="" class="product-image">
-                                    <span>{{product.name}}</span>
+                                <div class="product rounded">
+                                    <img :src="product.imageLink" alt="" class="product-image">
+                                    <div class="product-name ps-3">{{product.name}}</div>
+                                    <!-- <p>{{product.description}}</p> -->
+                                    <div class="amountAndAdd">
+
+                                    </div>
+                                    <div v-for="tag in product.tags" class="tags p-1 rounded">
+                                        {{tag}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
