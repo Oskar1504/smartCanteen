@@ -5,12 +5,20 @@ const fetch = require('node-fetch');
 
 const DB_Connector = require('../helper/DB_Connector.js');
 const UserCollection = require('../helper/UserCollection.js');
-const RouterRightMapping = require("../helper/RouterRightMapping.js")
+const RouteMapping = require('../helper/RouteMapping.js');
 
 
 const db = new DB_Connector("http://127.0.0.1:8090");
 const userCollection = new UserCollection(db)
 const router = express.Router();
+
+let routeMapping = new RouteMapping({
+    "3": ["insert"],
+    "2": ["delete","insertOne/products","insertMany/products","update"],
+    "1": ["getCollection"],
+    "0":[]
+}).get()
+
 
 router.use(function (req, res, next) {
     if (process.env.MODE != "DEV") {
@@ -18,8 +26,23 @@ router.use(function (req, res, next) {
         if (req.headers["ope-auth-username"] != undefined) {
             if (req.headers["ope-auth-password"] != undefined) {
                 try {
-                    userCollection.login(req.headers["ope-auth-username"], req.headers["ope-auth-password"])
-                    next()
+                    let user = userCollection.login(req.headers["ope-auth-username"], req.headers["ope-auth-password"])
+                    let allowed = false
+                    routeMapping[user.type].forEach(routePart => {
+                        if(req.originalUrl.includes(routePart)){
+                            allowed = true
+                        }
+                    });
+
+                    if(allowed){
+                        next()
+                    }else{
+                        res.json({
+                            status: 500,
+                            message: "user not allowed to perform this action"
+                        })
+
+                    }
                 } catch (error) { 
                     res.json(error.toString())
                 }
@@ -47,7 +70,6 @@ router.get('/getCollection/:CollectionName', async (req, res) => {
 
         db.getCollection(req.params.CollectionName)
             .then(d => {
-                console.log(d)
                 res.json(d.items)
             })
             .catch(e => {
@@ -63,7 +85,6 @@ router.post('/insertOne/:collectionName', async (req, res) => {
     try {
         db.insertOne(req.params.collectionName, req.body)
             .then(d => {
-                console.log(d)
                 res.json(d)
             })
             .catch(e => {
@@ -79,7 +100,6 @@ router.post('/insertMany/:collectionName', async (req, res) => {
     try {
         db.insertMany(req.params.collectionName, req.body)
             .then(d => {
-                console.log(d)
                 res.json(d)
             })
             .catch(e => {
@@ -95,7 +115,6 @@ router.patch('/update/:collectionName/:id', async (req, res) => {
     try{
         db.updateOne(req.params.collectionName, req.params.id, req.body)
             .then(d => {
-                console.log(d)
                 res.json(d)
             })
             .catch(e => {
@@ -111,7 +130,6 @@ router.delete('/delete/:collectionName/:id', async (req, res) => {
     try{
         db.deleteOne(req.params.collectionName, req.params.id)
             .then(d => {
-                console.log(d)
                 res.json(d)
             })
             .catch(e => {
