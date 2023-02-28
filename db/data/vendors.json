@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Vendor 1",
+    "description": "vendor description: das ist eincoool er dadwtes",
+    "tags": "test,ehre"
+  },
+  {
+    "name": "Vendor 2",
+    "description": "vendor2 description: das ist eincoool er dadwtes",
+    "tags": "test,ehre"
+  }
+]

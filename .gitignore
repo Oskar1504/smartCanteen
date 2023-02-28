@@ -2,4 +2,6 @@
 node_modules
 .vscode/*
 db/pb_data/**/*
-db/pb_data/*.db
+db/pb_data/*
+db/pb_data/data.db-shm
+db/pb_data/data.db-wal
