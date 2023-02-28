@@ -3,6 +3,7 @@ const fetch = require('node-fetch');
 
 const DB_Connector = require('../helper/DB_Connector.js');
 const UserCollection = require('../helper/UserCollection.js');
+const RouterRightMapping = require("../helper/RouterRightMapping.js")
 
 
 const db = new DB_Connector("http://127.0.0.1:8090");
