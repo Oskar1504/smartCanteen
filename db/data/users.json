@@ -1,0 +1,42 @@
+[
+    {
+        "firstname": "Oskar",
+        "lastname": "Pester",
+        "balance": 100.69,
+        "username": "oskar",
+        "password": "admin2023",
+        "type": 3
+      },
+    {
+        "firstname": "Max",
+        "lastname": "Kallweit",
+        "balance": 100.69,
+        "username": "max",
+        "password": "admin2023",
+        "type": 3
+      },
+    {
+        "firstname": "Julian",
+        "lastname": "König",
+        "balance": 100.69,
+        "username": "julian",
+        "password": "admin2023",
+        "type": 3
+      },
+      {
+          "firstname": "User1",
+          "lastname": "lastanem1",
+          "balance": 100.69,
+          "username": "user1",
+          "password": "user2023",
+          "type": 1
+        },
+        {
+            "firstname": "vendor1",
+            "lastname": "lastanem1",
+            "balance": 100.69,
+            "username": "vendor1",
+            "password": "vendor2023",
+            "type": 2
+          }
+]
