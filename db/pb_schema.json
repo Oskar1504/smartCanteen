@@ -251,7 +251,7 @@
             {
                 "id": "wmwjnn85",
                 "name": "user",
-                "type": "relation",
+                "type": "text",
                 "system": false,
                 "required": false,
                 "unique": false,
