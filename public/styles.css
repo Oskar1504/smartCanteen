@@ -83,6 +83,10 @@ body {
 .product .addToCard:focus {
     box-shadow: none;
 }
+.product .quantityInput {
+    margin: 0 0 5px;
+    font-size: 14px;
+}
 .username input,
 .password input {
     border: none;
