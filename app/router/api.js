@@ -4,12 +4,16 @@ const fetch = require('node-fetch');
 
 const DB_Connector = require('../helper/DB_Connector.js');
 const UserCollection = require('../helper/UserCollection.js');
+const ProductCollection = require('../helper/ProductCollection.js')
 const RouteMapping = require('../helper/RouteMapping.js');
+const transaction_Handler = require('../businessLogic/TransactionHandler.js')
 
 
 const db = new DB_Connector("http://127.0.0.1:8090");
 const userCollection = new UserCollection(db)
+const productCollection = new ProductCollection(db, 60)
 const router = express.Router();
+const transactionHandler = new transaction_Handler(db, productCollection)
 
 //TODO getproducts should always work
 let routeMapping = new RouteMapping({
@@ -169,6 +173,19 @@ router.delete('/delete/:collectionName/:id', async (req, res) => {
     }
     catch (e) {
         res.json(e)
+    }
+})
+
+router.post('/placeOrder', async (req, res) => {
+    try {
+        let user = userCollection.login(req.headers["ope-auth-username"], req.headers["ope-auth-password"])
+        res.json(
+            await transactionHandler.placeOrder(user.id, req.body)
+        )
+
+    }
+    catch (e) {
+        res.json(e.toString())
     }
 })
 

@@ -1,6 +1,6 @@
 
 module.exports = class UserCollection{
-    constructor(db, maxCacheMinutes = 1){
+    constructor(db, maxCacheMinutes = 30){
         this.db = db
         this.maxCacheMinutes = maxCacheMinutes * 60 * 1000
         this.loadUser()

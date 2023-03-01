@@ -5,34 +5,34 @@ orders
 attribute/column products
 
 [
-    {
-      "id": "eins",
-      "name": "eins",
-      "amount": 2,
-      "price": 2.5
-    },
-    {
-      "id": "zwei",
-      "name": "zwei",
+  {
+    "id": "eins",
+    "name": "eins",
+    "amount": 2,
+    "price": 2.5
+  },
+  {
+    "id": "zwei",
+    "name": "zwei",
+    "amount": 1,
+    "price": 3
+  }
+]
+
+
+[
+  {
+      "id": "bww09igqcwy6mk9",
+      "name": "Nudeln",
+      "price": 123.21,
       "amount": 1,
-      "price": 3
-    }
-  ]
-
-
-  [
-    {
-        "id": "bww09igqcwy6mk9",
-        "name": "Nudeln",
-        "price": 123.21,
-        "amount": 1,
-        "total": "123.21"
-    },
-    {
-        "id": "wwcek8rwd4uitqs",
-        "name": "Döner",
-        "price": 123,
-        "amount": 1,
-        "total": "123.00"
-    }
+      "total": "123.21"
+  },
+  {
+      "id": "wwcek8rwd4uitqs",
+      "name": "Döner",
+      "price": 123,
+      "amount": 2,
+      "total": "123.00"
+  }
 ]

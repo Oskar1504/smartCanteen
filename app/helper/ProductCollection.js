@@ -1,9 +1,9 @@
 module.exports = class productCollection{
         
-    constructor(db, maxCacheMinutes = 1){
+    constructor(db, maxCacheMinutes = 30){
         this.db = db
         this.maxCacheMinutes = maxCacheMinutes * 60 * 1000
-        this.productCollection = loadProducts()
+        this.loadProducts()
         this.productsLastFetched = new Date().getTime()
     }
 
@@ -13,13 +13,14 @@ module.exports = class productCollection{
             .then(d => {
                 this.productsLastFetched = new Date().getTime()
                 this.products = Object.fromEntries(d.items.map(e => [e.id,e]))
+                this.productsArray = d.items
         })
     }
 
-    getUser(userId){
+    getProduct(productId){
         this.checkCache()
         //TODO check existance
-        return this.users[userId]
+        return this.products[productId]
     }
 
     checkCache(){
