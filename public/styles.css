@@ -121,6 +121,12 @@ body {
     color: var(--blue);
     background-color: var(--lightblue);
 }
+.badge {
+    /* border: 1px solid #198754; */
+    border: 1px solid var(--black);
+    color: var(--black);
+    background: var(--white);
+}
 
 /* Tablet */
 @media(min-width: 768px)
