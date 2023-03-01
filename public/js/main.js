@@ -8,6 +8,7 @@ var app = new Vue({
     data: {
         pageName: "products",
         products:[],
+        filteredProducts:[],
         checkout: {
             cart: []
         },
@@ -17,6 +18,10 @@ var app = new Vue({
             password: "",
             userId: "",
             loggedIn: false
+        },
+        filters: {
+            "tag": new Set(),
+            "categorie": new Set(),
         }
     },
     created(){
@@ -33,6 +38,8 @@ var app = new Vue({
                     product.categorie = product.categorie.split(",");
                     return product;
                 })
+
+                this.filterProducts()
             })
         },
         loadOrderHistory(){
@@ -109,7 +116,40 @@ var app = new Vue({
                     app.loadOrderHistory()
                 }
             })
+        },
+        toggleFilter(type, value){
+            if(this.filters[type].has(value)){
+                this.filters[type].delete(value)
+            }else{
+                this.filters[type].add(value)
+            }
+
+            this.filterProducts()
+        },
+        filterProducts(){
+            if(this.filters.tag.size != 0 || this.filters.categorie.size != 0){
+                this.filteredProducts =  this.products.filter(product => {
+                    let found = 0
+                    this.filters.tag.forEach(tag => {
+                        if(product.tags.includes(tag)){
+                            found = 1
+                        }
+                    })
+                    this.filters.categorie.forEach(categorie => {
+                        if(product.categorie.includes(categorie)){
+                            found = 1
+                        }
+                    })
+                    return found
+                })
+            }else{
+                this.filteredProducts = this.products
+            }
+        },
+        isFilterActive(type, val){
+            return this.filters[type].has(val) ? "active": ""
         }
+        
     },
     computed: {
         cartLength: function(){
@@ -126,6 +166,12 @@ var app = new Vue({
                 return 0
             }
         },
+        usedTags: function(){
+            return new Set(this.products.map(e => e.tags).flat())
+        },
+        usedCategories: function(){
+            return new Set(this.products.map(e => e.categorie).flat())
+        }
     }
 })
 
