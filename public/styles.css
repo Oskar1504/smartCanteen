@@ -75,6 +75,13 @@ body {
 .product .product-name {
     margin: 15px 0;
 }
+.product .addToCard {
+    padding: 0;
+    font-size: 14px;
+}
+.product .addToCard:focus {
+    box-shadow: none;
+}
 
 /* Tablet */
 @media(min-width: 768px)

@@ -30,6 +30,7 @@
             </nav>
             <main>
                 <div v-if="pageName == 'products'" id="products">
+                    <h1 class="my-4">Produkte</h1>
                     <div class="products-container container-fluid">
                         <div class="row">
                             <div v-for="product in products" class="product-card rounded col-12 col-md-6">
@@ -41,7 +42,7 @@
                                     <div class="bottom-container d-flex justify-content-between px-3">
                                         <div class="quantity">
                                             <input type="number" id="quantity" value="1" name="quantity" min="1" max="10">
-                                            <button @click="addToCard(product.id)" class="addToCard"></button>
+                                            <button @click="addToCart(product.id)" class="addToCard btn">Hinzufügen</button>
                                         </div>
                                         <div class="tags-wrap">
                                             <span v-for="tag in product.tags" class="tags rounded fw-bold">
@@ -55,8 +56,13 @@
                     </div>
                 </div>
                 <div v-if="pageName == 'profilePage'" id="profilePage">
-                    <h2>Profile page WIP</h2>
+                    <h1 class="my-4">Profil</h1>
                     <div>
+                        <h2>Allgemeine Daten</h2>
+                            <ul v-for="user in users">
+                                <li class="general">{{user.firstname}}</li>
+                            </ul>
+                        <h2>Bestellhistorie</h2>
                         <ul class="list-group list-group-flush">
                             <li v-for="order in orderHistory" class="list-group-item d-flex justify-content-between align-items-start">
                               <div class="ms-2 me-auto">
