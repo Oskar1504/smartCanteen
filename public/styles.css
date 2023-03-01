@@ -18,6 +18,7 @@
     --white: #fff;
     --black: #000;
     --green: rgb(3, 92, 3);
+    --lightgreen: #198754;
     --blue: rgb(3, 3, 141);
     --lightblue: rgb(240, 240, 254);
 }
@@ -49,8 +50,8 @@ body {
     transition: .3s;
 }
 .nav-item-wrap .nav-item:hover {
-    background: #198754;
-    border-color: #198754;
+    background: var(--lightgreen);
+    border-color: var(--lightgreen);
     color: var(--white);
 }
 .product {
@@ -102,6 +103,12 @@ body {
     border: 1px solid var(--black);
     background: var(--white);
     width: 100px;
+    transition: .3s;
+}
+.submitLogin:hover {
+    background: var(--lightgreen);
+    border-color: var(--lightgreen);
+    color: var(--white);
 }
 .container {
     width: 70%;
@@ -136,7 +143,8 @@ body {
 }
 .nav-item-wrap .nav-item:hover .badge {
     color: var(--white);
-    background: #198754;
+    background: var(--lightgreen);
+    border-color: #fff;
 }
 
 /* Tablet */
