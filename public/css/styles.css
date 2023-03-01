@@ -1,18 +1,18 @@
 /* Mobile and general stuff */
 @font-face {
     font-family: 'RobotoCondensed-Light';
-    src: url('font/RobotoCondensed-Light.ttf');
-    src: url('font/RobotoCondensed-Light.ttf') format('ttf'),
+    src: url('../font/RobotoCondensed-Light.ttf');
+    src: url('../font/RobotoCondensed-Light.ttf') format('ttf'),
 }
 @font-face {
     font-family: 'RobotoCondensed-Regular';
-    src: url('font/RobotoCondensed-Regular.ttf');
-    src: url('font/RobotoCondensed-Regular.ttf') format('ttf'),
+    src: url('../font/RobotoCondensed-Regular.ttf');
+    src: url('../font/RobotoCondensed-Regular.ttf') format('ttf'),
 }
 @font-face {
     font-family: 'RobotoCondensed-Bold';
-    src: url('font/RobotoCondensed-Bold.ttf');
-    src: url('font/RobotoCondensed-Bold.ttf') format('ttf'),
+    src: url('../font/RobotoCondensed-Bold.ttf');
+    src: url('../font/RobotoCondensed-Bold.ttf') format('ttf'),
 }
 :root {
     --white: #fff;
