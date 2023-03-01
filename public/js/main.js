@@ -1,6 +1,6 @@
 
 const HOST = "http://localhost:42069"
-const LOGIN_MAX_CACHE = 5 * 60 * 1000
+const LOGIN_MAX_CACHE = 30 * 60 * 1000
 let api = new ApiConnector(HOST)
 
 var app = new Vue({
