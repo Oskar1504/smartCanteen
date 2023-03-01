@@ -1,6 +1,6 @@
 
 const HOST = "http://localhost:42069"
-
+const LOGIN_MAX_CACHE = 30 * 60 * 1000
 let api = new ApiConnector(HOST)
 
 var app = new Vue({
@@ -26,8 +26,10 @@ var app = new Vue({
     },
     created(){
         this.loadProducts()
+        this.loadLoginFromCash()
     },
     methods: {
+        
         loadProducts(){
             api.get(`/api/getCollection/products`)
             .then(r => r.json())
@@ -114,8 +116,26 @@ var app = new Vue({
                     console.log("ERROR LOGIN")
                 }else{
                     app.loadOrderHistory()
+                    app.storeLoginInCache()
                 }
             })
+        },
+        loadLoginFromCash(){
+            if(localStorage.getItem("smartCanteenLogin") !=null){
+                let storageLogin = JSON.parse(localStorage.getItem("smartCanteenLogin"))
+                if(new Date().getTime() - storageLogin.created <= LOGIN_MAX_CACHE){
+                    this.login.username = storageLogin.username
+                    this.login.password = storageLogin.password
+                    this.signIn()
+                }
+            }
+        },
+        storeLoginInCache(){
+            localStorage.setItem("smartCanteenLogin", JSON.stringify({
+                username: this.login.username,
+                password: this.login.password,
+                created: new Date().getTime()
+            }))
         },
         toggleFilter(type, value){
             if(this.filters[type].has(value)){

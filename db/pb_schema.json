@@ -272,6 +272,19 @@
                     "min": null,
                     "max": null
                 }
+            },
+            {
+                "id": "fsr1d6el",
+                "name": "mainorder",
+                "type": "text",
+                "system": false,
+                "required": false,
+                "unique": false,
+                "options": {
+                    "min": null,
+                    "max": null,
+                    "pattern": ""
+                }
             }
         ],
         "listRule": "",
