@@ -7,19 +7,16 @@ var app = new Vue({
         pageName: "products",
         products:[],
         checkout: {
-            cart: [
-                "test",
-                "test",
-                "test",
-            ]
-        }
+            cart: []
+        },
+        orderHistory: []
     },
     created(){
         this.loadProducts()
     },
     methods: {
         loadProducts(){
-            fetch(`${HOST}/api/getProducts`)
+            fetch(`${HOST}/api/getCollection/products`)
             .then(r => r.json())
             .then(d => {
                 console.log(d)
@@ -30,11 +27,51 @@ var app = new Vue({
                 })
             })
         },
+        loadOrderHistory(){
+            fetch(`${HOST}/api/getCollection/orders`)
+            .then(r => r.json())
+            .then(d => {
+                console.log(d)
+                d = d.map(order => {
+                    let totalItems = 0
+                    order.products = order.products.map(product => {
+                        totalItems += product.amount
+                        product.price = product.price.toFixed(2)
+                        product["total"] = (product.amount * product.price).toFixed(2)
+                        return product
+                    })
+                    order["totalItems"] = totalItems
+                    order.total = order.total.toFixed(2)
+                    return order
+                })
+                this.orderHistory = d
+            })
+        },
         navTo(pageName) {
             this.pageName = pageName
+
+            if(this.pageName == "profilePage"){
+                this.loadOrderHistory()
+            }
         },
-        test: function(){
-            console.log("test")
+        addToCart(productId){
+            this.checkout.cart.push(productId)
+        },
+        placeOrder(){
+            let data  = {
+                products: this.checkout.cart
+            }
+            fetch(`${HOST}/api/getCollection/products`, {
+                method:"POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            })
+            .then(r => r.json())
+            .then(d => {
+                console.log(d)
+            })
         }
     }
 })

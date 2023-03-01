@@ -11,6 +11,7 @@ const db = new DB_Connector("http://127.0.0.1:8090");
 const userCollection = new UserCollection(db)
 const router = express.Router();
 
+//TODO getproducts should always work
 let routeMapping = new RouteMapping({
     "3": ["insert"],
     "2": ["delete","insertOne/products","insertMany/products","update"],
@@ -53,7 +54,7 @@ router.use(function (req, res, next) {
             }
         } else {
             res.json({
-                status:500,
+                status: 500,
                 message: "ope-auth-username header is missing in request"
             })
         }
@@ -72,7 +73,7 @@ router.get('/getCollection/:CollectionName', async (req, res) => {
                 res.json(d.items)
             })
             .catch(e => {
-                res.json(e)
+                res.json(e.toString())
             })
     }
     catch (e) {

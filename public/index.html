@@ -56,6 +56,23 @@
                 </div>
                 <div v-if="pageName == 'profilePage'" id="profilePage">
                     <h2>Profile page WIP</h2>
+                    <div>
+                        <ul class="list-group list-group-flush">
+                            <li v-for="order in orderHistory" class="list-group-item d-flex justify-content-between align-items-start">
+                              <div class="ms-2 me-auto">
+                                <div class="fw-bold" data-bs-toggle="collapse" :href="'#order_' + order.id" >{{order.totalItems}} Products</div>
+                                <div class="collapse" :id="'order_' + order.id">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item" v-for="product in order.products">
+                                            {{product.amount}} x {{product.name}} {{product.price}} € | {{product.total}} €
+                                        </li>
+                                    </ul>
+                                </div>
+                              </div>
+                              <span class="badge bg-primary rounded-pill">{{order.total}} €</span>
+                            </li>
+                          </ul>
+                    </div>
                 </div>
                 <div v-if="pageName == 'checkout'" id="checkout">
                     <h2>Checkout page WIP</h2>
@@ -65,7 +82,8 @@
     </div>
 
     <script src="dep/vue2.js"></script>
-    <script src="components/user.js"></script>
+    <script src="dep/bootstrap.min.js"></script>
+
     <script src="main.js"></script>
 
 </body>

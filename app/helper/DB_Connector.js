@@ -9,10 +9,10 @@ module.exports = class db_Connector{
     getCollection(collectionName){
         return fetch(`${this.host}/api/collections/${collectionName}/records`)
             .then(r => r.json())
-
             .then(d => {
                 if(d.code == 403){
-                    throw new Error("error" + d.message)
+                    console.log("[DB_CONNECTOR] error" + d.message)
+                    throw new Error("[DB_CONNECTOR] error" + d.message)
                 }
                 return d
             })
