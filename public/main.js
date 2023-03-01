@@ -63,10 +63,12 @@ var app = new Vue({
                     id: productId,
                     name: product.name,
                     price: product.price,
-                    amount: amount
+                    amount: amount,
+                    total: (amount * product.price).toFixed(2)
                 })
             }else{
-                productInCart.amount += amount
+                productInCart.amount += amount,
+                productInCart.total = (productInCart.price * productInCart.amount).toFixed(2)
             }
         },
         placeOrder(){
@@ -93,7 +95,14 @@ var app = new Vue({
             }else{
                 return 0
             }
-        }
+        },
+        checkoutTotal: function(){
+            if(this.checkout.cart.length >= 1){
+                return this.checkout.cart.map(e => e.price * e.amount).reduce((a, b) => a+b)
+            }else{
+                return 0
+            }
+        },
     }
 })
 

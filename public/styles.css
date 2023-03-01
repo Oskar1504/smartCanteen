@@ -17,6 +17,7 @@
 :root {
     --white: #fff;
     --black: #000;
+    --green: rgb(3, 92, 3);
 }
 body {
     font-family: 'RobotoCondensed-Regular';
@@ -96,6 +97,11 @@ body {
     border: 1px solid var(--black);
     background: var(--white);
     width: 100px;
+}
+
+.container {
+    width: 70%;
+    margin: auto;
 }
 
 /* Tablet */

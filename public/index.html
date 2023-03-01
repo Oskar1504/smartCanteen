@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>smartCanteen</title>
     <link rel="stylesheet" href="dep/bootstrap.min.css">
+    <link rel="stylesheet" href="input.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -40,7 +41,15 @@
                                     <div class="product-name ps-3">{{product.name}}</div>
                                     <p class="product-description px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat asperiores impedit non dolore voluptatem voluptate consequuntur soluta vel! Eveniet ad a ut voluptas animi vel. Facere repudiandae temporibus tenetur sed.</p>
                                     
-                                    <div class="bottom-container d-flex justify-content-between px-3">
+                                    <div class="bottom-container d-flex justify-content-between px-3 mb-2">
+                                        <div class="quantity">
+                                            <div class="number-input">
+                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</button>
+                                                <input type="number" class="quantity" :id="product.id + '_cart_amount'" value="1" name="quantity" min="1" max="10">
+                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+                                                <button @click="addToCart(product.id)" class="addToCard btn test">Hinzufügen</button>
+                                              </div>
+                                        </div>
                                         <div class="tags-wrap">
                                             <span v-for="tag in product.tags" class="tags rounded fw-bold">
                                                 {{tag}}
@@ -70,7 +79,7 @@
                         <button class="submitLogin mt-4" id="submitLogin" type="submit">Login</button>
                     </div>
                 </div>
-                <div v-if="pageName == 'profilePage'" id="profilePage">
+                <div v-if="pageName == 'profilePage'" id="profilePage"  class="container">
                     <h1 class="my-4">Profil</h1>
                     <div>
                         <h2>Allgemeine Daten</h2>
@@ -95,13 +104,33 @@
                           </ul>
                     </div>
                 </div>
-                <div v-if="pageName == 'checkout'" id="checkout">
-                    <h2>Checkout page WIP</h2>
-                    <div class="row">
+                <div v-if="pageName == 'checkout'" id="checkout" class="container">
+                    <h2>Checkout product list</h2>
+                    <div class="row" v-if="cartLength >= 1">
                         <div class="col col-8">
-                            
+                            <div class="card">
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li v-for="product in checkout.cart" class="list-group-item">
+                                            {{product.amount}} x {{product.name}}  {{product.price}} € | {{product.total}} € 
+                                            
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                         <div class="col col-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    Total: {{checkoutTotal}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" v-else>
+                        <div class="col">
+                            <p>No products in cart</p>
+                            <p class="btn btn-outline-success" @click="navTo('products')">Continue shopping</p>
 
                         </div>
                     </div>
