@@ -24,6 +24,7 @@ body {
 }
 .logo {
     font-size: 24px;
+    cursor: default;
 }
 .outerWrap {
     margin: 0 10px;
