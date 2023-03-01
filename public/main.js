@@ -85,6 +85,15 @@ var app = new Vue({
                 console.log(d)
             })
         }
+    },
+    computed: {
+        cartLength: function(){
+            if(this.checkout.cart.length >= 1){
+                return this.checkout.cart.map(e => e.amount).reduce((a, b) => a+b)
+            }else{
+                return 0
+            }
+        }
     }
 })
 
