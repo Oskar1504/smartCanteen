@@ -89,16 +89,7 @@ var app = new Vue({
             }
         },
         placeOrder(){
-            let data  = {
-                products: this.checkout.cart
-            }
-            fetch(`${HOST}/api/getCollection/products`, {
-                method:"POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            })
+            api.post("/api/placeOrder", this.checkout.cart)
             .then(r => r.json())
             .then(d => {
                 console.log(d)
