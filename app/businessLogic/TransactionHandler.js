@@ -1,8 +1,9 @@
 module.exports = class transaction_Handler{
 
-    constructor(db, productCollection){
+    constructor(db, productCollection, userCollection){
         this.db = db;
         this.productCollection = productCollection;
+        this.userCollection = userCollection;
     }
 
     async placeOrder(buyerID, items){
@@ -24,10 +25,12 @@ module.exports = class transaction_Handler{
             total += parseFloat((item.price * item.amount).toFixed(2));
             delete item.total;
 
-            if(vendorOrders[dbItem.vendor] == undefined){
-                vendorOrders[dbItem.vendor] = []
+            
+            let vendorUserId = Object.values(this.userCollection.users).find(e => e.vendorId == dbItem.vendor).id
+            if(vendorOrders[vendorUserId] == undefined){
+                vendorOrders[vendorUserId] = []
             }
-            vendorOrders[dbItem.vendor].push(item)
+            vendorOrders[vendorUserId].push(item)
 
             
             return item;
