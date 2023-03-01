@@ -26,7 +26,7 @@ async function main(){
         }
 
         if(fs.existsSync(file)){
-            insertedItems[fileName] = await db.inserMany(fileName, importData, true)
+            insertedItems[fileName] = await db.insertMany(fileName, importData, true)
         }else{
             console.log(`Data file "${fileName}" does not exist`)
         }

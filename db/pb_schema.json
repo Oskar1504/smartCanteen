@@ -232,5 +232,53 @@
         "updateRule": "",
         "deleteRule": "",
         "options": {}
+    },
+    {
+        "id": "vcoe71c9q8fp6o5",
+        "name": "orders",
+        "type": "base",
+        "system": false,
+        "schema": [
+            {
+                "id": "2tt1x7ur",
+                "name": "products",
+                "type": "json",
+                "system": false,
+                "required": false,
+                "unique": false,
+                "options": {}
+            },
+            {
+                "id": "wmwjnn85",
+                "name": "user",
+                "type": "relation",
+                "system": false,
+                "required": false,
+                "unique": false,
+                "options": {
+                    "maxSelect": 1,
+                    "collectionId": "qcage5ei69cqto7",
+                    "cascadeDelete": false
+                }
+            },
+            {
+                "id": "ougkify5",
+                "name": "total",
+                "type": "number",
+                "system": false,
+                "required": false,
+                "unique": false,
+                "options": {
+                    "min": null,
+                    "max": null
+                }
+            }
+        ],
+        "listRule": null,
+        "viewRule": null,
+        "createRule": null,
+        "updateRule": null,
+        "deleteRule": null,
+        "options": {}
     }
 ]
