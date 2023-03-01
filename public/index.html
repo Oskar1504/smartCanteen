@@ -16,6 +16,7 @@
                 <ul class="nav-item-wrap d-flex align-items-center list-unstyled m-0">
                     <li class="logo me-auto fw-bold">smartCanteen</li>
                     <li class="nav-item rounded-pill" @click="navTo('products')">Produkte</li>
+                    <li class="nav-item rounded-pill" @click="navTo('loginPage')">Login</li>
                     <li class="nav-item rounded-pill" @click="navTo('profilePage')">Profil</li>
                     <li class="nav-item rounded-pill" @click="navTo('checkout')">
                         <div type="button" class="position-relative">
@@ -55,13 +56,16 @@
                         </div>
                     </div>
                 </div>
+                <div v-if="pageName == 'loginPage'" id="loginPage">
+                    <h1 class="my-4">Login</h1>
+                </div>
                 <div v-if="pageName == 'profilePage'" id="profilePage">
                     <h1 class="my-4">Profil</h1>
                     <div>
                         <h2>Allgemeine Daten</h2>
-                            <ul v-for="user in users">
+                            <!-- <ul v-for="user in users">
                                 <li class="general">{{user.username}}</li>
-                            </ul>
+                            </ul> -->
                         <h2>Bestellhistorie</h2>
                         <ul class="list-group list-group-flush">
                             <li v-for="order in orderHistory" class="list-group-item d-flex justify-content-between align-items-start">
