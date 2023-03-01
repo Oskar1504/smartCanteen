@@ -33,16 +33,38 @@
             <main>
 
                 <div v-if="pageName == 'products'" id="products">
-                    <h1 class="my-4">Produkte</h1>
+                    <h1 class="my-2">Produkte</h1>
+                    <div>
+                        <h2 data-bs-toggle="collapse" href="#filter" >Filter</h2>
+                        <div class="collapse show" id="filter">
+                            <h4>Tags</h4>
+                            <div class="flex">
+                                <div @click="toggleFilter('tag', tag)" v-for="tag in usedTags"  class="pill-item rounded-pill" :class="isFilterActive('tag', tag)">{{tag}}</div>
+                            </div>
+                            <h4>Categories</h4>
+                            <div class="flex">
+                                <div @click="toggleFilter('categorie', cat)" v-for="cat in usedCategories" class="pill-item rounded-pill" :class="isFilterActive('categorie', cat)">{{cat}}</div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="products-container container-fluid">
                         <div class="row">
-                            <div v-for="product in products" class="product-card rounded col-12 col-md-6">
+                            <div v-for="product in filteredProducts" class="product-card rounded col-12 col-md-6">
                                 <div class="product rounded">
                                     <img :src="product.imageLink" alt="" class="product-image">
                                     <div class="product-name ps-3">{{product.name}}</div>
-                                    <p class="product-description px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat asperiores impedit non dolore voluptatem voluptate consequuntur soluta vel! Eveniet ad a ut voluptas animi vel. Facere repudiandae temporibus tenetur sed.</p>
+                                    <p class="product-description px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat asperiores impedit non dolore voluptatem voluptate consequuntur soluta vel!.</p>
                                     
                                     <div class="bottom-container d-flex justify-content-between px-3 mb-2">
+                                        
+                                        <div class="tags-wrap">
+                                            <span v-for="cat in product.categorie" class="tags rounded fw-bold">
+                                                {{cat}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="bottom-container d-flex justify-content-between px-3 mb-2">
+                                        
                                         <div class="tags-wrap">
                                             <span v-for="tag in product.tags" class="tags rounded fw-bold">
                                                 {{tag}}
@@ -51,11 +73,18 @@
                                         <div class="quantity">
                                             <div class="number-input">
                                                 <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</button>
+<<<<<<< HEAD
                                                 <input type="number" class="quantity" :id="product.id + '_cart_amount'" value="1" name="quantity" min="1"
                                                     max="10">
                                                 <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
                                                 <button @click="addToCart(product.id)" class="addToCard btn">Hinzufügen</button>
                                             </div>
+=======
+                                                <input type="number" class="quantity" :id="product.id + '_cart_amount'" value="1" name="quantity" min="1" max="10">
+                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+                                                <button @click="addToCart(product.id)" class="addToCard btn test">Hinzufügen</button>
+                                              </div>
+>>>>>>> 0e408e42effc56679c8ec727ba0799f1a935f2de
                                         </div>
                                     </div>
                                 </div>
