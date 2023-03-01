@@ -1,0 +1,20 @@
+
+table
+orders
+
+attribute/column products
+
+[
+    {
+      "id": "eins",
+      "name": "eins",
+      "amount": 2,
+      "price": 2.5
+    },
+    {
+      "id": "zwei",
+      "name": "zwei",
+      "amount": 1,
+      "price": 3
+    }
+  ]
