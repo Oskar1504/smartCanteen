@@ -27,7 +27,7 @@ body {
 }
 .logo {
     font-size: 24px;
-    cursor: default;
+    cursor: pointer;
 }
 .outerWrap {
     margin: 0 10px;
@@ -38,6 +38,7 @@ body {
 }
 .nav-item-wrap {
     padding: 15px 10px;
+    flex-wrap: wrap;
 }
 .nav-item-wrap .nav-item {
     margin: 0 5px;
@@ -48,7 +49,8 @@ body {
     transition: .3s;
 }
 .nav-item-wrap .nav-item:hover {
-    background: var(--black);
+    background: #198754;
+    border-color: #198754;
     color: var(--white);
 }
 .product {
@@ -94,23 +96,21 @@ body {
 .password input {
     border: none;
     border-bottom: 1px solid var(--black);
+    outline: none;
 }
 .submitLogin {
     border: 1px solid var(--black);
     background: var(--white);
     width: 100px;
 }
-
 .container {
     width: 70%;
     margin: auto;
 }
-
 .flex {
     display: flex;
     gap: .3em;
 }
-
 .pill-item  {
     border: 1px solid var(--black);
     padding-left: 0.5rem;
@@ -124,6 +124,12 @@ body {
 .active {
     color: var(--white);
     background-color: var(--black);
+}
+.badge {
+    /* border: 1px solid #198754; */
+    border: 1px solid var(--black);
+    color: var(--black);
+    background: var(--white);
 }
 
 /* Tablet */
@@ -151,5 +157,10 @@ body {
     }
     .nav-item-wrap {
         padding: 15px 200px;
+    }
+    .filter-wrap {
+        position: fixed;
+        left: 10px;
+        max-width: 170px;
     }
 }
