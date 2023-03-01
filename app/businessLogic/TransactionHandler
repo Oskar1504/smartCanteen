@@ -1,0 +1,30 @@
+const DB_Connector = require('../helper/DB_Connector.js');
+
+
+class transaction_Handler{
+
+
+    placeOrder(buyer, items){
+        
+        if(!Array.isArray(items)){
+            throw new Error("Expected Array of items")
+        }
+        
+        if (!items.every(item => this.productCollection.find(a => a.id == item))){
+            this.productCollection = db.getCollection("products");
+        }
+
+        for(let item of items){
+
+        }
+
+    }
+
+    checkCache(){
+        let time = new Date().getTime()
+        if(time - this.userLastFetched >= this.maxCacheMinutes){
+            console.log("[Transaction] reloading user data")
+            this.loadUser()
+        }
+    }
+}
