@@ -47,7 +47,7 @@ body {
     border: 1px solid var(--black);
     background: var(--white);
     cursor: pointer;
-    transition: .3s;
+    transition: .15s;
 }
 .nav-item-wrap .nav-item:hover {
     background: var(--lightgreen);
@@ -120,17 +120,15 @@ body {
 }
 .pill-item  {
     border: 1px solid var(--black);
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding: 0 10px;
+    transition: .15s;
+    cursor: pointer;
 }
-.pill-item:hover  {
-    color: var(--white);
-    background-color: var(--black);
-}
-
+.pill-item:hover,
 .active {
     color: var(--white);
-    background-color: var(--black);
+    background-color: var(--lightgreen);
+    border-color: var(--lightgreen);
 }
 .badge {
     /* border: 1px solid #198754; */
@@ -139,7 +137,7 @@ body {
     background: var(--white);
     top: -15px;
     right: -25px;
-    transition: .3s;
+    transition: .15s;
 }
 .nav-item-wrap .nav-item:hover .badge {
     color: var(--white);
