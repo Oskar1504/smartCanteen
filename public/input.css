@@ -39,11 +39,10 @@ input[type="number"] {
     position: relative;
   }
   .number-input button.minus {
-    
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
   }
-  .number-input button.test {
+  .number-input button.addToCard {
     width: 100%;
     border-color: var(--green);
     color: var(--green);

@@ -25,7 +25,7 @@ body {
 }
 .logo {
     font-size: 24px;
-    cursor: default;
+    cursor: pointer;
 }
 .outerWrap {
     margin: 0 10px;
@@ -36,6 +36,7 @@ body {
 }
 .nav-item-wrap {
     padding: 15px 10px;
+    flex-wrap: wrap;
 }
 .nav-item-wrap .nav-item {
     margin: 0 5px;
@@ -92,6 +93,7 @@ body {
 .password input {
     border: none;
     border-bottom: 1px solid var(--black);
+    outline: none;
 }
 .submitLogin {
     border: 1px solid var(--black);
