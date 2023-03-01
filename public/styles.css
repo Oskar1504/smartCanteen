@@ -130,6 +130,13 @@ body {
     border: 1px solid var(--black);
     color: var(--black);
     background: var(--white);
+    top: -15px;
+    right: -25px;
+    transition: .3s;
+}
+.nav-item-wrap .nav-item:hover .badge {
+    color: var(--white);
+    background: #198754;
 }
 
 /* Tablet */
