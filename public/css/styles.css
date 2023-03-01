@@ -124,8 +124,8 @@ body {
     transition: .15s;
     cursor: pointer;
 }
-.pill-item:hover,
-.active {
+.active,
+.pill-item:hover {
     color: var(--white);
     background-color: var(--lightgreen);
     border-color: var(--lightgreen);
