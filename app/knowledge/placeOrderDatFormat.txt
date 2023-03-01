@@ -18,3 +18,21 @@ attribute/column products
       "price": 3
     }
   ]
+
+
+  [
+    {
+        "id": "bww09igqcwy6mk9",
+        "name": "Nudeln",
+        "price": 123.21,
+        "amount": 1,
+        "total": "123.21"
+    },
+    {
+        "id": "wwcek8rwd4uitqs",
+        "name": "Döner",
+        "price": 123,
+        "amount": 1,
+        "total": "123.00"
+    }
+]

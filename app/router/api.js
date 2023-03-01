@@ -81,6 +81,37 @@ router.get('/getCollection/:CollectionName', async (req, res) => {
     }
 })
 
+router.get('/login', async (req, res) => {
+    try {
+        let user = userCollection.login(req.headers["ope-auth-username"], req.headers["ope-auth-password"])
+        res.json({
+            username: user.username,
+            password: user.password,
+            userId: user.id,
+            loggedIn: true,
+            balance: user.balance
+        })
+    }
+    catch (e) {
+        res.json(e)
+    }
+})
+router.get('/getOrderHistory', async (req, res) => {
+    try {
+        let user = userCollection.login(req.headers["ope-auth-username"], req.headers["ope-auth-password"])
+        db.getCollection("orders")
+        .then(orders => {
+            res.json(orders.items.filter(e => e.user == user.id))
+        })
+        .catch(e => {
+            res.json(e.toString())
+        })
+    }
+    catch (e) {
+        res.json(e)
+    }
+})
+
 router.post('/insertOne/:collectionName', async (req, res) => {
     try {
         db.insertOne(req.params.collectionName, req.body)

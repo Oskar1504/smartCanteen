@@ -17,6 +17,9 @@
 :root {
     --white: #fff;
     --black: #000;
+    --green: rgb(3, 92, 3);
+    --blue: rgb(3, 3, 141);
+    --lightblue: rgb(240, 240, 254);
 }
 body {
     font-family: 'RobotoCondensed-Regular';
@@ -82,6 +85,42 @@ body {
 }
 .product .addToCard:focus {
     box-shadow: none;
+}
+.product .quantityInput {
+    margin: 0 0 5px;
+    font-size: 14px;
+}
+.username input,
+.password input {
+    border: none;
+    border-bottom: 1px solid var(--black);
+}
+.submitLogin {
+    border: 1px solid var(--black);
+    background: var(--white);
+    width: 100px;
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+    gap: .3em;
+}
+
+.pill-item  {
+    border: 1px solid var(--black);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.active {
+    border-color: var(--blue);
+    color: var(--blue);
+    background-color: var(--lightblue);
 }
 
 /* Tablet */
