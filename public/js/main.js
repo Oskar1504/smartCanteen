@@ -1,6 +1,8 @@
 
 const HOST = "http://localhost:42069"
 
+let api = new ApiConnector(HOST)
+
 var app = new Vue({
     el: '#app',
     data: {
@@ -9,14 +11,20 @@ var app = new Vue({
         checkout: {
             cart: []
         },
-        orderHistory: []
+        orderHistory: [],
+        login: {
+            username: "",
+            password: "",
+            userId: "",
+            loggedIn: false
+        }
     },
     created(){
         this.loadProducts()
     },
     methods: {
         loadProducts(){
-            fetch(`${HOST}/api/getCollection/products`)
+            api.get(`/api/getCollection/products`)
             .then(r => r.json())
             .then(d => {
                 console.log(d)
@@ -28,7 +36,7 @@ var app = new Vue({
             })
         },
         loadOrderHistory(){
-            fetch(`${HOST}/api/getCollection/orders`)
+            api.get(`/api/getOrderHistory`)
             .then(r => r.json())
             .then(d => {
                 console.log(d)
@@ -50,7 +58,7 @@ var app = new Vue({
         navTo(pageName) {
             this.pageName = pageName
 
-            if(this.pageName == "profilePage"){
+            if(this.pageName == "profilePage" && this.login.loggedIn){
                 this.loadOrderHistory()
             }
         },
@@ -85,6 +93,21 @@ var app = new Vue({
             .then(r => r.json())
             .then(d => {
                 console.log(d)
+            })
+        },
+        signIn(){
+            api.setAuth(this.login.username, this.login.password)
+            api.get(`/api/login`)
+            .then( r => r.json())
+            .then(d => {
+                app.login = d
+
+                if(!d.loggedIn){
+                    console.log(d)
+                    console.log("ERROR LOGIN")
+                }else{
+                    app.loadOrderHistory()
+                }
             })
         }
     },

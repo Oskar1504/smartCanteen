@@ -18,8 +18,8 @@
                     <li class="logo me-auto fw-bold">smartCanteen</li>
                     <li class="nav-item rounded-pill" @click="navTo('products')">Produkte</li>
                     <li class="nav-item rounded-pill" @click="navTo('loginPage')">Login</li>
-                    <li class="nav-item rounded-pill" @click="navTo('profilePage')">Profil</li>
-                    <li class="nav-item rounded-pill" @click="navTo('checkout')">
+                    <li class="nav-item rounded-pill" v-if="login.loggedIn" @click="navTo('profilePage')">Profil</li>
+                    <li class="nav-item rounded-pill" v-if="login.loggedIn"  @click="navTo('checkout')">
                         <div type="button" class="position-relative">
                             Warenkorb
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -31,6 +31,7 @@
                 </ul>
             </nav>
             <main>
+
                 <div v-if="pageName == 'products'" id="products">
                     <h1 class="my-4">Produkte</h1>
                     <div class="products-container container-fluid">
@@ -65,27 +66,29 @@
                         </div>
                     </div>
                 </div>
+
+
                 <div v-if="pageName == 'loginPage'" id="loginPage">
                     <h1 class="my-4">Login</h1>
                     <div class="container-fluid p-0">
                         <div class="username my-2 test">
                             <label class="fw-bold pe-2">Benutzername: </label>
-                            <input type="text" placeholder="Benutzername" name="username" required>
+                            <input type="text" v-model="login.username" placeholder="Benutzername" name="username" required>
                         </div>
                         <div class="password my-2 pe-2">
                             <label class="fw-bold">Passwort: </label>
-                            <input type="password" placeholder="Passwort" name="password" required>
+                            <input type="password" v-model="login.password" placeholder="Passwort" name="password" required>
                         </div>
-                        <button class="submitLogin mt-4" id="submitLogin" type="submit">Login</button>
+                        <button class="submitLogin mt-4" @click="signIn()" id="submitLogin" type="submit">Login</button>
                     </div>
                 </div>
+
+
                 <div v-if="pageName == 'profilePage'" id="profilePage"  class="container">
                     <h1 class="my-4">Profil</h1>
                     <div>
                         <h2>Allgemeine Daten</h2>
-                            <!-- <ul v-for="user in users">
-                                <li class="general">{{user.username}}</li>
-                            </ul> -->
+                            <p>Balance: {{this.login.balance}} €</p>
                         <h2>Bestellhistorie</h2>
                         <ul class="list-group list-group-flush">
                             <li v-for="order in orderHistory" class="list-group-item d-flex justify-content-between align-items-start">
@@ -104,6 +107,8 @@
                           </ul>
                     </div>
                 </div>
+
+                
                 <div v-if="pageName == 'checkout'" id="checkout" class="container">
                     <h2>Checkout product list</h2>
                     <div class="row" v-if="cartLength >= 1">
@@ -128,7 +133,7 @@
                         </div>
                     </div>
                     <div class="row" v-else>
-                        <div class="col">
+                        <div class="col col-12">
                             <p>No products in cart</p>
                             <p class="btn btn-outline-success" @click="navTo('products')">Continue shopping</p>
 
@@ -142,7 +147,8 @@
     <script src="dep/vue2.js"></script>
     <script src="dep/bootstrap.min.js"></script>
 
-    <script src="main.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/main.js"></script>
 
 </body>
 </html>
