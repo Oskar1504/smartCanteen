@@ -32,10 +32,18 @@
           "type": 1
         },
         {
-            "firstname": "vendor1",
+            "firstname": "Vendor 1",
             "lastname": "lastanem1",
             "balance": 100.69,
             "username": "vendor1",
+            "password": "vendor2023",
+            "type": 2
+          },
+        {
+            "firstname": "Vendor 2",
+            "lastname": "lastanem1",
+            "balance": 100.69,
+            "username": "vendor2",
             "password": "vendor2023",
             "type": 2
           }
