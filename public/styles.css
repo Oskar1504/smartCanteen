@@ -50,6 +50,7 @@ body {
 }
 .nav-item-wrap .nav-item:hover {
     background: #198754;
+    border-color: #198754;
     color: var(--white);
 }
 .product {
@@ -102,23 +103,19 @@ body {
     background: var(--white);
     width: 100px;
 }
-
 .container {
     width: 70%;
     margin: auto;
 }
-
 .flex {
     display: flex;
     gap: .3em;
 }
-
 .pill-item  {
     border: 1px solid var(--black);
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
-
 .active {
     border-color: var(--blue);
     color: var(--blue);
@@ -150,5 +147,10 @@ body {
     }
     .nav-item-wrap {
         padding: 15px 200px;
+    }
+    .filter-wrap {
+        position: fixed;
+        left: 10px;
+        max-width: 170px;
     }
 }
