@@ -24,6 +24,7 @@ body {
 }
 .logo {
     font-size: 24px;
+    cursor: default;
 }
 .outerWrap {
     margin: 0 10px;
@@ -59,16 +60,14 @@ body {
 .product-card:nth-of-type(even) {
     padding: 0 0 0 5px;
 }
-.product .tags-wrap {
-    margin: 0 0 5px auto;
-    width: fit-content;
-}
 .product .tags {
     font-size: 14px;
     padding: 5px 10px;
     background: #e8e8e8;
-    margin: 0 5px 5px auto;
     width: fit-content;
+}
+.product .tags:first-of-type {
+    margin: 0 5px 0 0;
 }
 .product .product-image {
     width: 100%;
@@ -76,6 +75,13 @@ body {
 }
 .product .product-name {
     margin: 15px 0;
+}
+.product .addToCard {
+    padding: 0;
+    font-size: 14px;
+}
+.product .addToCard:focus {
+    box-shadow: none;
 }
 
 /* Tablet */

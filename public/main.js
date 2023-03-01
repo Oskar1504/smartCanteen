@@ -55,7 +55,19 @@ var app = new Vue({
             }
         },
         addToCart(productId){
-            this.checkout.cart.push(productId)
+            let amount = parseInt(document.getElementById(`${productId}_cart_amount`).value)
+            let productInCart = this.checkout.cart.find(e => e.id == productId)
+            if(productInCart == undefined){
+                let product = this.products.find(e => e.id == productId)
+                this.checkout.cart.push({
+                    id: productId,
+                    name: product.name,
+                    price: product.price,
+                    amount: amount
+                })
+            }else{
+                productInCart.amount += amount
+            }
         },
         placeOrder(){
             let data  = {
@@ -72,6 +84,15 @@ var app = new Vue({
             .then(d => {
                 console.log(d)
             })
+        }
+    },
+    computed: {
+        cartLength: function(){
+            if(this.checkout.cart.length >= 1){
+                return this.checkout.cart.map(e => e.amount).reduce((a, b) => a+b)
+            }else{
+                return 0
+            }
         }
     }
 })

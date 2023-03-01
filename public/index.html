@@ -16,35 +16,57 @@
                 <ul class="nav-item-wrap d-flex align-items-center list-unstyled m-0">
                     <li class="logo me-auto fw-bold">smartCanteen</li>
                     <li class="nav-item rounded-pill" @click="navTo('products')">Produkte</li>
+                    <li class="nav-item rounded-pill" @click="navTo('loginPage')">Login</li>
                     <li class="nav-item rounded-pill" @click="navTo('profilePage')">Profil</li>
-                    <li class="nav-item rounded-pill" @click="navTo('checkout')">Warenkorb</li>
+                    <li class="nav-item rounded-pill" @click="navTo('checkout')">
+                        <div type="button" class="position-relative">
+                            Warenkorb
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                {{cartLength}}
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <main>
                 <div v-if="pageName == 'products'" id="products">
+                    <h1 class="my-4">Produkte</h1>
                     <div class="products-container container-fluid">
                         <div class="row">
                             <div v-for="product in products" class="product-card rounded col-12 col-md-6">
                                 <div class="product rounded">
                                     <img :src="product.imageLink" alt="" class="product-image">
                                     <div class="product-name ps-3">{{product.name}}</div>
-                                    <!-- <p>{{product.description}}</p> -->
-                                    <div class="amountAndAdd">
-
-                                    </div>
-                                    <div class="tags-wrap">
-                                        <span v-for="tag in product.tags" class="tags rounded fw-bold">
-                                            {{tag}}
-                                        </span>
+                                    <p class="product-description px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat asperiores impedit non dolore voluptatem voluptate consequuntur soluta vel! Eveniet ad a ut voluptas animi vel. Facere repudiandae temporibus tenetur sed.</p>
+                                    
+                                    <div class="bottom-container d-flex justify-content-between px-3">
+                                        <div class="quantity">
+                                            <input type="number" :id="product.id + '_cart_amount'" value="1" name="quantity" min="1" max="10">
+                                            <button @click="addToCart(product.id)" class="addToCard btn">Hinzufügen</button>
+                                        </div>
+                                        <div class="tags-wrap">
+                                            <span v-for="tag in product.tags" class="tags rounded fw-bold">
+                                                {{tag}}
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div v-if="pageName == 'loginPage'" id="loginPage">
+                    <h1 class="my-4">Login</h1>
+                </div>
                 <div v-if="pageName == 'profilePage'" id="profilePage">
-                    <h2>Profile page WIP</h2>
+                    <h1 class="my-4">Profil</h1>
                     <div>
+                        <h2>Allgemeine Daten</h2>
+                            <!-- <ul v-for="user in users">
+                                <li class="general">{{user.username}}</li>
+                            </ul> -->
+                        <h2>Bestellhistorie</h2>
                         <ul class="list-group list-group-flush">
                             <li v-for="order in orderHistory" class="list-group-item d-flex justify-content-between align-items-start">
                               <div class="ms-2 me-auto">
@@ -64,6 +86,14 @@
                 </div>
                 <div v-if="pageName == 'checkout'" id="checkout">
                     <h2>Checkout page WIP</h2>
+                    <div class="row">
+                        <div class="col col-8">
+                            
+                        </div>
+                        <div class="col col-4">
+
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>
