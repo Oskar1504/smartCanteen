@@ -88,6 +88,11 @@ body {
     border: none;
     border-bottom: 1px solid var(--black);
 }
+.submitLogin {
+    border: 1px solid var(--black);
+    background: var(--white);
+    width: 100px;
+}
 
 /* Tablet */
 @media(min-width: 768px)
