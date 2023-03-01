@@ -116,11 +116,14 @@ body {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
+.pill-item:hover  {
+    color: var(--white);
+    background-color: var(--black);
+}
 
 .active {
-    border-color: var(--blue);
-    color: var(--blue);
-    background-color: var(--lightblue);
+    color: var(--white);
+    background-color: var(--black);
 }
 
 /* Tablet */
