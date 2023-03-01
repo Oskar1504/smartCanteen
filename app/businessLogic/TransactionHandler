@@ -1,30 +1,28 @@
-const DB_Connector = require('../helper/DB_Connector.js');
+const db_Connector = require("../helper/DB_Connector.js")
+const productCollection = require("../helper/ProductCollection.js")
 
+const db = new DB_Connector("http://127.0.0.1:8090");
+const pC = new productCollection(db, 5)
 
 class transaction_Handler{
-
 
     placeOrder(buyer, items){
         
         if(!Array.isArray(items)){
-            throw new Error("Expected Array of items")
+            throw new Error("Expected Array of items");
         }
         
-        if (!items.every(item => this.productCollection.find(a => a.id == item))){
-            this.productCollection = db.getCollection("products");
+        if (!pC.checkCache() && !items.every(item => pC.productCollection.find(prod => prod.id == item.id))){
+            pC.loadProducts()
         }
 
-        for(let item of items){
+        items = items.map((item) => {
+            let dbItem = pC.productCollection.find(prod => prod.id = item.id);
+            //TODO: Rabattstuff
+            item.price = dbItem.price;
+            item.total = (item.price * item.amount).toFixed(2);
+        })
 
-        }
-
-    }
-
-    checkCache(){
-        let time = new Date().getTime()
-        if(time - this.userLastFetched >= this.maxCacheMinutes){
-            console.log("[Transaction] reloading user data")
-            this.loadUser()
-        }
+        
     }
 }
