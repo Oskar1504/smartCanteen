@@ -36,6 +36,10 @@ body {
 .mainNavigation {
     margin: 0 -10px;
     border-bottom: 1px solid var(--black);
+    position: sticky;
+    top: 0;
+    background: var(--white);
+    z-index: 99999;
 }
 .nav-item-wrap {
     padding: 15px 10px;
