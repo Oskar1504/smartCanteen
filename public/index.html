@@ -43,6 +43,12 @@
                                     <p class="product-description px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat asperiores impedit non dolore voluptatem voluptate consequuntur soluta vel! Eveniet ad a ut voluptas animi vel. Facere repudiandae temporibus tenetur sed.</p>
                                     
                                     <div class="bottom-container d-flex justify-content-between px-3 mb-2">
+                                        
+                                        <div class="tags-wrap">
+                                            <span v-for="tag in product.tags" class="tags rounded fw-bold">
+                                                {{tag}}
+                                            </span>
+                                        </div>
                                         <div class="quantity">
                                             <div class="number-input">
                                                 <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</button>
@@ -50,15 +56,6 @@
                                                 <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
                                                 <button @click="addToCart(product.id)" class="addToCard btn test">Hinzufügen</button>
                                               </div>
-                                        </div>
-                                        <div class="tags-wrap">
-                                            <span v-for="tag in product.tags" class="tags rounded fw-bold">
-                                                {{tag}}
-                                            </span>
-                                        </div>
-                                        <div class="quantity">
-                                            <input class="quantityInput" type="number" :id="product.id + '_cart_amount'" value="1" name="quantity" min="1" max="10">
-                                            <button @click="addToCart(product.id)" class="addToCard btn">Hinzufügen</button>
                                         </div>
                                     </div>
                                 </div>
