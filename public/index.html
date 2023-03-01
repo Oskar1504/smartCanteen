@@ -58,6 +58,17 @@
                 </div>
                 <div v-if="pageName == 'loginPage'" id="loginPage">
                     <h1 class="my-4">Login</h1>
+                    <div class="container-fluid p-0">
+                        <div class="username my-2">
+                            <label class="fw-bold pe-2">Benutzername: </label>
+                            <input type="text" placeholder="Benutzername" name="username" required>
+                        </div>
+                        <div class="password my-2 pe-2">
+                            <label class="fw-bold">Passwort: </label>
+                            <input type="password" placeholder="Passwort" name="password" required>
+                        </div>
+                        <button class="submitLogin" id="submitLogin" type="submit">Login</button>
+                    </div>
                 </div>
                 <div v-if="pageName == 'profilePage'" id="profilePage">
                     <h1 class="my-4">Profil</h1>

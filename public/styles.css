@@ -83,6 +83,11 @@ body {
 .product .addToCard:focus {
     box-shadow: none;
 }
+.username input,
+.password input {
+    border: none;
+    border-bottom: 1px solid var(--black);
+}
 
 /* Tablet */
 @media(min-width: 768px)
