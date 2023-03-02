@@ -35,7 +35,7 @@ module.exports = class transaction_Handler{
             SubOrders.push(await this.CreateOrder(key, value, total, bulkOrder.id));
         }
 
-        await this.ProcessTransaction(bulkOrder, SubOrders, buyerID);
+        await this.HandleTransaction(bulkOrder, SubOrders);
 
         return {status: 200, message: "success"}
     }
@@ -75,7 +75,7 @@ module.exports = class transaction_Handler{
     }
 
     async CreateOrder(user, items, total, bulkOrderId = ""){
-        let insertOrder = await this.db.insertOne("orders", {
+        return await this.db.insertOne("orders", {
             products: JSON.stringify(items,null,2),
             user: user,
             total: total,
@@ -84,15 +84,22 @@ module.exports = class transaction_Handler{
             .then(r => r.json())
             .then(d => d);
 
-        return insertOrder;
     }
 
-    async ProcessTransaction(bulk, Suborders, buyerID){
-        let user = this.userCollection.getUser(buyerID)
-        await this.db.updateOne("users",buyerID,{
-            balance: (user.balance - bulk.total).toFixed(2)
-        })
+    async HandleTransaction(bulkOrder, subOrders){
+        this.ProcessTransaction(bulkOrder.user, bulkOrder.total)
 
+        for(let order of subOrders){
+            this.ProcessTransaction(order.user, (-order.total))
+        }
+        
         await this.userCollection.loadUser()
+    }
+
+    async ProcessTransaction(userID, total){
+        let user = this.userCollection.getUser(userID)
+        await this.db.updateOne("users",userID,{
+            balance: (user.balance - total).toFixed(2)
+        })
     }
 }
