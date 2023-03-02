@@ -71,7 +71,6 @@ router.use(function (req, res, next) {
 
 router.get('/getCollection/:CollectionName', async (req, res) => {
     try {
-
         db.getCollection(req.params.CollectionName)
             .then(d => {
                 res.json(d.items)
@@ -84,6 +83,20 @@ router.get('/getCollection/:CollectionName', async (req, res) => {
         res.json(e)
     }
 })
+
+router.get('/getEntry/:CollectionName/:id', async (req, res) => {
+    try{
+        db.getOne(req.params.CollectionName, req.params.id)
+            .then(d => {
+                res.json(d)
+            })
+            .catch(e => {
+                res.json(e.toString())
+            })
+    }
+    catch (e) {
+        res.json(e)
+    }})
 
 router.get('/login', async (req, res) => {
     try {
