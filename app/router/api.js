@@ -10,7 +10,7 @@ const transaction_Handler = require('../businessLogic/TransactionHandler.js')
 
 
 const db = new DB_Connector("http://127.0.0.1:8090");
-const userCollection = new UserCollection(db)
+const userCollection = new UserCollection(db, 0)
 const productCollection = new ProductCollection(db, 60)
 const router = express.Router();
 const transactionHandler = new transaction_Handler(db, productCollection, userCollection)

@@ -7,7 +7,8 @@ module.exports = class UserCollection{
         this.userLastFetched = new Date().getTime()
     }
 
-    loadUser(){
+    async loadUser(){
+        
         this.db.getCollection("users")
         .then(d => {
             this.userLastFetched = new Date().getTime()

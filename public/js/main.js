@@ -116,6 +116,7 @@ var app = new Vue({
             .then(r => r.json())
             .then(d => {
                 console.log(d)
+                app.signIn()
             })
         },
         signIn(){
@@ -131,7 +132,7 @@ var app = new Vue({
                 }else{
                     app.loadOrderHistory()
                     app.storeLoginInCache()
-                    app.navTo("products")
+                    app.navTo("profilePage")
                 }
             })
         },
