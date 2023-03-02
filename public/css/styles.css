@@ -97,6 +97,16 @@ body {
     margin: 0 0 5px;
     font-size: 14px;
 }
+.product .image-container {
+    overflow: hidden;
+}
+.product img {
+    transform: scale(1);
+    transition: .4s;
+}
+.product:hover img {
+    transform: scale(1.1);
+}
 .username input,
 .password input {
     border: none;
