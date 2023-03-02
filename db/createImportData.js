@@ -8,7 +8,9 @@ let categories = Object.fromEntries(rawData.menu.categories.map(categorie => {
 
 function randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
-  }
+}
+
+
 
 let availableVendors = ["Vendor 1", "Vendor 2"]
 
@@ -24,7 +26,11 @@ let resolve = {
         return availableVendors[randomIntFromInterval(0, availableVendors.length -1)]
     },
     imageLink(product){
-        return "./images/salad.png"
+        if(product.name.includes("urger")){
+            return "./images/burger.png"
+        }else{
+            return "./images/salad.png"
+        }
     },
 }
 

@@ -76,7 +76,7 @@ async function importData(){
             console.log("changing product import data to get keys from vendors")
             importData = importData.map(entry => {
                 //Search created vendors for name and get id of created vendor entry
-                entry.vendor = insertedItems["vendors"].find(e => e.name == entry.vendor).id
+                entry.vendorId = insertedItems["vendors"].find(e => e.name == entry.vendor).id
                 return entry
             })
         }

@@ -32,4 +32,11 @@ module.exports = class productCollection{
         }
         return true
     }
+
+    checkCacheForProducts(items){
+        return Array.isArray(items) ?
+            items.every(item => this.productsArray.find(prod => prod.id == item.id)) :
+            this.productsArray.find(prod => prod.id == items.id);
+        
+    }
 }
