@@ -28,6 +28,8 @@ let resolve = {
     imageLink(product){
         if(product.name.includes("urger")){
             return "./images/burger.png"
+        }else if(product.name.includes("Fries")){
+            return "./images/pommes.png"
         }else{
             return "./images/salad.png"
         }
@@ -48,4 +50,4 @@ let products = Object.entries(rawData.menu.products).map(([key, product]) => {
 })
 
 
-fs.writeFileSync("./db/data/gen/products.json", JSON.stringify(products, null, 2))
+fs.writeFileSync("./db/data/products.json", JSON.stringify(products, null, 2))

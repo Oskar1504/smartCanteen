@@ -116,10 +116,10 @@ var app = new Vue({
             .then(r => r.json())
             .then(d => {
                 console.log(d)
-                app.signIn()
+                app.signIn("profilePage")
             })
         },
-        signIn(){
+        signIn(targetPage = "products"){
             api.setAuth(this.login.username, this.login.password)
             api.get(`/api/login`)
             .then( r => r.json())
@@ -132,7 +132,7 @@ var app = new Vue({
                 }else{
                     app.loadOrderHistory()
                     app.storeLoginInCache()
-                    app.navTo("profilePage")
+                    app.navTo(targetPage)
                 }
             })
         },
