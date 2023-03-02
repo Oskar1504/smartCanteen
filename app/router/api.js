@@ -105,6 +105,7 @@ router.get('/login', async (req, res) => {
             username: user.username,
             password: user.password,
             userId: user.id,
+            type: user.type,
             loggedIn: true,
             balance: user.balance
         })
@@ -134,6 +135,7 @@ router.post('/insertOne/:collectionName', async (req, res) => {
         db.insertOne(req.params.collectionName, req.body)
             .then(d => {
                 res.json(d)
+                productCollection.loadProducts()
             })
             .catch(e => {
                 res.json(e)

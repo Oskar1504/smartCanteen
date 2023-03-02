@@ -12,6 +12,19 @@
 <body>
     <div class="outerWrap">
         <div id="app">
+            <div id="message" class="message loginNotification" v-if="message.visible">
+                {{message.content}}
+            </div>
+            <dialog id="formDialog">
+                <h2>{{formDialog.title}}</h2>
+                <div>
+                    <div v-for="input in formDialog.schema" class="input-group mb-3">
+                        <span class="input-group-text" :id="'input_' + input.name">{{input.title}}</span>
+                        <input :type="input.type" v-model="input.value" class="form-control" :placeholder="input.title" :aria-label="input.title">
+                    </div>
+                </div>
+                <button @click="formDialogCreate()" class="btn btn-outline-success">{{formDialog.title}}</button>
+            </dialog>
             <nav class="mainNavigation">
                 <ul class="nav-item-wrap d-flex align-items-center list-unstyled m-0">
                     <li class="logo me-auto fw-bold" @click="navTo('products')">smartCanteen</li>
@@ -105,12 +118,14 @@
                 <div v-if="pageName == 'profilePage'" id="profilePage"  class="container-fluid p-0">
                     <h1 class="my-4">Profil</h1>
                     <div>
+
                         <h2>Allgemeine Daten</h2>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Username: {{this.login.username}}</li>
                             <li class="list-group-item">Kontostand: {{this.login.balance}} €</li>
                             <li class="list-group-item">Bestellungen: {{orderHistory.length}}</li>
                         </ul>
+
                         <h2>Bestellhistorie</h2>
                         <ul class="list-group list-group-flush">
                             <li v-for="order in orderHistory" class="list-group-item d-flex justify-content-between align-items-start">
@@ -128,7 +143,12 @@
                               </div>
                               <span class="badge rounded-pill">{{order.total}} €</span>
                             </li>
-                          </ul>
+                        </ul>
+                        <div v-if="login.type == 2">
+                            <h2>Vendor actions</h2>
+                            <button @click="openFormDialog('Create Product', 'product')" class="btn btn-outline-success" >Create Product</button>
+                        </div>
+                        
                     </div>
                 </div>
 
@@ -180,6 +200,7 @@
     <script src="./dep/vue2.js"></script>
     <script src="./dep/bootstrap.min.js"></script>
 
+    <script src="./js/formSchema.js"></script>
     <script src="./js/api.js"></script>
     <script src="./js/main.js"></script>
 

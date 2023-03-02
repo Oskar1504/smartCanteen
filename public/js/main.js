@@ -22,14 +22,41 @@ var app = new Vue({
         filters: {
             "tag": new Set(),
             "categorie": new Set(),
+        },
+        formDialog: {
+            element: "formDialog",
+            title:"",
+            type:"",
+            schema:[],
+            open(){
+                document.getElementById(this.element).showModal()
+            },
+            close(){
+                document.getElementById(this.element).close()
+            }
+        },
+        message: {
+            visible: false,
+            content: "",
+            show(content, seconds = 5){
+                this.content = content
+                this.visible = true
+                setTimeout(()=>{
+                    document.getElementById("message").classList.toggle("trans")
+                },100)
+                setTimeout(() => {
+                    this.visible = false
+                }, seconds * 1000)
+            }
         }
     },
     created(){
         this.loadProducts()
         this.loadLoginFromCash()
     },
+    mounted(){
+    },
     methods: {
-        
         loadProducts(){
             api.get(`/api/getCollection/products`)
             .then(r => r.json())
@@ -191,6 +218,29 @@ var app = new Vue({
             this.login.password = ""
             this.login.loggedIn = false
             this.login.userId = ""
+        },
+        openFormDialog(title, type){
+            this.formDialog.title = title
+            this.formDialog.type = type
+            this.formDialog.schema = formSchema[type]
+            this.formDialog.open()
+        },
+        formDialogCreate(){
+            if(this.formDialog.type == "product"){
+                let data = Object.fromEntries(this.formDialog.schema.map(input =>{
+                    return [input.name, input.value]
+                }))
+
+                data["vendorId"] = this.login.userId
+
+                api.post("/api/insertOne/products", data)
+                .then(r => r.json())
+                .then(d => {
+                    console.log(d)
+                    this.formDialog.close()
+                })
+
+            }
         }
         
     },
