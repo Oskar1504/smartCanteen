@@ -46,11 +46,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="products-container container-fluid">
-                        <div class="flex-wrap">
-                            <div v-for="product in filteredProducts" class="product-card rounded col-12 col-md-6">
+                    <div class="products-container container-fluid p-0">
+                        <ul class="product-row list-unstyled">
+                            <li v-for="product in filteredProducts" class="product-card rounded col-12 col-md-6">
                                 <div class="product rounded">
-                                    <img :src="product.imageLink" alt="" class="product-image">
+                                    <div class="image-container">
+                                        <img :src="product.imageLink" alt="" class="product-image">
+                                    </div>
                                     <h4 class="product-name ps-3">{{product.name}}</h4>
                                     <p class="product-description px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat asperiores impedit non dolore voluptatem voluptate consequuntur soluta vel!.</p>
                                     
@@ -79,8 +81,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
