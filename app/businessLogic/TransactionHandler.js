@@ -90,7 +90,7 @@ module.exports = class transaction_Handler{
     async ProcessTransaction(bulk, Suborders, buyerID){
         let user = this.userCollection.getUser(buyerID)
         await this.db.updateOne("users",buyerID,{
-            balance: user.balance - bulk.total
+            balance: (user.balance - bulk.total).toFixed(2)
         })
 
         await this.userCollection.loadUser()

@@ -58,18 +58,16 @@
                                     <p class="product-description px-3">{{product.description}}</p>
                                     
                                     <div class="bottom-container d-flex justify-content-between px-3 mb-2">
-                                        
                                         <div class="tags-wrap">
-                                            <span v-for="cat in product.categorie" class="tags rounded fw-bold">
-                                                {{cat}}
+                                            <span v-for="tag in product.tags" class="tags rounded fw-bold">
+                                                {{tag}}
                                             </span>
                                         </div>
                                     </div>
                                     <div class="bottom-container d-flex justify-content-between px-3 mb-2">
-                                        
                                         <div class="tags-wrap">
-                                            <span v-for="tag in product.tags" class="tags rounded fw-bold">
-                                                {{tag}}
+                                            <span v-for="cat in product.categorie" class="tags rounded fw-bold">
+                                                {{cat}}
                                             </span>
                                         </div>
                                         <div class="quantity">
