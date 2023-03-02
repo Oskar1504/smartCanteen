@@ -71,8 +71,10 @@ var app = new Vue({
                 this.loadOrderHistory()
             }
         },
-        addToCart(productId){
-            let amount = parseInt(document.getElementById(`${productId}_cart_amount`).value)
+        addToCart(productId, amount = 0){
+            if(amount == 0){
+                amount = parseInt(document.getElementById(`${productId}_cart_amount`).value)
+            }
             let productInCart = this.checkout.cart.find(e => e.id == productId)
             if(productInCart == undefined){
                 let product = this.products.find(e => e.id == productId)
@@ -88,17 +90,24 @@ var app = new Vue({
                 productInCart.total = (productInCart.price * productInCart.amount).toFixed(2)
             }
         },
-        placeOrder(){
-            let data  = {
-                products: this.checkout.cart
-            }
-            fetch(`${HOST}/api/getCollection/products`, {
-                method:"POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
+        removeFromCart(productId){
+            let foundIndex = -1
+            this.checkout.cart.find((e,i) =>{
+                if(e.id == productId){
+                    e.amount -= 1;
+                    if(e.amount <= 0){
+                        foundIndex = i
+                    }
+                    return true
+                }
+                return false
             })
+            if(foundIndex != -1){
+                this.checkout.cart.splice(foundIndex, 1)
+            }
+        },
+        placeOrder(){
+            api.post("/api/placeOrder", this.checkout.cart)
             .then(r => r.json())
             .then(d => {
                 console.log(d)
@@ -117,6 +126,7 @@ var app = new Vue({
                 }else{
                     app.loadOrderHistory()
                     app.storeLoginInCache()
+                    app.navTo("products")
                 }
             })
         },
@@ -168,6 +178,12 @@ var app = new Vue({
         },
         isFilterActive(type, val){
             return this.filters[type].has(val) ? "active": ""
+        },
+        logout(){
+            this.login.username = ""
+            this.login.password = ""
+            this.login.loggedIn = false
+            this.login.userId = ""
         }
         
     },
@@ -181,7 +197,7 @@ var app = new Vue({
         },
         checkoutTotal: function(){
             if(this.checkout.cart.length >= 1){
-                return this.checkout.cart.map(e => e.price * e.amount).reduce((a, b) => a+b)
+                return (this.checkout.cart.map(e => e.price * e.amount).reduce((a, b) => a+b)).toFixed(2)
             }else{
                 return 0
             }

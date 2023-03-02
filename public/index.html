@@ -16,7 +16,8 @@
                 <ul class="nav-item-wrap d-flex align-items-center list-unstyled m-0">
                     <li class="logo me-auto fw-bold" @click="navTo('products')">smartCanteen</li>
                     <li class="nav-item rounded-pill" @click="navTo('products')">Produkte</li>
-                    <li class="nav-item rounded-pill" @click="navTo('loginPage')">Login</li>
+                    <li class="nav-item rounded-pill" v-if="!login.loggedIn" @click="navTo('loginPage')">Login</li>
+                    <li class="nav-item rounded-pill" v-if="login.loggedIn" @click="logout()">Logout</li>
                     <li class="nav-item rounded-pill" v-if="login.loggedIn" @click="navTo('profilePage')">Profil</li>
                     <li class="nav-item rounded-pill" v-if="login.loggedIn"  @click="navTo('checkout')">
                         <div type="button" class="position-relative">
@@ -46,7 +47,7 @@
                         </div>
                     </div>
                     <div class="products-container container-fluid">
-                        <div class="row">
+                        <div class="flex-wrap">
                             <div v-for="product in filteredProducts" class="product-card rounded col-12 col-md-6">
                                 <div class="product rounded">
                                     <div class="image-container">
@@ -106,13 +107,18 @@
                     <h1 class="my-4">Profil</h1>
                     <div>
                         <h2>Allgemeine Daten</h2>
-                            <h3>{{this.login.username}}</h3>
-                            <p>Kontostand: {{this.login.balance}} €</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Username: {{this.login.username}}</li>
+                            <li class="list-group-item">Kontostand: {{this.login.balance}} €</li>
+                            <li class="list-group-item">Bestellungen: {{orderHistory.length}}</li>
+                        </ul>
                         <h2>Bestellhistorie</h2>
                         <ul class="list-group list-group-flush">
                             <li v-for="order in orderHistory" class="list-group-item d-flex justify-content-between align-items-start">
                               <div class="ms-2 me-auto">
-                                <div class="fw-bold" data-bs-toggle="collapse" :href="'#order_' + order.id" >{{order.totalItems}} Products</div>
+                                <div class="fw-bold dropdown-icon" data-bs-toggle="collapse" :href="'#order_' + order.id" aria-expanded="false" >
+                                    {{order.totalItems}} Products | Am {{new Date(order.created).toLocaleString("de")}}
+                                </div>
                                 <div class="collapse" :id="'order_' + order.id">
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item" v-for="product in order.products">
@@ -121,7 +127,7 @@
                                     </ul>
                                 </div>
                               </div>
-                              <span class="badge bg-primary rounded-pill">{{order.total}} €</span>
+                              <span class="badge rounded-pill">{{order.total}} €</span>
                             </li>
                           </ul>
                     </div>
@@ -136,7 +142,17 @@
                                 <div class="card-body">
                                     <ul class="list-group list-group-flush">
                                         <li v-for="product in checkout.cart" class="list-group-item">
-                                            {{product.amount}} x {{product.name}}  {{product.price}} € | {{product.total}} € 
+                                            <div class="flex space-between">
+                                                <div>
+                                                    {{product.amount}} x {{product.name}}  {{product.price}} € | {{product.total}} € 
+                                                </div>
+                                                <div class="quantity">
+                                                    <div class="number-input">
+                                                        <button @click="removeFromCart(product.id)" class="minus">-</button>
+                                                        <button  @click="addToCart(product.id, 1)" class="plus round-right">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -145,7 +161,8 @@
                         <div class="col col-4">
                             <div class="card">
                                 <div class="card-body">
-                                    Insgesamt: {{checkoutTotal}}
+                                    Insgesamt: {{checkoutTotal}} €
+                                    <button @click="placeOrder()" class="btn btn-outline-primary">PlaceOrder</button>
                                 </div>
                             </div>
                         </div>

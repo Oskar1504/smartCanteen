@@ -60,6 +60,10 @@ body {
 }
 .product {
     border: 1px solid var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
 }
 .product-card {
     margin: 5px 0;
@@ -158,6 +162,25 @@ body {
     background: var(--lightgreen);
     border-color: #fff;
 }
+
+.dropdown-icon[aria-expanded="true"]::before{
+    /* content: " \1F845"; */
+    content: " 	\2BC5";
+}
+.dropdown-icon[aria-expanded="false"]::before{
+    /* content: " \1F847"; */
+    content: " \2BC6";
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .product-card {
+    flex: 1 0 30%; /* explanation below */
+    margin: 5px;
+  }
 
 /* Tablet */
 @media(min-width: 768px)

@@ -1,0 +1,2720 @@
+{
+    "brand": {
+        "name": "Eden",
+        "branchName": "",
+        "chainId": "",
+        "description": [],
+        "slogan": "Immer eine gute Wahl!",
+        "logoUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/{parameters}/v1677648868/static-takeaway-com/images/restaurants/de/O70R17PN/logo_465x320",
+        "headerImageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/{parameters}/v1619011773/static-takeaway-com/images/generic/heroes/541/541_burger_106"
+    },
+    "customerServiceFoodInfoUrl": "https://www.lieferando.de/kundenservice/kontaktiere-uns?reason=Ich+habe+eine+Frage+zu+Allergenen+und+Zusatzstoffen&category=default",
+    "rating": {
+        "votes": 611,
+        "score": 3.9
+    },
+    "location": {
+        "streetName": "Johannisstraße",
+        "streetNumber": "21",
+        "postalCode": "07743",
+        "city": "Jena",
+        "country": "DE",
+        "lat": "50.9292613",
+        "lng": "11.5859229",
+        "timeZone": "Europe/Amsterdam"
+    },
+    "restaurantId": "O70R17PN",
+    "colophon": {
+        "status": "fetched",
+        "data": {
+            "branchName": "",
+            "restaurantName": "Eden",
+            "streetName": "Schloßgasse",
+            "streetNumber": "1",
+            "postalCode": "07743",
+            "city": "Jena",
+            "legalEntity": "",
+            "legalRepresentativeName": "Senguel Wieduwilt",
+            "legalName": "Amida Gastronomie- und Lebensmittelgesellschaft mbH",
+            "email": "info@lieferando.de",
+            "fax": "0800 202 07 702",
+            "chamberOfCommerce": [
+                {
+                    "issuer": "Jena",
+                    "number": "HRB 515398"
+                },
+                {
+                    "issuer": "Jena",
+                    "number": "16053000"
+                }
+            ],
+            "vatNumber": null,
+            "disputeResolutionLink": "https://ec.europa.eu/consumers/odr"
+        }
+    },
+    "summary": {
+        "title": null,
+        "content": null
+    },
+    "delivery": {
+        "times": {
+            "0": [
+                {
+                    "start": 660,
+                    "end": 1320,
+                    "formattedStart": "11:00",
+                    "formattedEnd": "22:00"
+                }
+            ],
+            "1": [
+                {
+                    "start": 660,
+                    "end": 1320,
+                    "formattedStart": "11:00",
+                    "formattedEnd": "22:00"
+                }
+            ],
+            "2": [
+                {
+                    "start": 660,
+                    "end": 1320,
+                    "formattedStart": "11:00",
+                    "formattedEnd": "22:00"
+                }
+            ],
+            "3": [
+                {
+                    "start": 660,
+                    "end": 1320,
+                    "formattedStart": "11:00",
+                    "formattedEnd": "22:00"
+                }
+            ],
+            "4": [
+                {
+                    "start": 660,
+                    "end": 1320,
+                    "formattedStart": "11:00",
+                    "formattedEnd": "22:00"
+                }
+            ],
+            "5": [
+                {
+                    "start": 660,
+                    "end": 1320,
+                    "formattedStart": "11:00",
+                    "formattedEnd": "22:00"
+                }
+            ],
+            "6": [
+                {
+                    "start": 660,
+                    "end": 1320,
+                    "formattedStart": "11:00",
+                    "formattedEnd": "22:00"
+                }
+            ]
+        },
+        "isOpenForOrder": true,
+        "isOpenForPreorder": true,
+        "isScooberRestaurant": false,
+        "durationRange": {
+            "min": 50,
+            "max": 75
+        }
+    },
+    "exceptionalStatus": null,
+    "menu": {
+        "currency": {
+            "denominator": 100,
+            "code": "EUR"
+        },
+        "categories": [
+            {
+                "id": "O1Q37P511",
+                "name": "Salad",
+                "description": [
+                    "Alle Salate werden mit geröstetem Baguette serviert."
+                ],
+                "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/{parameters}/v1677433599/static-takeaway-com/images/generic/categories/1_salads/salat_salat",
+                "overviewImageUrl": null,
+                "timeRestrictions": {},
+                "productIds": [
+                    "ONOQN50131",
+                    "O5OQN50131",
+                    "OQOQN50131"
+                ]
+            },
+            {
+                "id": "OOQ37P511",
+                "name": "Burger",
+                "description": [],
+                "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/{parameters}/v1677433599/static-takeaway-com/images/generic/categories/1_burger/burger_burger2",
+                "overviewImageUrl": null,
+                "timeRestrictions": {},
+                "productIds": [
+                    "ON1Q7R0131",
+                    "O51Q7R0131",
+                    "OQ1Q7R0131",
+                    "O1NQ7R0131",
+                    "OONQ7R0131",
+                    "O7NQ7R0131",
+                    "O03Q7R0131",
+                    "O33Q7R0131",
+                    "OP3Q7R0131",
+                    "OR3Q7R0131",
+                    "ONOQ7R0131",
+                    "O5OQ7R0131",
+                    "OQOQ7R0131",
+                    "O15Q7R0131",
+                    "OO5Q7R0131"
+                ]
+            },
+            {
+                "id": "O0R37P511",
+                "name": "Others",
+                "description": [],
+                "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/{parameters}/v1677433599/static-takeaway-com/images/generic/categories/1_restaurant/restaurant_soesschen",
+                "overviewImageUrl": null,
+                "timeRestrictions": {},
+                "productIds": [
+                    "OQR3N50131",
+                    "O10ON50131"
+                ]
+            },
+            {
+                "id": "O3R37P511",
+                "name": "Side Dishes",
+                "description": [],
+                "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/{parameters}/v1677433599/static-takeaway-com/images/generic/categories/1_imbiss/imbiss_mozzarellasticks",
+                "overviewImageUrl": null,
+                "timeRestrictions": {},
+                "productIds": [
+                    "OPPP750131",
+                    "ORPP750131",
+                    "ON7P750131"
+                ]
+            },
+            {
+                "id": "OPR37P511",
+                "name": "Fries",
+                "description": [
+                    "Alle Gerichte werden mit einem Dip nach Wahl serviert."
+                ],
+                "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/{parameters}/v1677433599/static-takeaway-com/images/generic/categories/1_restaurant/restaurant_pommes_frites",
+                "overviewImageUrl": null,
+                "timeRestrictions": {},
+                "productIds": [
+                    "O577P50131",
+                    "OQ77P50131",
+                    "O1Q7P50131",
+                    "OOQ7P50131"
+                ]
+            },
+            {
+                "id": "ORR37P511",
+                "name": "Dips",
+                "description": [],
+                "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/{parameters}/v1677433599/static-takeaway-com/images/generic/categories/1_imbiss/imbiss_saucen",
+                "overviewImageUrl": null,
+                "timeRestrictions": {},
+                "productIds": [
+                    "O5ORO50131",
+                    "OQORO50131",
+                    "O15RO50131",
+                    "OO5RO50131",
+                    "O75RO50131",
+                    "OOQQ550131",
+                    "O7QQ550131",
+                    "O0RQ550131",
+                    "O0PRO50131",
+                    "O3PRO50131",
+                    "OPPRO50131"
+                ]
+            },
+            {
+                "id": "ON0O7P511",
+                "name": "Kindergerichte",
+                "description": [],
+                "imageUrl": "https://res.cloudinary.com/tkwy-prod-eu/image/upload/{parameters}/v1677433599/static-takeaway-com/images/generic/categories/1_burger/burger_burger",
+                "overviewImageUrl": null,
+                "timeRestrictions": {},
+                "productIds": [
+                    "O1OP7R0131",
+                    "O317Q50131"
+                ]
+            }
+        ],
+        "optionGroups": {
+            "4ffaf95e98462fe9d62e85504a9a46f0": {
+                "name": "Ihr Sonderwunsch",
+                "isTypeMulti": true,
+                "isRequired": false,
+                "minChoices": 0,
+                "maxChoices": 1,
+                "optionIds": [
+                    "OP0RN5PQOO"
+                ]
+            },
+            "db0ff9cafcb73b06f8aeb7dad230a8cb": {
+                "name": "Ihr Bun",
+                "isTypeMulti": false,
+                "isRequired": true,
+                "minChoices": 1,
+                "maxChoices": 1,
+                "optionIds": [
+                    "OQ7O777QOO",
+                    "O1QO777QOO",
+                    "OOQO777QOO"
+                ]
+            },
+            "b44d1304c654b5788d47cd91760136a6": {
+                "name": "Ihre Extras",
+                "isTypeMulti": true,
+                "isRequired": false,
+                "minChoices": 0,
+                "maxChoices": 9,
+                "optionIds": [
+                    "3511R15Q1O1",
+                    "3P01R15Q1O1",
+                    "3R01R15Q1O1",
+                    "31N1R15Q1O1",
+                    "3Q11R15Q1O1",
+                    "3R7703037N1",
+                    "3N11R15Q1O1",
+                    "37N1R15Q1O1",
+                    "3ON1R15Q1O1"
+                ]
+            },
+            "870fbd6ba53a11458b8b64b2b00c05c2": {
+                "name": "Ihr Dip",
+                "isTypeMulti": false,
+                "isRequired": true,
+                "minChoices": 1,
+                "maxChoices": 1,
+                "optionIds": [
+                    "O1RPO5PQOO",
+                    "OORPO5PQOO",
+                    "O517O5PQOO",
+                    "O7RPO5PQOO",
+                    "O5QPO5PQOO",
+                    "OQQPO5PQOO",
+                    "OP07O5PQOO",
+                    "OR07O5PQOO",
+                    "ON17O5PQOO",
+                    "O007O5PQOO",
+                    "O307O5PQOO",
+                    "O1N7O5PQOO"
+                ]
+            },
+            "9c674449ae2d6061916e5085e2e1dc22": {
+                "name": "Ihre Zubereitung",
+                "isTypeMulti": false,
+                "isRequired": true,
+                "minChoices": 1,
+                "maxChoices": 1,
+                "optionIds": [
+                    "O5NPO5PQOO",
+                    "OQNPO5PQOO"
+                ]
+            },
+            "c7ce4342fa7c860e6ec121798fcb9b95": {
+                "name": "Ihr Dip",
+                "isTypeMulti": false,
+                "isRequired": true,
+                "minChoices": 1,
+                "maxChoices": 1,
+                "optionIds": [
+                    "OP0055PQOO",
+                    "OR0055PQOO",
+                    "O03055PQOO",
+                    "ON1055PQOO",
+                    "O00055PQOO",
+                    "O30055PQOO",
+                    "O1N055PQOO",
+                    "OON055PQOO",
+                    "O7N055PQOO",
+                    "O51055PQOO",
+                    "OQ1055PQOO",
+                    "O33055PQOO"
+                ]
+            }
+        },
+        "options": {
+            "OP0RN5PQOO": {
+                "name": "ohne Dressing",
+                "minAmount": 0,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "OQ7O777QOO": {
+                "name": "mit Dinkel-Bun",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "O1QO777QOO": {
+                "name": "mit Maisgrieß-Bun",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "OOQO777QOO": {
+                "name": "mit Weizen-Bun",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "3511R15Q1O1": {
+                "name": "mit Avocado",
+                "minAmount": 0,
+                "maxAmount": 9,
+                "prices": {
+                    "delivery": 130,
+                    "pickup": 130,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "3P01R15Q1O1": {
+                "name": "mit Bacon",
+                "minAmount": 0,
+                "maxAmount": 9,
+                "prices": {
+                    "delivery": 200,
+                    "pickup": 200,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "3R01R15Q1O1": {
+                "name": "mit Cheddar",
+                "minAmount": 0,
+                "maxAmount": 9,
+                "prices": {
+                    "delivery": 200,
+                    "pickup": 200,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "31N1R15Q1O1": {
+                "name": "mit Chili-Zwiebeln",
+                "minAmount": 0,
+                "maxAmount": 9,
+                "prices": {
+                    "delivery": 130,
+                    "pickup": 130,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "3Q11R15Q1O1": {
+                "name": "mit Jalapenos",
+                "minAmount": 0,
+                "maxAmount": 9,
+                "prices": {
+                    "delivery": 130,
+                    "pickup": 130,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "3R7703037N1": {
+                "name": "mit Patty, extra",
+                "minAmount": 0,
+                "maxAmount": 9,
+                "prices": {
+                    "delivery": 250,
+                    "pickup": 250,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "3N11R15Q1O1": {
+                "name": "mit Spiegelei",
+                "minAmount": 0,
+                "maxAmount": 9,
+                "prices": {
+                    "delivery": 200,
+                    "pickup": 200,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "37N1R15Q1O1": {
+                "name": "mit Zwiebeln, karamellisiert",
+                "minAmount": 0,
+                "maxAmount": 9,
+                "prices": {
+                    "delivery": 130,
+                    "pickup": 130,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "3ON1R15Q1O1": {
+                "name": "mit Zwiebeln, rot",
+                "minAmount": 0,
+                "maxAmount": 9,
+                "prices": {
+                    "delivery": 130,
+                    "pickup": 130,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "O1RPO5PQOO": {
+                "name": "Aioli",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "OORPO5PQOO": {
+                "name": "Barbecue-Dip",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "O517O5PQOO": {
+                "name": "Hot-Barbecue-Dip",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "O7RPO5PQOO": {
+                "name": "Joppie-Dip",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "O5QPO5PQOO": {
+                "name": "Ketchup",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "OQQPO5PQOO": {
+                "name": "Mayonnaise",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "OP07O5PQOO": {
+                "name": "Preiselbeer-Dip",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "OR07O5PQOO": {
+                "name": "Schweden-Dip",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "ON17O5PQOO": {
+                "name": "Sour Cream",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "O007O5PQOO": {
+                "name": "Sweet-Chili-Dip",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "O307O5PQOO": {
+                "name": "Wasabi-Honig-Dip",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "O1N7O5PQOO": {
+                "name": "ohne Dip",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "O5NPO5PQOO": {
+                "name": "mit Fleisch",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "OQNPO5PQOO": {
+                "name": "ohne Fleisch",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "OP0055PQOO": {
+                "name": "Aioli",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "OR0055PQOO": {
+                "name": "Barbecue-Dip",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "O03055PQOO": {
+                "name": "Hot-Barbecue-Dip",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "ON1055PQOO": {
+                "name": "Joppie-Dip",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "O00055PQOO": {
+                "name": "Ketchup",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "O30055PQOO": {
+                "name": "Mayonnaise",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "O1N055PQOO": {
+                "name": "Preiselbeer-Dip",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "OON055PQOO": {
+                "name": "Schweden-Dip",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "O7N055PQOO": {
+                "name": "Sour Cream",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "O51055PQOO": {
+                "name": "Sweet-Chili-Dip",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "OQ1055PQOO": {
+                "name": "Wasabi-Honig-Dip",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            },
+            "O33055PQOO": {
+                "name": "ohne Dip",
+                "minAmount": 1,
+                "maxAmount": 1,
+                "prices": {
+                    "delivery": 0,
+                    "pickup": 0,
+                    "deposit": null
+                },
+                "metric": {
+                    "unit": null,
+                    "quantity": null
+                },
+                "priceUnit": null,
+                "pricePerUnitPickup": null,
+                "pricePerUnitDelivery": null,
+                "alcoholVolume": null,
+                "caffeineAmount": null,
+                "isSoldOut": false,
+                "isExcludedFromMov": false
+            }
+        },
+        "products": {
+            "ONOQN50131": {
+                "name": "Caesar Chicken Salat",
+                "description": [
+                    "mit Hähnchenbrustfilet, Römersalat, Kirschtomaten, Grana Padano und Dressing aus Knoblauch, Mayonnaise und Sardellenfilet"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "ONOQN50131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "4ffaf95e98462fe9d62e85504a9a46f0"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 990,
+                            "pickup": 990,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O5OQN50131": {
+                "name": "Salat Eden (vegetarisch)",
+                "description": [
+                    "mit Wildkräutersalat, Rucola, Kirschtomaten, mariniertem Mozzarella, Grana Padano und Balsamico-Dressing"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O5OQN50131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "4ffaf95e98462fe9d62e85504a9a46f0"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 950,
+                            "pickup": 950,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "OQOQN50131": {
+                "name": "Falafel Bowl",
+                "description": [
+                    "mit Falafel, Salat, Gurken, Kirschtomaten, roten Rüben, Zwiebeln, gegrillten Möhren und Hummus"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "OQOQN50131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "4ffaf95e98462fe9d62e85504a9a46f0"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 950,
+                            "pickup": 950,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "ON1Q7R0131": {
+                "name": "Hamburger",
+                "description": [
+                    "mit Beef, Burgersauce, Gurken, Tomaten, Salat, roten Zwiebeln und Ketchup"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "ON1Q7R0131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 900,
+                            "pickup": 900,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O51Q7R0131": {
+                "name": "Cheeseburger",
+                "description": [
+                    "mit Beef, Burgersauce, Gurken, Tomaten, Salat, roten Zwiebeln, Käse und Ketchup"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O51Q7R0131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 950,
+                            "pickup": 950,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "OQ1Q7R0131": {
+                "name": "Chili-Cheeseburger",
+                "description": [
+                    "mit Beef, Burgersauce, Salat, roten Zwiebeln, Jalapenos, Käse und Ketchup"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "OQ1Q7R0131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 950,
+                            "pickup": 950,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O1NQ7R0131": {
+                "name": "Bacon-Cheeseburger",
+                "description": [
+                    "mit Beef, Burgersauce, Bacon, Tomaten, Salat, roten Zwiebeln, Käse und Ketchup"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O1NQ7R0131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 990,
+                            "pickup": 990,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "OONQ7R0131": {
+                "name": "BBQ-Burger",
+                "description": [
+                    "mit Beef, Burgersauce, Bacon, Salat, karamellisierten Zwiebeln, Käse und Barbecuesauce"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "OONQ7R0131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 990,
+                            "pickup": 990,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O7NQ7R0131": {
+                "name": "Hot-BBQ-Burger",
+                "description": [
+                    "mit Beef, Burgersauce, Bacon, Salat, karamellisierten Zwiebeln, Jalapenos, Mozzarella und Hot-Barbecuesauce"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O7NQ7R0131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 990,
+                            "pickup": 990,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O03Q7R0131": {
+                "name": "Italo-Burger",
+                "description": [
+                    "mit Beef, Burgersauce, Rucola, Suga di Pomodoro, gegrilltem Mozzarella und Balsamicosauce"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O03Q7R0131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 950,
+                            "pickup": 950,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O33Q7R0131": {
+                "name": "Halloumi-Burger (vegetarisch)",
+                "description": [
+                    "mit Halloumi, Burgersauce, Tomaten, Salat, Olivencreme, roten Zwiebeln, gegrillter Paprika, Zucchini und Ketchup"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O33Q7R0131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 890,
+                            "pickup": 890,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "OP3Q7R0131": {
+                "name": "Walnuss-Cheddar-Burger (vegetarisch)",
+                "description": [
+                    "mit Walnuss-Cheddar-Patty, Burgersauce, Tomaten, Salat, roten Zwiebeln und Ketchup"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "OP3Q7R0131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 890,
+                            "pickup": 890,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "OR3Q7R0131": {
+                "name": "Vital-Burger",
+                "description": [
+                    "mit marinierten Hähnchenfleisch, Tomaten, Rucola, rotem Pesto, roten Zwiebeln, gegrillter Paprika, Zucchini und Balsamicosauce"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "OR3Q7R0131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 890,
+                            "pickup": 890,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "ONOQ7R0131": {
+                "name": "Champignon-Burger (vegan)",
+                "description": [
+                    "mit Champignon-Patty, veganer Burgersauce, Tomaten, Rucola und karamellisierten Zwiebeln"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "ONOQ7R0131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 890,
+                            "pickup": 890,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O5OQ7R0131": {
+                "name": "Beefree-Burger (vegan)",
+                "description": [
+                    "mit Pea-Protein-Patty, veganer Burgersauce, Tomaten, Gurken, Salat und roten Zwiebeln"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O5OQ7R0131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 890,
+                            "pickup": 890,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "OQOQ7R0131": {
+                "name": "Birne-Gorgonzola-Burger",
+                "description": [
+                    "mit Beef, Salat, roten Zwiebeln, Käse, karamellisierter Birne und Zitronen-Joghurt-Dip"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "OQOQ7R0131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 990,
+                            "pickup": 990,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O15Q7R0131": {
+                "name": "Greek-Style-Burger",
+                "description": [
+                    "mit Beef, Salat, roten Zwiebeln, Oliven, milden Peperoni und Fetasauce"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O15Q7R0131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 990,
+                            "pickup": 990,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "OO5Q7R0131": {
+                "name": "Mexican-Style-Burger",
+                "description": [
+                    "mit Beef, Tomaten, Salat, karamellisierten Zwiebeln, Käse, Chili con Carne, Tortilla Chips und Käsesauce"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "OO5Q7R0131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 990,
+                            "pickup": 990,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "OQR3N50131": {
+                "name": "Hummus (vegan)",
+                "description": [
+                    "mit Hummus, Olivenöl und geröstetem Baguette"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "OQR3N50131",
+                        "name": null,
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 790,
+                            "pickup": 790,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O10ON50131": {
+                "name": "Müttebel (vegetarisch)",
+                "description": [
+                    "mit Auberginen, Joghurt, Knoblauch, Tahin und geröstetem Baguette"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O10ON50131",
+                        "name": null,
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 790,
+                            "pickup": 790,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "OPPP750131": {
+                "name": "Chicken Nuggets",
+                "description": [],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "OPPP750131",
+                        "name": "5 Stück",
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 550,
+                            "pickup": 550,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    },
+                    {
+                        "id": "O1R1Q50131",
+                        "name": "7 Stück",
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 650,
+                            "pickup": 650,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    },
+                    {
+                        "id": "OOR1Q50131",
+                        "name": "9 Stück",
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 750,
+                            "pickup": 750,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "ORPP750131": {
+                "name": "Frittierte Zwiebelringe (6 Stück)",
+                "description": [],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "ORPP750131",
+                        "name": null,
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 490,
+                            "pickup": 490,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "ON7P750131": {
+                "name": "Mozzarella Sticks",
+                "description": [],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "ON7P750131",
+                        "name": null,
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 690,
+                            "pickup": 690,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O577P50131": {
+                "name": "Fries",
+                "description": [],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O577P50131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "870fbd6ba53a11458b8b64b2b00c05c2"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 320,
+                            "pickup": 320,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "OQ77P50131": {
+                "name": "Sweet-Potatoe-Fries",
+                "description": [],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "OQ77P50131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "870fbd6ba53a11458b8b64b2b00c05c2"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 380,
+                            "pickup": 380,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O1Q7P50131": {
+                "name": "Chili-Cheese-Fries",
+                "description": [
+                    "mit einer Zubereitung nach Wahl"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O1Q7P50131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "9c674449ae2d6061916e5085e2e1dc22",
+                            "c7ce4342fa7c860e6ec121798fcb9b95"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 550,
+                            "pickup": 550,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "OOQ7P50131": {
+                "name": "Dippers",
+                "description": [
+                    "Potatoe-Slices"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "OOQ7P50131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "870fbd6ba53a11458b8b64b2b00c05c2"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 380,
+                            "pickup": 380,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O5ORO50131": {
+                "name": "Ketchup",
+                "description": [],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O5ORO50131",
+                        "name": null,
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 80,
+                            "pickup": 80,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "OQORO50131": {
+                "name": "Mayonnaise",
+                "description": [],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "OQORO50131",
+                        "name": null,
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 80,
+                            "pickup": 80,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O15RO50131": {
+                "name": "Aioli",
+                "description": [],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O15RO50131",
+                        "name": null,
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 80,
+                            "pickup": 80,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "OO5RO50131": {
+                "name": "Barbecue-Dip",
+                "description": [],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "OO5RO50131",
+                        "name": null,
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 80,
+                            "pickup": 80,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O75RO50131": {
+                "name": "Joppie-Dip",
+                "description": [],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O75RO50131",
+                        "name": null,
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 80,
+                            "pickup": 80,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "OOQQ550131": {
+                "name": "Schweden-Dip",
+                "description": [],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "OOQQ550131",
+                        "name": null,
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 80,
+                            "pickup": 80,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O7QQ550131": {
+                "name": "Sour Cream",
+                "description": [],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O7QQ550131",
+                        "name": null,
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 80,
+                            "pickup": 80,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O0RQ550131": {
+                "name": "Hot-Barbecue-Dip",
+                "description": [],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O0RQ550131",
+                        "name": null,
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 80,
+                            "pickup": 80,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O0PRO50131": {
+                "name": "Sweet-Chili-Dip",
+                "description": [],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O0PRO50131",
+                        "name": null,
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 80,
+                            "pickup": 80,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O3PRO50131": {
+                "name": "Wasabi-Honig-Dip",
+                "description": [],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O3PRO50131",
+                        "name": null,
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 80,
+                            "pickup": 80,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "OPPRO50131": {
+                "name": "Preiselbeer-Dip",
+                "description": [],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "OPPRO50131",
+                        "name": null,
+                        "optionGroupIds": [],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 80,
+                            "pickup": 80,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O1OP7R0131": {
+                "name": "Kids Burger",
+                "description": [
+                    "kleiner Cheeseburger"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O1OP7R0131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 690,
+                            "pickup": 690,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            },
+            "O317Q50131": {
+                "name": "Kids Menü",
+                "description": [
+                    "• 1 Kids Cheeseburger",
+                    "• 1 kleine Fries",
+                    "• 1 Getränk"
+                ],
+                "imageUrl": null,
+                "variants": [
+                    {
+                        "id": "O317Q50131",
+                        "name": null,
+                        "optionGroupIds": [
+                            "db0ff9cafcb73b06f8aeb7dad230a8cb",
+                            "b44d1304c654b5788d47cd91760136a6"
+                        ],
+                        "shippingTypes": [
+                            "DELIVERY",
+                            "PICKUP"
+                        ],
+                        "prices": {
+                            "delivery": 950,
+                            "pickup": 950,
+                            "deposit": null
+                        },
+                        "metric": {
+                            "unit": null,
+                            "quantity": null
+                        },
+                        "priceUnit": null,
+                        "pricePerUnitPickup": null,
+                        "pricePerUnitDelivery": null,
+                        "alcoholVolume": null,
+                        "caffeineAmount": null,
+                        "isSoldOut": false,
+                        "isExcludedFromMov": false
+                    }
+                ]
+            }
+        },
+        "popularProductIds": [
+            "O1NQ7R0131",
+            "O1Q7P50131",
+            "OONQ7R0131"
+        ],
+        "discounts": [],
+        "autoAddedProducts": {}
+    },
+    "pickup": {
+        "times": {
+            "0": [
+                {
+                    "start": 600,
+                    "end": 1350,
+                    "formattedStart": "10:00",
+                    "formattedEnd": "22:30"
+                }
+            ],
+            "1": [
+                {
+                    "start": 600,
+                    "end": 1350,
+                    "formattedStart": "10:00",
+                    "formattedEnd": "22:30"
+                }
+            ],
+            "2": [
+                {
+                    "start": 600,
+                    "end": 1350,
+                    "formattedStart": "10:00",
+                    "formattedEnd": "22:30"
+                }
+            ],
+            "3": [
+                {
+                    "start": 600,
+                    "end": 1350,
+                    "formattedStart": "10:00",
+                    "formattedEnd": "22:30"
+                }
+            ],
+            "4": [
+                {
+                    "start": 600,
+                    "end": 1350,
+                    "formattedStart": "10:00",
+                    "formattedEnd": "22:30"
+                }
+            ],
+            "5": [
+                {
+                    "start": 600,
+                    "end": 1350,
+                    "formattedStart": "10:00",
+                    "formattedEnd": "22:30"
+                }
+            ],
+            "6": [
+                {
+                    "start": 600,
+                    "end": 1350,
+                    "formattedStart": "10:00",
+                    "formattedEnd": "22:30"
+                }
+            ]
+        },
+        "isOpenForOrder": true,
+        "isOpenForPreorder": true
+    },
+    "supports": {
+        "delivery": true,
+        "pickup": true,
+        "stampCards": false,
+        "vouchers": true,
+        "productRemarks": true,
+        "onlinePayments": true,
+        "tipping": true
+    },
+    "primarySlug": "eden",
+    "minisiteUrl": "edenjena.de",
+    "restaurantHygieneRatingId": null,
+    "restaurantPhoneNumber": "036416331706",
+    "indicators": {
+        "isActive": true,
+        "isTestRestaurant": false,
+        "isGroceryStore": false
+    },
+    "payment": {
+        "methods": [
+            "sofort",
+            "paypal",
+            "creditcard",
+            "giropay",
+            "bitpay"
+        ],
+        "paymentMethodFees": {},
+        "fees": [],
+        "messages": {
+            "onlinePayment": [
+                "Um die Eindämmung der Ausbreitung des Coronavirus zu unterstützen, wird der Lieferfahrer bei dir klingeln und deine Bestellung an der Tür abstellen."
+            ],
+            "offlinePayment": [
+                "Für kontaktlose Lieferung: bitte wähle eine Online-Bezahlmethode."
+            ]
+        },
+        "issuers": {}
+    }
+}

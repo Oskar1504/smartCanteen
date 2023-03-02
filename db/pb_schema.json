@@ -80,6 +80,19 @@
                     "min": null,
                     "max": null
                 }
+            },
+            {
+                "id": "ce6vti11",
+                "name": "vendorId",
+                "type": "text",
+                "system": false,
+                "required": false,
+                "unique": false,
+                "options": {
+                    "min": null,
+                    "max": null,
+                    "pattern": ""
+                }
             }
         ],
         "listRule": "",
@@ -249,19 +262,6 @@
                 "options": {}
             },
             {
-                "id": "wmwjnn85",
-                "name": "user",
-                "type": "relation",
-                "system": false,
-                "required": false,
-                "unique": false,
-                "options": {
-                    "maxSelect": 1,
-                    "collectionId": "qcage5ei69cqto7",
-                    "cascadeDelete": false
-                }
-            },
-            {
                 "id": "ougkify5",
                 "name": "total",
                 "type": "number",
@@ -276,6 +276,19 @@
             {
                 "id": "fsr1d6el",
                 "name": "mainorder",
+                "type": "text",
+                "system": false,
+                "required": false,
+                "unique": false,
+                "options": {
+                    "min": null,
+                    "max": null,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": "quhxgdrc",
+                "name": "user",
                 "type": "text",
                 "system": false,
                 "required": false,
