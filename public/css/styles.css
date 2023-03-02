@@ -74,6 +74,13 @@ body {
 }
 .product-card {
     margin: 0 0 15px;
+    transition: .3s;
+}
+.product-card:hover {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    color: #000;
+    text-shadow: 1px 1px 21px rgb(150 150 150 / 37%);
+    transform: translateY(-5px);
 }
 .product .tags {
     font-size: 14px;
