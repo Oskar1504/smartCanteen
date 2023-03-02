@@ -75,8 +75,6 @@ module.exports = class transaction_Handler{
     }
 
     async CreateOrder(user, items, total, bulkOrderId = ""){
-        console.log(total)
-        
         let insertOrder = await this.db.insertOne("orders", {
             products: JSON.stringify(items,null,2),
             user: user,
