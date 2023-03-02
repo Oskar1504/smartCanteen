@@ -36,13 +36,14 @@
                     <div class="filter-wrap">
                         <h2 data-bs-toggle="collapse" href="#filter" >Filter</h2>
                         <div class="collapse show" id="filter">
-                            <h4 class="my-3">Tags</h4>
-                            <div class="flex item-row flex-wrap">
-                                <div @click="toggleFilter('tag', tag)" v-for="tag in usedTags"  class="pill-item rounded-pill" :class="isFilterActive('tag', tag)">{{tag}}</div>
-                            </div>
                             <h4 class="my-3">Kategorien</h4>
                             <div class="flex item-row flex-wrap">
                                 <div @click="toggleFilter('categorie', cat)" v-for="cat in usedCategories" class="pill-item rounded-pill" :class="isFilterActive('categorie', cat)">{{cat}}</div>
+                            </div>
+                            <h4 class="my-3">Tags</h4>
+                            <div class="flex item-row flex-wrap">
+                                <div @click="toggleFilter('tag', tag)" v-for="tag in usedTags" class="pill-item rounded-pill"
+                                    :class="isFilterActive('tag', tag)">{{tag}}</div>
                             </div>
                         </div>
                     </div>
