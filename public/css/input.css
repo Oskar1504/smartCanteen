@@ -5,8 +5,12 @@ input[type="number"] {
     height:2rem;
     width: 2rem;
     border: 1px solid var(--black);
+    text-align: center;
+    font-size: 16px;
   }
-  
+  input[type="number"]:focus-visible {
+    outline: none;
+  }
   input[type=number]::-webkit-inner-spin-button,
   input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -28,18 +32,17 @@ input[type="number"] {
     border: 1px solid var(--black);
     align-items: center;
     justify-content: center;
-    width: 1.5rem;
+    width: 2rem;
     height: 2rem;
     cursor: pointer;
     margin: 0;
     position: relative;
   }
   .number-input button.minus {
-    
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
   }
-  .number-input button.test {
+  .number-input button.addToCard {
     width: 100%;
     border-color: var(--green);
     color: var(--green);
@@ -50,4 +53,12 @@ input[type="number"] {
     border-bottom-right-radius: 15px;
   }
 
- 
+ .space-between{
+  justify-content: space-between;
+ }
+
+  .round-right {
+    
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}

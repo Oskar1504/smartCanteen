@@ -5,26 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>smartCanteen</title>
-    <link rel="stylesheet" href="dep/bootstrap.min.css">
-    <link rel="stylesheet" href="input.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./dep/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/input.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <div class="outerWrap">
         <div id="app">
-            <!-- {{ message }} -->
             <nav class="mainNavigation">
                 <ul class="nav-item-wrap d-flex align-items-center list-unstyled m-0">
-                    <li class="logo me-auto fw-bold">smartCanteen</li>
+                    <li class="logo me-auto fw-bold" @click="navTo('products')">smartCanteen</li>
                     <li class="nav-item rounded-pill" @click="navTo('products')">Produkte</li>
-                    <li class="nav-item rounded-pill" @click="navTo('loginPage')">Login</li>
+                    <li class="nav-item rounded-pill" v-if="!login.loggedIn" @click="navTo('loginPage')">Login</li>
+                    <li class="nav-item rounded-pill" v-if="login.loggedIn" @click="logout()">Logout</li>
                     <li class="nav-item rounded-pill" v-if="login.loggedIn" @click="navTo('profilePage')">Profil</li>
                     <li class="nav-item rounded-pill" v-if="login.loggedIn"  @click="navTo('checkout')">
                         <div type="button" class="position-relative">
                             Warenkorb
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            <span class="position-absolute badge rounded-pill">
                                 {{cartLength}}
-                                <span class="visually-hidden">unread messages</span>
                             </span>
                         </div>
                     </li>
@@ -33,26 +32,28 @@
             <main>
 
                 <div v-if="pageName == 'products'" id="products">
-                    <h1 class="my-2">Produkte</h1>
-                    <div>
+                    <h1 class="my-4">Produkte</h1>
+                    <div class="filter-wrap">
                         <h2 data-bs-toggle="collapse" href="#filter" >Filter</h2>
                         <div class="collapse show" id="filter">
-                            <h4>Tags</h4>
-                            <div class="flex">
+                            <h4 class="my-3">Tags</h4>
+                            <div class="flex item-row flex-wrap">
                                 <div @click="toggleFilter('tag', tag)" v-for="tag in usedTags"  class="pill-item rounded-pill" :class="isFilterActive('tag', tag)">{{tag}}</div>
                             </div>
-                            <h4>Categories</h4>
-                            <div class="flex">
+                            <h4 class="my-3">Kategorien</h4>
+                            <div class="flex item-row flex-wrap">
                                 <div @click="toggleFilter('categorie', cat)" v-for="cat in usedCategories" class="pill-item rounded-pill" :class="isFilterActive('categorie', cat)">{{cat}}</div>
                             </div>
                         </div>
                     </div>
-                    <div class="products-container container-fluid">
-                        <div class="row">
-                            <div v-for="product in filteredProducts" class="product-card rounded col-12 col-md-6">
+                    <div class="products-container container-fluid p-0">
+                        <ul class="product-row list-unstyled">
+                            <li v-for="product in filteredProducts" class="product-card rounded col-12 col-md-6">
                                 <div class="product rounded">
-                                    <img :src="product.imageLink" alt="" class="product-image">
-                                    <div class="product-name ps-3">{{product.name}}</div>
+                                    <div class="image-container">
+                                        <img :src="product.imageLink" alt="" class="product-image">
+                                    </div>
+                                    <h4 class="product-name ps-3">{{product.name}}</h4>
                                     <p class="product-description px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat asperiores impedit non dolore voluptatem voluptate consequuntur soluta vel!.</p>
                                     
                                     <div class="bottom-container d-flex justify-content-between px-3 mb-2">
@@ -80,8 +81,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
@@ -89,7 +90,7 @@
                 <div v-if="pageName == 'loginPage'" id="loginPage">
                     <h1 class="my-4">Login</h1>
                     <div class="container-fluid p-0">
-                        <div class="username my-2 test">
+                        <div class="username my-2">
                             <label class="fw-bold pe-2">Benutzername: </label>
                             <input type="text" v-model="login.username" placeholder="Benutzername" name="username" required>
                         </div>
@@ -97,21 +98,27 @@
                             <label class="fw-bold">Passwort: </label>
                             <input type="password" v-model="login.password" placeholder="Passwort" name="password" required>
                         </div>
-                        <button class="submitLogin mt-4" @click="signIn()" id="submitLogin" type="submit">Login</button>
+                        <button class="submitLogin mt-4 rounded" @click="signIn()" id="submitLogin" type="submit">Login</button>
                     </div>
                 </div>
 
 
-                <div v-if="pageName == 'profilePage'" id="profilePage"  class="container">
+                <div v-if="pageName == 'profilePage'" id="profilePage"  class="container-fluid p-0">
                     <h1 class="my-4">Profil</h1>
                     <div>
                         <h2>Allgemeine Daten</h2>
-                            <p>Balance: {{this.login.balance}} €</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Username: {{this.login.username}}</li>
+                            <li class="list-group-item">Kontostand: {{this.login.balance}} €</li>
+                            <li class="list-group-item">Bestellungen: {{orderHistory.length}}</li>
+                        </ul>
                         <h2>Bestellhistorie</h2>
                         <ul class="list-group list-group-flush">
                             <li v-for="order in orderHistory" class="list-group-item d-flex justify-content-between align-items-start">
                               <div class="ms-2 me-auto">
-                                <div class="fw-bold" data-bs-toggle="collapse" :href="'#order_' + order.id" >{{order.totalItems}} Products</div>
+                                <div class="fw-bold dropdown-icon" data-bs-toggle="collapse" :href="'#order_' + order.id" aria-expanded="false" >
+                                    {{order.totalItems}} Products | Am {{new Date(order.created).toLocaleString("de")}}
+                                </div>
                                 <div class="collapse" :id="'order_' + order.id">
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item" v-for="product in order.products">
@@ -120,23 +127,32 @@
                                     </ul>
                                 </div>
                               </div>
-                              <span class="badge bg-primary rounded-pill">{{order.total}} €</span>
+                              <span class="badge rounded-pill">{{order.total}} €</span>
                             </li>
                           </ul>
                     </div>
                 </div>
 
                 
-                <div v-if="pageName == 'checkout'" id="checkout" class="container">
-                    <h2>Checkout product list</h2>
+                <div v-if="pageName == 'checkout'" id="checkout" class="container-fluid p-0">
+                    <h1 class="my-4">Warenkorb</h1>
                     <div class="row" v-if="cartLength >= 1">
                         <div class="col col-8">
                             <div class="card">
                                 <div class="card-body">
                                     <ul class="list-group list-group-flush">
                                         <li v-for="product in checkout.cart" class="list-group-item">
-                                            {{product.amount}} x {{product.name}}  {{product.price}} € | {{product.total}} € 
-                                            
+                                            <div class="flex space-between">
+                                                <div>
+                                                    {{product.amount}} x {{product.name}}  {{product.price}} € | {{product.total}} € 
+                                                </div>
+                                                <div class="quantity">
+                                                    <div class="number-input">
+                                                        <button @click="removeFromCart(product.id)" class="minus">-</button>
+                                                        <button  @click="addToCart(product.id, 1)" class="plus round-right">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -145,16 +161,16 @@
                         <div class="col col-4">
                             <div class="card">
                                 <div class="card-body">
-                                    Total: {{checkoutTotal}}
+                                    Insgesamt: {{checkoutTotal}} €
+                                    <button @click="placeOrder()" class="btn btn-outline-primary">PlaceOrder</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row" v-else>
                         <div class="col col-12">
-                            <p>No products in cart</p>
-                            <p class="btn btn-outline-success" @click="navTo('products')">Continue shopping</p>
-
+                            <p>Keine Produkte im Warenkorb</p>
+                            <p class="btn btn-outline-success" @click="navTo('products')">Weiter stöbern</p>
                         </div>
                     </div>
                 </div>
@@ -162,8 +178,8 @@
         </div>
     </div>
 
-    <script src="dep/vue2.js"></script>
-    <script src="dep/bootstrap.min.js"></script>
+    <script src="./dep/vue2.js"></script>
+    <script src="./dep/bootstrap.min.js"></script>
 
     <script src="./js/api.js"></script>
     <script src="./js/main.js"></script>

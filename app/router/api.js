@@ -13,7 +13,7 @@ const db = new DB_Connector("http://127.0.0.1:8090");
 const userCollection = new UserCollection(db)
 const productCollection = new ProductCollection(db, 60)
 const router = express.Router();
-const transactionHandler = new transaction_Handler(db, productCollection)
+const transactionHandler = new transaction_Handler(db, productCollection, userCollection)
 
 //TODO getproducts should always work
 let routeMapping = new RouteMapping({

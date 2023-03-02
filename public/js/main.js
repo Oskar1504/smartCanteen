@@ -1,6 +1,6 @@
 
 const HOST = "http://localhost:42069"
-
+const LOGIN_MAX_CACHE = 30 * 60 * 1000
 let api = new ApiConnector(HOST)
 
 var app = new Vue({
@@ -26,8 +26,10 @@ var app = new Vue({
     },
     created(){
         this.loadProducts()
+        this.loadLoginFromCash()
     },
     methods: {
+        
         loadProducts(){
             api.get(`/api/getCollection/products`)
             .then(r => r.json())
@@ -69,8 +71,10 @@ var app = new Vue({
                 this.loadOrderHistory()
             }
         },
-        addToCart(productId){
-            let amount = parseInt(document.getElementById(`${productId}_cart_amount`).value)
+        addToCart(productId, amount = 0){
+            if(amount == 0){
+                amount = parseInt(document.getElementById(`${productId}_cart_amount`).value)
+            }
             let productInCart = this.checkout.cart.find(e => e.id == productId)
             if(productInCart == undefined){
                 let product = this.products.find(e => e.id == productId)
@@ -86,17 +90,24 @@ var app = new Vue({
                 productInCart.total = (productInCart.price * productInCart.amount).toFixed(2)
             }
         },
-        placeOrder(){
-            let data  = {
-                products: this.checkout.cart
-            }
-            fetch(`${HOST}/api/getCollection/products`, {
-                method:"POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
+        removeFromCart(productId){
+            let foundIndex = -1
+            this.checkout.cart.find((e,i) =>{
+                if(e.id == productId){
+                    e.amount -= 1;
+                    if(e.amount <= 0){
+                        foundIndex = i
+                    }
+                    return true
+                }
+                return false
             })
+            if(foundIndex != -1){
+                this.checkout.cart.splice(foundIndex, 1)
+            }
+        },
+        placeOrder(){
+            api.post("/api/placeOrder", this.checkout.cart)
             .then(r => r.json())
             .then(d => {
                 console.log(d)
@@ -114,8 +125,27 @@ var app = new Vue({
                     console.log("ERROR LOGIN")
                 }else{
                     app.loadOrderHistory()
+                    app.storeLoginInCache()
+                    app.navTo("products")
                 }
             })
+        },
+        loadLoginFromCash(){
+            if(localStorage.getItem("smartCanteenLogin") !=null){
+                let storageLogin = JSON.parse(localStorage.getItem("smartCanteenLogin"))
+                if(new Date().getTime() - storageLogin.created <= LOGIN_MAX_CACHE){
+                    this.login.username = storageLogin.username
+                    this.login.password = storageLogin.password
+                    this.signIn()
+                }
+            }
+        },
+        storeLoginInCache(){
+            localStorage.setItem("smartCanteenLogin", JSON.stringify({
+                username: this.login.username,
+                password: this.login.password,
+                created: new Date().getTime()
+            }))
         },
         toggleFilter(type, value){
             if(this.filters[type].has(value)){
@@ -148,6 +178,12 @@ var app = new Vue({
         },
         isFilterActive(type, val){
             return this.filters[type].has(val) ? "active": ""
+        },
+        logout(){
+            this.login.username = ""
+            this.login.password = ""
+            this.login.loggedIn = false
+            this.login.userId = ""
         }
         
     },
@@ -161,7 +197,7 @@ var app = new Vue({
         },
         checkoutTotal: function(){
             if(this.checkout.cart.length >= 1){
-                return this.checkout.cart.map(e => e.price * e.amount).reduce((a, b) => a+b)
+                return (this.checkout.cart.map(e => e.price * e.amount).reduce((a, b) => a+b)).toFixed(2)
             }else{
                 return 0
             }

@@ -1,23 +1,24 @@
 /* Mobile and general stuff */
 @font-face {
     font-family: 'RobotoCondensed-Light';
-    src: url('font/RobotoCondensed-Light.ttf');
-    src: url('font/RobotoCondensed-Light.ttf') format('ttf'),
+    src: url('../font/RobotoCondensed-Light.ttf');
+    src: url('../font/RobotoCondensed-Light.ttf') format('ttf'),
 }
 @font-face {
     font-family: 'RobotoCondensed-Regular';
-    src: url('font/RobotoCondensed-Regular.ttf');
-    src: url('font/RobotoCondensed-Regular.ttf') format('ttf'),
+    src: url('../font/RobotoCondensed-Regular.ttf');
+    src: url('../font/RobotoCondensed-Regular.ttf') format('ttf'),
 }
 @font-face {
     font-family: 'RobotoCondensed-Bold';
-    src: url('font/RobotoCondensed-Bold.ttf');
-    src: url('font/RobotoCondensed-Bold.ttf') format('ttf'),
+    src: url('../font/RobotoCondensed-Bold.ttf');
+    src: url('../font/RobotoCondensed-Bold.ttf') format('ttf'),
 }
 :root {
     --white: #fff;
     --black: #000;
     --green: rgb(3, 92, 3);
+    --lightgreen: #198754;
     --blue: rgb(3, 3, 141);
     --lightblue: rgb(240, 240, 254);
 }
@@ -27,7 +28,7 @@ body {
 }
 .logo {
     font-size: 24px;
-    cursor: default;
+    cursor: pointer;
 }
 .outerWrap {
     margin: 0 10px;
@@ -35,9 +36,14 @@ body {
 .mainNavigation {
     margin: 0 -10px;
     border-bottom: 1px solid var(--black);
+    position: sticky;
+    top: 0;
+    background: var(--white);
+    z-index: 99999;
 }
 .nav-item-wrap {
     padding: 15px 10px;
+    flex-wrap: wrap;
 }
 .nav-item-wrap .nav-item {
     margin: 0 5px;
@@ -45,23 +51,29 @@ body {
     border: 1px solid var(--black);
     background: var(--white);
     cursor: pointer;
-    transition: .3s;
+    transition: .15s;
 }
 .nav-item-wrap .nav-item:hover {
-    background: var(--black);
+    background: var(--lightgreen);
+    border-color: var(--lightgreen);
     color: var(--white);
 }
 .product {
     border: 1px solid var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
+}
+.product-row {
+    columns: 2;
+}
+.product-row li {
+    width: 100%;
+    break-inside: avoid-column;
 }
 .product-card {
-    margin: 5px 0;
-}
-.product-card:nth-of-type(odd) {
-    padding: 0 5px 0 0;
-}
-.product-card:nth-of-type(even) {
-    padding: 0 0 0 5px;
+    margin: 0 0 15px;
 }
 .product .tags {
     font-size: 14px;
@@ -73,7 +85,7 @@ body {
     margin: 0 5px 0 0;
 }
 .product .product-image {
-    width: 100%;
+    width: 250px;
     height: auto;
 }
 .product .product-name {
@@ -90,37 +102,75 @@ body {
     margin: 0 0 5px;
     font-size: 14px;
 }
+.product .image-container {
+    overflow: hidden;
+}
+.product img {
+    transform: scale(1);
+    transition: .4s;
+}
+.product:hover img {
+    transform: scale(1.1);
+}
 .username input,
 .password input {
     border: none;
     border-bottom: 1px solid var(--black);
+    outline: none;
 }
 .submitLogin {
     border: 1px solid var(--black);
     background: var(--white);
     width: 100px;
+    transition: .3s;
 }
-
+.submitLogin:hover {
+    background: var(--lightgreen);
+    border-color: var(--lightgreen);
+    color: var(--white);
+}
 .container {
     width: 70%;
     margin: auto;
 }
-
 .flex {
     display: flex;
     gap: .3em;
 }
-
 .pill-item  {
     border: 1px solid var(--black);
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding: 0 10px;
+    transition: .15s;
+    cursor: pointer;
+}
+.active,
+.pill-item:hover {
+    color: var(--white);
+    background-color: var(--lightgreen);
+    border-color: var(--lightgreen);
+}
+.badge {
+    /* border: 1px solid #198754; */
+    border: 1px solid var(--black);
+    color: var(--black);
+    background: var(--white);
+    top: -15px;
+    right: -25px;
+    transition: .15s;
+}
+.nav-item-wrap .nav-item:hover .badge {
+    color: var(--white);
+    background: var(--lightgreen);
+    border-color: #fff;
 }
 
-.active {
-    border-color: var(--blue);
-    color: var(--blue);
-    background-color: var(--lightblue);
+.dropdown-icon[aria-expanded="true"]::before{
+    /* content: " \1F845"; */
+    content: " 	\2BC5";
+}
+.dropdown-icon[aria-expanded="false"]::before{
+    /* content: " \1F847"; */
+    content: " \2BC6";
 }
 
 /* Tablet */
@@ -148,5 +198,10 @@ body {
     }
     .nav-item-wrap {
         padding: 15px 200px;
+    }
+    .filter-wrap {
+        position: fixed;
+        left: 10px;
+        max-width: 170px;
     }
 }
