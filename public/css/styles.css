@@ -126,12 +126,16 @@ body {
     outline: none;
 }
 .submitLogin {
+    width: 100px;
+}
+.submitLogin,
+.btnPlaceOrder {
     border: 1px solid var(--black);
     background: var(--white);
-    width: 100px;
     transition: .3s;
 }
-.submitLogin:hover {
+.submitLogin:hover,
+.btnPlaceOrder:hover {
     background: var(--lightgreen);
     border-color: var(--lightgreen);
     color: var(--white);
