@@ -195,7 +195,6 @@ router.post('/placeOrder', async (req, res) => {
         res.json(
             await transactionHandler.placeOrder(user.id, req.body)
         )
-
     }
     catch (e) {
         res.json(e.toString())
