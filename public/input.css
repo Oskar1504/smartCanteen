@@ -53,4 +53,12 @@ input[type="number"] {
     border-bottom-right-radius: 15px;
   }
 
- 
+ .space-between{
+  justify-content: space-between;
+ }
+
+  .round-right {
+    
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
