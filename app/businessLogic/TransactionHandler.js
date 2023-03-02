@@ -58,7 +58,7 @@ module.exports = class transaction_Handler{
             total += parseFloat((item.price * item.amount).toFixed(2));
             
             //Deconstruct bulk order for each vendor
-            let vendorUserId = Object.values(this.userCollection.users).find(e => e.vendorId == dbItem.vendor).id
+            let vendorUserId = Object.values(this.userCollection.users).find(e => e.vendorId == dbItem.vendorId).id
             if(vendorOrders[vendorUserId] == undefined){
                 vendorOrders[vendorUserId] = []
             }
