@@ -116,6 +116,15 @@ var app = new Vue({
                 console.log(d)
             })
         },
+        createAndAppend(el, elClassName, text, target, timeout) {
+            var iDiv = document.createElement(el);
+            iDiv.className = elClassName;
+            iDiv.innerHTML = text;
+            document.getElementsByTagName(target)[0].appendChild(iDiv);
+            setTimeout(function () {
+                iDiv.remove();
+            }, timeout)
+        },
         signIn() {
             api.setAuth(this.login.username, this.login.password)
             api.get(`/api/login`)
@@ -127,14 +136,6 @@ var app = new Vue({
                     console.log(d)
                     console.log("ERROR LOGIN")
                 } else {
-                    var iDiv = document.createElement('div');
-                    iDiv.className = 'loginNotification';
-                    iDiv.innerHTML = "Sie haben sich eingeloggt";
-                    document.getElementsByTagName('body')[0].appendChild(iDiv);
-                    setTimeout(function () {
-                        iDiv.remove();
-                    }, 3000)
-
                     app.loadOrderHistory()
                     app.storeLoginInCache()
                     app.navTo("products")
@@ -190,14 +191,7 @@ var app = new Vue({
             return this.filters[type].has(val) ? "active": ""
         },
         logout() {
-
-            var iDiv = document.createElement('div');
-            iDiv.className = 'logoutNotification';
-            iDiv.innerHTML = "Sie haben sich ausgeloggt";
-            document.getElementsByTagName('body')[0].appendChild(iDiv);
-            setTimeout(function() {
-                iDiv.remove();
-            }, 3000)
+            localStorage.removeItem("smartCanteenLogin");
             this.pageName = "products"
             this.login.username = ""
             this.login.password = ""
