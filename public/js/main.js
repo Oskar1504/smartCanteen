@@ -180,6 +180,7 @@ var app = new Vue({
             return this.filters[type].has(val) ? "active": ""
         },
         logout(){
+            this.pageName = "products"
             this.login.username = ""
             this.login.password = ""
             this.login.loggedIn = false
