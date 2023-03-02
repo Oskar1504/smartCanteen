@@ -1,34 +1,362 @@
 [
-    {
-        "name": "Döner",
-        "price": 123,
-        "categorie": "türkisch,fleisch",
-        "vendor": "Vendor 1",
-        "tags": "döner,lecker",
-        "imageLink": "test"
-    },
-    {
-        "name": "Nudeln",
-        "price": 123.21,
-        "categorie": "chinesisch",
-        "vendor": "Vendor 2",
-        "tags": "essen,lecker",
-        "imageLink": "test"
-    },
-    {
-        "name": "Pizza",
-        "price": 2.5,
-        "categorie": "italienisch",
-        "vendor": "Vendor 2",
-        "tags": "döner,lecker",
-        "imageLink": "test"
-    },
-    {
-        "name": "Burger",
-        "price": 64.8,
-        "categorie": "burger,fleisch",
-        "vendor": "Vendor 1",
-        "tags": "burger,lecker",
-        "imageLink": "test"
-    }
+  {
+    "name": "Caesar Chicken Salat",
+    "description": "mit Hähnchenbrustfilet, Römersalat, Kirschtomaten, Grana Padano und Dressing aus Knoblauch, Mayonnaise und Sardellenfilet",
+    "price": 9.9,
+    "categorie": "Salad",
+    "tags": "",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Salat Eden (vegetarisch)",
+    "description": "mit Wildkräutersalat, Rucola, Kirschtomaten, mariniertem Mozzarella, Grana Padano und Balsamico-Dressing",
+    "price": 9.5,
+    "categorie": "Salad",
+    "tags": "vegetarisch",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Falafel Bowl",
+    "description": "mit Falafel, Salat, Gurken, Kirschtomaten, roten Rüben, Zwiebeln, gegrillten Möhren und Hummus",
+    "price": 9.5,
+    "categorie": "Salad",
+    "tags": "",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Hamburger",
+    "description": "mit Beef, Burgersauce, Gurken, Tomaten, Salat, roten Zwiebeln und Ketchup",
+    "price": 9,
+    "categorie": "Burger",
+    "tags": "",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Cheeseburger",
+    "description": "mit Beef, Burgersauce, Gurken, Tomaten, Salat, roten Zwiebeln, Käse und Ketchup",
+    "price": 9.5,
+    "categorie": "Burger",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Chili-Cheeseburger",
+    "description": "mit Beef, Burgersauce, Salat, roten Zwiebeln, Jalapenos, Käse und Ketchup",
+    "price": 9.5,
+    "categorie": "Burger",
+    "tags": "",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Bacon-Cheeseburger",
+    "description": "mit Beef, Burgersauce, Bacon, Tomaten, Salat, roten Zwiebeln, Käse und Ketchup",
+    "price": 9.9,
+    "categorie": "Burger",
+    "tags": "",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "BBQ-Burger",
+    "description": "mit Beef, Burgersauce, Bacon, Salat, karamellisierten Zwiebeln, Käse und Barbecuesauce",
+    "price": 9.9,
+    "categorie": "Burger",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Hot-BBQ-Burger",
+    "description": "mit Beef, Burgersauce, Bacon, Salat, karamellisierten Zwiebeln, Jalapenos, Mozzarella und Hot-Barbecuesauce",
+    "price": 9.9,
+    "categorie": "Burger",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Italo-Burger",
+    "description": "mit Beef, Burgersauce, Rucola, Suga di Pomodoro, gegrilltem Mozzarella und Balsamicosauce",
+    "price": 9.5,
+    "categorie": "Burger",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Halloumi-Burger (vegetarisch)",
+    "description": "mit Halloumi, Burgersauce, Tomaten, Salat, Olivencreme, roten Zwiebeln, gegrillter Paprika, Zucchini und Ketchup",
+    "price": 8.9,
+    "categorie": "Burger",
+    "tags": "vegetarisch",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Walnuss-Cheddar-Burger (vegetarisch)",
+    "description": "mit Walnuss-Cheddar-Patty, Burgersauce, Tomaten, Salat, roten Zwiebeln und Ketchup",
+    "price": 8.9,
+    "categorie": "Burger",
+    "tags": "vegetarisch",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Vital-Burger",
+    "description": "mit marinierten Hähnchenfleisch, Tomaten, Rucola, rotem Pesto, roten Zwiebeln, gegrillter Paprika, Zucchini und Balsamicosauce",
+    "price": 8.9,
+    "categorie": "Burger",
+    "tags": "",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Champignon-Burger (vegan)",
+    "description": "mit Champignon-Patty, veganer Burgersauce, Tomaten, Rucola und karamellisierten Zwiebeln",
+    "price": 8.9,
+    "categorie": "Burger",
+    "tags": "vegan",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Beefree-Burger (vegan)",
+    "description": "mit Pea-Protein-Patty, veganer Burgersauce, Tomaten, Gurken, Salat und roten Zwiebeln",
+    "price": 8.9,
+    "categorie": "Burger",
+    "tags": "vegan",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Birne-Gorgonzola-Burger",
+    "description": "mit Beef, Salat, roten Zwiebeln, Käse, karamellisierter Birne und Zitronen-Joghurt-Dip",
+    "price": 9.9,
+    "categorie": "Burger",
+    "tags": "",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Greek-Style-Burger",
+    "description": "mit Beef, Salat, roten Zwiebeln, Oliven, milden Peperoni und Fetasauce",
+    "price": 9.9,
+    "categorie": "Burger",
+    "tags": "",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Mexican-Style-Burger",
+    "description": "mit Beef, Tomaten, Salat, karamellisierten Zwiebeln, Käse, Chili con Carne, Tortilla Chips und Käsesauce",
+    "price": 9.9,
+    "categorie": "Burger",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Hummus (vegan)",
+    "description": "mit Hummus, Olivenöl und geröstetem Baguette",
+    "price": 7.9,
+    "categorie": "Others",
+    "tags": "vegan",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Müttebel (vegetarisch)",
+    "description": "mit Auberginen, Joghurt, Knoblauch, Tahin und geröstetem Baguette",
+    "price": 7.9,
+    "categorie": "Others",
+    "tags": "vegetarisch",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Chicken Nuggets",
+    "description": "",
+    "price": 5.5,
+    "categorie": "Side Dishes",
+    "tags": "",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Frittierte Zwiebelringe (6 Stück)",
+    "description": "",
+    "price": 4.9,
+    "categorie": "Side Dishes",
+    "tags": "6 Stück",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Mozzarella Sticks",
+    "description": "",
+    "price": 6.9,
+    "categorie": "Side Dishes",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Fries",
+    "description": "",
+    "price": 3.2,
+    "categorie": "Fries",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Sweet-Potatoe-Fries",
+    "description": "",
+    "price": 3.8,
+    "categorie": "Fries",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Chili-Cheese-Fries",
+    "description": "mit einer Zubereitung nach Wahl",
+    "price": 5.5,
+    "categorie": "Fries",
+    "tags": "",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Dippers",
+    "description": "Potatoe-Slices",
+    "price": 3.8,
+    "categorie": "Fries",
+    "tags": "",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Ketchup",
+    "description": "",
+    "price": 0.8,
+    "categorie": "Dips",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Mayonnaise",
+    "description": "",
+    "price": 0.8,
+    "categorie": "Dips",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Aioli",
+    "description": "",
+    "price": 0.8,
+    "categorie": "Dips",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Barbecue-Dip",
+    "description": "",
+    "price": 0.8,
+    "categorie": "Dips",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Joppie-Dip",
+    "description": "",
+    "price": 0.8,
+    "categorie": "Dips",
+    "tags": "",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Schweden-Dip",
+    "description": "",
+    "price": 0.8,
+    "categorie": "Dips",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Sour Cream",
+    "description": "",
+    "price": 0.8,
+    "categorie": "Dips",
+    "tags": "",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Hot-Barbecue-Dip",
+    "description": "",
+    "price": 0.8,
+    "categorie": "Dips",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Sweet-Chili-Dip",
+    "description": "",
+    "price": 0.8,
+    "categorie": "Dips",
+    "tags": "",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Wasabi-Honig-Dip",
+    "description": "",
+    "price": 0.8,
+    "categorie": "Dips",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Preiselbeer-Dip",
+    "description": "",
+    "price": 0.8,
+    "categorie": "Dips",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Kids Burger",
+    "description": "kleiner Cheeseburger",
+    "price": 6.9,
+    "categorie": "Kindergerichte",
+    "tags": "",
+    "vendor": "Vendor 2",
+    "imageLink": "./images/salad.png"
+  },
+  {
+    "name": "Kids Menü",
+    "description": "• 1 Kids Cheeseburger\n• 1 kleine Fries\n• 1 Getränk",
+    "price": 9.5,
+    "categorie": "Kindergerichte",
+    "tags": "",
+    "vendor": "Vendor 1",
+    "imageLink": "./images/salad.png"
+  }
 ]
