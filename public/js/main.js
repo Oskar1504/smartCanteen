@@ -95,6 +95,7 @@ var app = new Vue({
             this.checkout.cart.find((e,i) =>{
                 if(e.id == productId){
                     e.amount -= 1;
+                    e.total = (e.amount * e.price).toFixed(2);
                     if(e.amount <= 0){
                         foundIndex = i
                     }
@@ -102,7 +103,7 @@ var app = new Vue({
                 }
                 return false
             })
-            if(foundIndex != -1){
+            if (foundIndex != -1) {
                 this.checkout.cart.splice(foundIndex, 1)
             }
         },
