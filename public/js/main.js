@@ -24,13 +24,13 @@ var app = new Vue({
             "categorie": new Set(),
         }
     },
-    created(){
+    created() {
         this.loadProducts()
         this.loadLoginFromCash()
     },
     methods: {
         
-        loadProducts(){
+        loadProducts() {
             api.get(`/api/getCollection/products`)
             .then(r => r.json())
             .then(d => {
@@ -47,7 +47,7 @@ var app = new Vue({
                 this.filterProducts()
             })
         },
-        loadOrderHistory(){
+        loadOrderHistory() {
             api.get(`/api/getOrderHistory`)
             .then(r => r.json())
             .then(d => {
@@ -127,6 +127,14 @@ var app = new Vue({
                     console.log(d)
                     console.log("ERROR LOGIN")
                 } else {
+                    var iDiv = document.createElement('div');
+                    iDiv.className = 'loginNotification';
+                    iDiv.innerHTML = "Sie haben sich eingeloggt";
+                    document.getElementsByTagName('body')[0].appendChild(iDiv);
+                    setTimeout(function () {
+                        iDiv.remove();
+                    }, 3000)
+
                     app.loadOrderHistory()
                     app.storeLoginInCache()
                     app.navTo("products")
@@ -182,6 +190,14 @@ var app = new Vue({
             return this.filters[type].has(val) ? "active": ""
         },
         logout() {
+
+            var iDiv = document.createElement('div');
+            iDiv.className = 'logoutNotification';
+            iDiv.innerHTML = "Sie haben sich ausgeloggt";
+            document.getElementsByTagName('body')[0].appendChild(iDiv);
+            setTimeout(function() {
+                iDiv.remove();
+            }, 3000)
             this.pageName = "products"
             this.login.username = ""
             this.login.password = ""
