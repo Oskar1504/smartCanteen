@@ -92,7 +92,7 @@ body {
     margin: 0 5px 0 0;
 }
 .product .product-image {
-    width: 250px;
+    width: 50%;
     height: auto;
 }
 .product .product-name {
@@ -111,6 +111,7 @@ body {
 }
 .product .image-container {
     overflow: hidden;
+    text-align: center;
 }
 .product img {
     transform: scale(1);
