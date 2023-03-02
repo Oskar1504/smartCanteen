@@ -74,6 +74,13 @@ body {
 }
 .product-card {
     margin: 0 0 15px;
+    transition: .3s;
+}
+.product-card:hover {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    color: #000;
+    text-shadow: 1px 1px 21px rgb(150 150 150 / 37%);
+    transform: translateY(-5px);
 }
 .product .tags {
     font-size: 14px;
@@ -119,12 +126,16 @@ body {
     outline: none;
 }
 .submitLogin {
+    width: 100px;
+}
+.submitLogin,
+.btnPlaceOrder {
     border: 1px solid var(--black);
     background: var(--white);
-    width: 100px;
     transition: .3s;
 }
-.submitLogin:hover {
+.submitLogin:hover,
+.btnPlaceOrder:hover {
     background: var(--lightgreen);
     border-color: var(--lightgreen);
     color: var(--white);
@@ -150,7 +161,6 @@ body {
     border-color: var(--lightgreen);
 }
 .badge {
-    /* border: 1px solid #198754; */
     border: 1px solid var(--black);
     color: var(--black);
     background: var(--white);
@@ -164,11 +174,11 @@ body {
     border-color: #fff;
 }
 
-.dropdown-icon[aria-expanded="true"]::before{
+.dropdown-icon[aria-expanded="true"]::before {
     /* content: " \1F845"; */
     content: " 	\2BC5";
 }
-.dropdown-icon[aria-expanded="false"]::before{
+.dropdown-icon[aria-expanded="false"]::before {
     /* content: " \1F847"; */
     content: " \2BC6";
 }
