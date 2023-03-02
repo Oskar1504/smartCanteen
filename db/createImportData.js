@@ -1,13 +1,16 @@
 const fs = require("fs")
 
-let rawData = JSON.parse(fs.readFileSync("./db/data/raw.json"))
+let rawData = JSON.parse(fs.readFileSync("./db/data/gen/raw.json"))
 
 let categories = Object.fromEntries(rawData.menu.categories.map(categorie => {
     return [categorie.name, categorie.productIds]
 }))
+
 function randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
+
+let availableVendors = ["Vendor 1", "Vendor 2"]
 
 let resolve = {
     categorie(product){
@@ -18,10 +21,10 @@ let resolve = {
         return Array.from(product.name.matchAll(/\((.*?)\)/g), x => x[1]).join(", ")
     },
     vendor(product){
-        return "WIP"
+        return availableVendors[randomIntFromInterval(0, availableVendors.length -1)]
     },
     imageLink(product){
-        return "WIP"
+        return "./images/salad.png"
     },
 }
 

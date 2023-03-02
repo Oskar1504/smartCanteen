@@ -148,20 +148,33 @@
             },
             {
                 "id": "ou32fgvx",
-                "name": "vendor",
-                "type": "relation",
+                "name": "vendorId",
+                "type": "text",
                 "system": false,
                 "required": false,
                 "unique": false,
                 "options": {
-                    "maxSelect": 1,
-                    "collectionId": "1z704dn9qkm477k",
-                    "cascadeDelete": false
+                    "min": null,
+                    "max": null,
+                    "pattern": ""
                 }
             },
             {
                 "id": "qn7lxdxg",
                 "name": "tags",
+                "type": "text",
+                "system": false,
+                "required": false,
+                "unique": false,
+                "options": {
+                    "min": null,
+                    "max": null,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": "qn7lxdxg",
+                "name": "description",
                 "type": "text",
                 "system": false,
                 "required": false,
