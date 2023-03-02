@@ -1,23 +1,24 @@
 /* Mobile and general stuff */
 @font-face {
     font-family: 'RobotoCondensed-Light';
-    src: url('font/RobotoCondensed-Light.ttf');
-    src: url('font/RobotoCondensed-Light.ttf') format('ttf'),
+    src: url('../font/RobotoCondensed-Light.ttf');
+    src: url('../font/RobotoCondensed-Light.ttf') format('ttf'),
 }
 @font-face {
     font-family: 'RobotoCondensed-Regular';
-    src: url('font/RobotoCondensed-Regular.ttf');
-    src: url('font/RobotoCondensed-Regular.ttf') format('ttf'),
+    src: url('../font/RobotoCondensed-Regular.ttf');
+    src: url('../font/RobotoCondensed-Regular.ttf') format('ttf'),
 }
 @font-face {
     font-family: 'RobotoCondensed-Bold';
-    src: url('font/RobotoCondensed-Bold.ttf');
-    src: url('font/RobotoCondensed-Bold.ttf') format('ttf'),
+    src: url('../font/RobotoCondensed-Bold.ttf');
+    src: url('../font/RobotoCondensed-Bold.ttf') format('ttf'),
 }
 :root {
     --white: #fff;
     --black: #000;
     --green: rgb(3, 92, 3);
+    --lightgreen: #198754;
     --blue: rgb(3, 3, 141);
     --lightblue: rgb(240, 240, 254);
 }
@@ -35,6 +36,10 @@ body {
 .mainNavigation {
     margin: 0 -10px;
     border-bottom: 1px solid var(--black);
+    position: sticky;
+    top: 0;
+    background: var(--white);
+    z-index: 99999;
 }
 .nav-item-wrap {
     padding: 15px 10px;
@@ -46,11 +51,11 @@ body {
     border: 1px solid var(--black);
     background: var(--white);
     cursor: pointer;
-    transition: .3s;
+    transition: .15s;
 }
 .nav-item-wrap .nav-item:hover {
-    background: #198754;
-    border-color: #198754;
+    background: var(--lightgreen);
+    border-color: var(--lightgreen);
     color: var(--white);
 }
 .product {
@@ -106,6 +111,12 @@ body {
     border: 1px solid var(--black);
     background: var(--white);
     width: 100px;
+    transition: .3s;
+}
+.submitLogin:hover {
+    background: var(--lightgreen);
+    border-color: var(--lightgreen);
+    color: var(--white);
 }
 .container {
     width: 70%;
@@ -117,23 +128,29 @@ body {
 }
 .pill-item  {
     border: 1px solid var(--black);
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding: 0 10px;
+    transition: .15s;
+    cursor: pointer;
 }
-.pill-item:hover  {
+.active,
+.pill-item:hover {
     color: var(--white);
-    background-color: var(--black);
-}
-
-.active {
-    color: var(--white);
-    background-color: var(--black);
+    background-color: var(--lightgreen);
+    border-color: var(--lightgreen);
 }
 .badge {
     /* border: 1px solid #198754; */
     border: 1px solid var(--black);
     color: var(--black);
     background: var(--white);
+    top: -15px;
+    right: -25px;
+    transition: .15s;
+}
+.nav-item-wrap .nav-item:hover .badge {
+    color: var(--white);
+    background: var(--lightgreen);
+    border-color: #fff;
 }
 
 .dropdown-icon[aria-expanded="true"]::before{

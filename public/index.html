@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>smartCanteen</title>
-    <link rel="stylesheet" href="dep/bootstrap.min.css">
-    <link rel="stylesheet" href="input.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./dep/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/input.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <div class="outerWrap">
@@ -24,7 +24,6 @@
                             Warenkorb
                             <span class="position-absolute badge rounded-pill">
                                 {{cartLength}}
-                                <span class="visually-hidden">unread messages</span>
                             </span>
                         </div>
                     </li>
@@ -33,7 +32,7 @@
             <main>
 
                 <div v-if="pageName == 'products'" id="products">
-                    <h1 class="my-2">Produkte</h1>
+                    <h1 class="my-4">Produkte</h1>
                     <div class="filter-wrap">
                         <h2 data-bs-toggle="collapse" href="#filter" >Filter</h2>
                         <div class="collapse show" id="filter">
@@ -52,7 +51,7 @@
                             <div v-for="product in filteredProducts" class="product-card rounded col-12 col-md-6">
                                 <div class="product rounded">
                                     <img :src="product.imageLink" alt="" class="product-image">
-                                    <div class="product-name ps-3">{{product.name}}</div>
+                                    <h4 class="product-name ps-3">{{product.name}}</h4>
                                     <p class="product-description px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat asperiores impedit non dolore voluptatem voluptate consequuntur soluta vel!.</p>
                                     
                                     <div class="bottom-container d-flex justify-content-between px-3 mb-2">
@@ -177,8 +176,8 @@
         </div>
     </div>
 
-    <script src="dep/vue2.js"></script>
-    <script src="dep/bootstrap.min.js"></script>
+    <script src="./dep/vue2.js"></script>
+    <script src="./dep/bootstrap.min.js"></script>
 
     <script src="./js/api.js"></script>
     <script src="./js/main.js"></script>
