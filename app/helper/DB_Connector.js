@@ -16,7 +16,19 @@ module.exports = class db_Connector{
                 }
                 return d
             })
+    }
 
+    getOne(collectionName, idString){
+        return fetch(`${this.host}/api/collections/${collectionName}/records/${idString}`)
+            .then(r => r.json())
+            .then(d => {
+                if(d.code == 403){
+                    console.log("[DB_CONNECTOR] error" + d.message)
+                    throw new Error("[DB_CONNECTOR] error" + d.message)
+                }
+                return d
+            })
+            
     }
 
     insertOne(collectionName, entry){
