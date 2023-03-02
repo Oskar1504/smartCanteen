@@ -36,7 +36,11 @@ var app = new Vue({
             .then(d => {
                 console.log(d)
                 this.products = d.map(product => {
-                    product.tags = product.tags.split(",");
+                    if(product.tags != ""){
+                        product.tags = product.tags.split(",");
+                    }else{
+                        product.tags = []
+                    }
                     product.categorie = product.categorie.split(",");
                     return product;
                 })
