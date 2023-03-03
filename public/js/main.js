@@ -252,6 +252,9 @@ var app = new Vue({
                     console.log(d)
                     app.loadProducts()
                 })
+        },
+        cancelOrder(order){
+            //TODO
         }
         
     },
