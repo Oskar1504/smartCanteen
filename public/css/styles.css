@@ -198,7 +198,6 @@ body {
     border: 1px solid #000;
     font-size: 22px;
 }
-
 dialog {
     min-width: 60%;
     max-width: 60%;
@@ -217,14 +216,11 @@ dialog {
     backdrop-filter: blur(10px);
     border: 1px solid #000;
     font-size: 22px;
-    visibility: hidden;
     opacity: 0;
-    transition: bottom .3s,visible .3s,opacity .3s linear;
+    transition: bottom .3s;
 }
-
 .trans {
     bottom: 50px;
-    visibility: visible;
     opacity: 1;
 }
 

@@ -38,10 +38,10 @@ var app = new Vue({
         message: {
             visible: false,
             content: "",
-            show(content, seconds = 5){
+            show(content, seconds = 5) {
                 this.content = content
                 this.visible = true
-                setTimeout(()=>{
+                setTimeout(() => {
                     document.getElementById("message").classList.toggle("trans")
                 },100)
                 setTimeout(() => {
@@ -155,6 +155,7 @@ var app = new Vue({
                     console.log(d)
                     console.log("ERROR LOGIN")
                 } else {
+                    app.message.show("Sie haben sich eingeloggt", 2)
                     app.loadOrderHistory()
                     app.storeLoginInCache()
                     app.navTo(targetPage)
@@ -211,6 +212,7 @@ var app = new Vue({
         },
         logout() {
             localStorage.removeItem("smartCanteenLogin");
+            app.message.show("Sie haben sich ausgeloggt", 2)
             this.pageName = "products"
             this.login.username = ""
             this.login.password = ""

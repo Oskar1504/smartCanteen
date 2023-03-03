@@ -12,9 +12,6 @@
 <body>
     <div class="outerWrap">
         <div id="app">
-            <div id="message" class="message loginNotification" v-if="message.visible">
-                {{message.content}}
-            </div>
             <dialog id="formDialog">
                 <h2>{{formDialog.title}}</h2>
                 <div>
@@ -194,6 +191,9 @@
                     </div>
                 </div>
             </main>
+            <div id="message" class="message loginNotification rounded-pill" v-if="message.visible">
+                {{message.content}}
+            </div>
         </div>
     </div>
 
