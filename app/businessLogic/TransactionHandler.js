@@ -18,13 +18,18 @@ module.exports = class transaction_Handler{
         }
 
         //Validate & Deconstruct ShopingCart
-        let result = this.EvaluateShopingCart(items)
+        let result = this.#EvaluateShopingCart(items)
         items = result.items;
         let total = result.total;
         let vendorOrders = result.vendorOrders;
         
+        //Check for avaiable Balance
+        if (!this.#checkForSufficentBalance(buyerID, total)){
+            return { status: 200, message:"insufficent Balance"}
+        }
+
         //Create MainOrder
-        let bulkOrder = await this.CreateOrder(buyerID, items, total)
+        let bulkOrder = await this.#CreateOrder(buyerID, items, total)
         
         let SubOrders = []
         //Create SubOrders foreach Vendor 
@@ -32,17 +37,18 @@ module.exports = class transaction_Handler{
         {    
             let value = vendorOrders[key];
             total = value.length > 1 ? value.map(a => a.price * a.amount).reduce((a,b) => a+ b) : value[0].price * value[0].amount;
-            SubOrders.push(await this.CreateOrder(key, value, total, bulkOrder.id));
+            SubOrders.push(await this.#CreateOrder(key, value, total, bulkOrder.id));
         }
 
-        await this.HandleTransaction(bulkOrder, SubOrders);
+        await this.#HandleTransaction(bulkOrder, SubOrders);
 
         return {status: 200, message: "success"}
     }
 
 
 
-    EvaluateShopingCart(items){
+
+    #EvaluateShopingCart(items){
         let total = 0;
         let vendorOrders = [];
 
@@ -74,7 +80,7 @@ module.exports = class transaction_Handler{
             vendorOrders: vendorOrders};
     }
 
-    async CreateOrder(user, items, total, bulkOrderId = ""){
+    async #CreateOrder(user, items, total, bulkOrderId = ""){
         return await this.db.insertOne("orders", {
             products: JSON.stringify(items,null,2),
             user: user,
@@ -86,20 +92,31 @@ module.exports = class transaction_Handler{
 
     }
 
-    async HandleTransaction(bulkOrder, subOrders){
-        this.ProcessTransaction(bulkOrder.user, bulkOrder.total)
+
+
+    #checkForSufficentBalance(userID, total){
+        let user = this.userCollection.getUser(userID);
+        if (user.balance >= total){
+            return true
+        }
+        return false
+    }
+
+    async #HandleTransaction(bulkOrder, subOrders){
+        this.#ProcessTransaction(bulkOrder.user, bulkOrder.total)
 
         for(let order of subOrders){
-            this.ProcessTransaction(order.user, (-order.total))
+            this.#ProcessTransaction(order.user, (-order.total))
         }
         
         await this.userCollection.loadUser()
     }
 
-    async ProcessTransaction(userID, total){
-        let user = this.userCollection.getUser(userID)
+    async #ProcessTransaction(userID, total){
+        let user = this.userCollection.getUser(userID);
         await this.db.updateOne("users",userID,{
             balance: (user.balance - total).toFixed(2)
         })
     }
+    
 }
