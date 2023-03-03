@@ -183,6 +183,19 @@ body {
     /* content: " \1F847"; */
     content: " \2BC6";
 }
+li[aria-expanded="true"] .dropdown-icon::before {
+    /* content: " \1F845"; */
+    content: " 	\2BC5";
+}
+li[aria-expanded="false"] .dropdown-icon::before {
+    /* content: " \1F847"; */
+    content: " \2BC6";
+}
+
+.vendorProducts {
+    overflow-y: scroll;
+    max-height: 50vh;
+}
 
 dialog {
     min-width: 60%;

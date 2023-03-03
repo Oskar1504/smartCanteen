@@ -44,6 +44,7 @@ var app = new Vue({
                 setTimeout(()=>{
                     document.getElementById("message").classList.toggle("trans")
                 },100)
+
                 setTimeout(() => {
                     this.visible = false
                 }, seconds * 1000)
@@ -231,7 +232,7 @@ var app = new Vue({
                     return [input.name, input.value]
                 }))
 
-                data["vendorId"] = this.login.userId
+                data["vendorId"] = this.login.vendorId
 
                 api.post("/api/insertOne/products", data)
                 .then(r => r.json())
@@ -241,6 +242,14 @@ var app = new Vue({
                 })
 
             }
+        },
+        deleteProduct(product){
+            api.delete("/api/delete/products/" + product.id)
+                .then(r => r.json())
+                .then(d => {
+                    console.log(d)
+                    app.loadProducts()
+                })
         }
         
     },
@@ -264,6 +273,9 @@ var app = new Vue({
         },
         usedCategories: function(){
             return new Set(this.products.map(e => e.categorie).flat())
+        },
+        vendorProducts: function(){
+            return this.products.filter(e => e.vendorId == this.login.vendorId)
         }
     }
 })
