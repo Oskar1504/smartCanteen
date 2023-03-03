@@ -225,6 +225,12 @@ dialog {
     visibility: visible;
     opacity: 1;
 }
+.btn {
+    border-radius: 25px;
+}
+.gap-1 {
+    gap:1rem !important;
+}
 
 
 /* Tablet */

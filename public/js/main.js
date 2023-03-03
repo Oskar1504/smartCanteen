@@ -12,7 +12,8 @@ var app = new Vue({
         checkout: {
             cart: []
         },
-        orderHistory: [],
+        userOrderHistory: [],
+        vendorOrderHistory: [],
         login: {
             username: "",
             password: "",
@@ -93,7 +94,8 @@ var app = new Vue({
                     order.total = order.total.toFixed(2)
                     return order
                 })
-                this.orderHistory = d
+                this.userOrderHistory = d.filter(e => e.mainorder == "")
+                this.vendorOrderHistory = d.filter(e => e.mainorder != "")
             })
         },
         navTo(pageName) {
