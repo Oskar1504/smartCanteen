@@ -228,7 +228,9 @@ dialog {
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(10px);
+    background: #19875452;
     border: 1px solid #000;
+    color: var(--black);
     font-size: 22px;
     opacity: 0;
     transition: bottom .3s;
@@ -236,6 +238,10 @@ dialog {
 .trans {
     bottom: 50px;
     opacity: 1;
+}
+.badgeOrderHistory {
+    top: 10px;
+    right: 0;
 }
 
 

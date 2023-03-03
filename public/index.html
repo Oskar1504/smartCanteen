@@ -125,8 +125,8 @@
 
                         <h2 class="mt-4">Bestellhistorie</h2>
                         <ul class="list-group list-group-flush">
-                            <li v-for="order in orderHistory" class="list-group-item d-flex justify-content-between align-items-start">
-                              <div class="ms-2 me-auto">
+                            <li v-for="order in orderHistory" class="list-group-item position-relative pe-0">
+                              <div class="ms-2">
                                 <div class="fw-bold dropdown-icon" data-bs-toggle="collapse" :href="'#order_' + order.id" aria-expanded="false" >
                                     {{order.totalItems}} Products | Am {{new Date(order.created).toLocaleString("de")}}
                                 </div>
@@ -138,7 +138,7 @@
                                     </ul>
                                 </div>
                               </div>
-                              <span class="badge rounded-pill">{{order.total}} €</span>
+                              <span class="badgeOrderHistory badge rounded-pill position-absolute">{{order.total}} €</span>
                             </li>
                         </ul>
                         <div v-if="login.type == 2">
