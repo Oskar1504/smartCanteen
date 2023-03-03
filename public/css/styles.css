@@ -66,14 +66,14 @@ body {
     height: 100%;
 }
 .product-row {
-    columns: 2;
+    columns: 1;
 }
 .product-row li {
     width: 100%;
     break-inside: avoid-column;
 }
 .product-card {
-    margin: 0 0 15px;
+    margin: 15px 0;
     transition: .3s;
 }
 .product-card:hover {
@@ -257,6 +257,9 @@ dialog {
     .nav-item-wrap {
         padding: 15px 100px;
     }
+    .product-row {
+        columns: 2;
+    }
 }
 
 /* Desktop */
@@ -275,5 +278,9 @@ dialog {
         position: fixed;
         left: 10px;
         max-width: 170px;
+    }
+    .product-card {
+        margin: 0 0 15px;
+        transition: .3s;
     }
 }
