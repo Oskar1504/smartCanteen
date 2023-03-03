@@ -11,6 +11,7 @@ app.use(function (req, res, next) {
     console.log(req.originalUrl.split("?")[0])
 
     res.header("Access-Control-Allow-Origin", "*")
+    res.header("Access-Control-Allow-Methods", "POST,GET,DELETE")
     res.header("Access-Control-Allow-Headers","Content-Type,ope-auth-username,ope-auth-password")
     res.header('Content-Type', 'application/json')
     next()
