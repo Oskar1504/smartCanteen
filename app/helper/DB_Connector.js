@@ -7,7 +7,7 @@ module.exports = class db_Connector{
     }
 
     getCollection(collectionName){
-        return fetch(`${this.host}/api/collections/${collectionName}/records`)
+        return fetch(`${this.host}/api/collections/${collectionName}/records?perPage=100`)
             .then(r => r.json())
             .then(d => {
                 if(d.code == 403){

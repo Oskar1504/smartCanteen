@@ -10,7 +10,7 @@ const transaction_Handler = require('../businessLogic/TransactionHandler.js')
 
 
 const db = new DB_Connector("http://127.0.0.1:8090");
-const userCollection = new UserCollection(db)
+const userCollection = new UserCollection(db, 0)
 const productCollection = new ProductCollection(db, 60)
 const router = express.Router();
 const transactionHandler = new transaction_Handler(db, productCollection, userCollection)
@@ -105,6 +105,7 @@ router.get('/login', async (req, res) => {
             username: user.username,
             password: user.password,
             userId: user.id,
+            type: user.type,
             loggedIn: true,
             balance: user.balance
         })
@@ -134,6 +135,7 @@ router.post('/insertOne/:collectionName', async (req, res) => {
         db.insertOne(req.params.collectionName, req.body)
             .then(d => {
                 res.json(d)
+                productCollection.loadProducts()
             })
             .catch(e => {
                 res.json(e)

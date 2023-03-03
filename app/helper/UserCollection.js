@@ -7,7 +7,8 @@ module.exports = class UserCollection{
         this.userLastFetched = new Date().getTime()
     }
 
-    loadUser(){
+    async loadUser(){
+        
         this.db.getCollection("users")
         .then(d => {
             this.userLastFetched = new Date().getTime()
@@ -24,7 +25,6 @@ module.exports = class UserCollection{
     checkCache(){
         let time = new Date().getTime()
         if(time - this.userLastFetched >= this.maxCacheMinutes){
-            console.log("[USERCOLLECTION] reloading user data")
             this.loadUser()
         }
     }

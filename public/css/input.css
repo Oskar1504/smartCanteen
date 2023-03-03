@@ -1,4 +1,4 @@
-input[type="number"] {
+.quantity input[type="number"] {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
