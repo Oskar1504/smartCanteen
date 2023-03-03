@@ -20,6 +20,22 @@ class ApiConnector{
                 ...headers
             }
         })
+        .catch(e => {
+            app.message.show(e.toString(),10)
+        })
+    }
+    
+    delete(url, headers = {}){
+        return fetch(this.host + url, {
+            method:"DELETE",
+            headers: {
+                ...this.defaultHeaders,
+                ...headers
+            }
+        })
+        .catch(e => {
+            app.message.show(e.toString(),10)
+        })
     }
 
     post(url, data, headers = {}){
@@ -33,6 +49,9 @@ class ApiConnector{
                 ...headers
             },
             body:JSON.stringify(data)
+        })
+        .catch(e => {
+            app.message.show(e.toString(),10)
         })
     }
 }

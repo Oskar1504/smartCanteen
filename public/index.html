@@ -29,6 +29,7 @@
                     <li class="nav-item rounded-pill" v-if="!login.loggedIn" @click="navTo('loginPage')">Login</li>
                     <li class="nav-item rounded-pill" v-if="login.loggedIn" @click="logout()">Logout</li>
                     <li class="nav-item rounded-pill" v-if="login.loggedIn" @click="navTo('profilePage')">Profil</li>
+                    <li class="nav-item rounded-pill" v-if="login.loggedIn && login.type == 2" @click="navTo('vendorProfile')">Vendorprofile</li>
                     <li class="nav-item rounded-pill" v-if="login.loggedIn"  @click="navTo('checkout')">
                         <div type="button" class="position-relative">
                             Warenkorb
@@ -71,6 +72,11 @@
                                         <div class="tags-wrap">
                                             <span v-for="tag in product.tags" class="tags rounded fw-bold">
                                                 {{tag}}
+                                            </span>
+                                        </div>
+                                        <div v-if="vendorData[product.vendorId]" class="tags-wrap">
+                                            <span class="tags rounded fw-bold vendor-tag">
+                                                {{vendorData[product.vendorId].name}}
                                             </span>
                                         </div>
                                     </div>
@@ -125,9 +131,9 @@
 
                         <h2 class="mt-4">Bestellhistorie</h2>
                         <ul class="list-group list-group-flush">
-                            <li v-for="order in orderHistory" class="list-group-item position-relative pe-0">
+                            <li v-for="order in userOrderHistory" class="list-group-item position-relative pe-0" data-bs-toggle="collapse" :href="'#order_' + order.id" aria-expanded="false">
                               <div class="ms-2">
-                                <div class="fw-bold dropdown-icon" data-bs-toggle="collapse" :href="'#order_' + order.id" aria-expanded="false" >
+                                <div class="fw-bold dropdown-icon" >
                                     {{order.totalItems}} Products | Am {{new Date(order.created).toLocaleString("de")}}
                                 </div>
                                 <div class="collapse" :id="'order_' + order.id">
@@ -141,10 +147,6 @@
                               <span class="badgeOrderHistory badge rounded-pill position-absolute">{{order.total}} €</span>
                             </li>
                         </ul>
-                        <div v-if="login.type == 2">
-                            <h2>Vendor actions</h2>
-                            <button @click="openFormDialog('Create Product', 'product')" class="btn btn-outline-success" >Create Product</button>
-                        </div>
                         
                     </div>
                 </div>
@@ -187,6 +189,56 @@
                         <div class="col col-12">
                             <p>Keine Produkte im Warenkorb</p>
                             <p class="btn btn-outline-success" @click="navTo('products')">Weiter stöbern</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div v-if="pageName == 'vendorProfile'" v-if="login.type == 2" id="vendorProfile" class="container-fluid p-0">
+                    <h1 class="my-4">vendorProfile</h1>
+                    <div>
+                        <h2>Orders with vendor products</h2>
+                        <ul class="list-group list-group-flush">
+                            <li v-for="order in vendorOrderHistory" class="gap-1 list-group-item d-flex justify-content-between align-items-center " data-bs-toggle="collapse" :href="'#order_' + order.id" aria-expanded="false">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold dropdown-icon"  >
+                                        {{order.totalItems}} Products | Am {{new Date(order.created).toLocaleString("de")}}
+                                    </div>
+                                    <div class="collapse" :id="'order_' + order.id">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item" v-for="product in order.products">
+                                                <div>
+                                                    {{product.amount}} x {{product.name}} {{product.price}} € | {{product.total}} €
+                                                </div>
+                                                
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="badge rounded-pill">{{order.total}} €</div>
+                                <button @click="cancelOrder(order.id)" class="btn btn-sm btn-outline-danger">Cancel order</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div >
+                        <h2>Vendor actions</h2>
+                        <button @click="openFormDialog('Create Product', 'product')" class="btn btn-outline-success" >Create Product</button>
+                    </div>
+                    <div  >
+                        <h2>Products from vendor</h2>
+                        <div class="vendorProducts">
+                            <ul class="list-group list-group-flush">
+                                <li v-for="product in vendorProducts" data-bs-toggle="collapse" :href="'#vendor_product_details_' + product.id" aria-expanded="false"  class="list-group-item ">
+                                    <div class="dropdown-icon" >{{product.name}}</div>
+                                    <div :id="'vendor_product_details_' + product.id" class="collapse " >
+                                        <ul>
+                                            <li v-for="(val, key) in product">
+                                                {{key}}: {{val}}
+                                            </li>
+                                        </ul>
+                                        <button @click="deleteProduct(product)" class="btn btn-outline-danger">Delete Product</button>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

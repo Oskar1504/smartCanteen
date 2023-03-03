@@ -12,7 +12,8 @@ var app = new Vue({
         checkout: {
             cart: []
         },
-        orderHistory: [],
+        userOrderHistory: [],
+        vendorOrderHistory: [],
         login: {
             username: "",
             password: "",
@@ -44,15 +45,19 @@ var app = new Vue({
                 setTimeout(() => {
                     document.getElementById("message").classList.toggle("trans")
                 },100)
+
                 setTimeout(() => {
                     this.visible = false
                 }, seconds * 1000)
             }
-        }
+        },
+        vendorData : {}
     },
     created() {
         this.loadProducts()
+        this.loadVendors()
         this.loadLoginFromCash()
+        this.loadCartFromCache()
     },
     mounted(){
     },
@@ -74,6 +79,16 @@ var app = new Vue({
                 this.filterProducts()
             })
         },
+        loadVendors(){
+            api.get(`/api/getCollection/vendors`)
+            .then(r => r.json())
+            .then(d => {
+                console.log(d)
+                this.vendorData = Object.fromEntries(d.map(vendor => {
+                    return [vendor.id, vendor]
+                }))
+            })
+        },
         loadOrderHistory() {
             api.get(`/api/getOrderHistory`)
             .then(r => r.json())
@@ -91,7 +106,8 @@ var app = new Vue({
                     order.total = order.total.toFixed(2)
                     return order
                 })
-                this.orderHistory = d
+                this.userOrderHistory = d.filter(e => e.mainorder == "")
+                this.vendorOrderHistory = d.filter(e => e.mainorder != "")
             })
         },
         navTo(pageName) {
@@ -118,6 +134,8 @@ var app = new Vue({
                 productInCart.amount += amount,
                 productInCart.total = (productInCart.price * productInCart.amount).toFixed(2)
             }
+
+            this.storeCartInCache()
         },
         removeFromCart(productId){
             let foundIndex = -1
@@ -142,6 +160,8 @@ var app = new Vue({
             .then(d => {
                 console.log(d)
                 app.signIn("profilePage")
+                app.checkout.cart = []
+                app.storeCartInCache()
             })
         },
         signIn(targetPage = "products"){
@@ -155,7 +175,9 @@ var app = new Vue({
                     console.log(d)
                     console.log("ERROR LOGIN")
                 } else {
-                    app.message.show("Sie haben sich eingeloggt", 2)
+                    //only print message when login using form
+                    //playocerde calls signin to update user balance
+                    targetPage == "products" ? app.message.show("Sie haben sich eingeloggt", 2) : null
                     app.loadOrderHistory()
                     app.storeLoginInCache()
                     app.navTo(targetPage)
@@ -231,7 +253,7 @@ var app = new Vue({
                     return [input.name, input.value]
                 }))
 
-                data["vendorId"] = this.login.userId
+                data["vendorId"] = this.login.vendorId
 
                 api.post("/api/insertOne/products", data)
                 .then(r => r.json())
@@ -241,7 +263,33 @@ var app = new Vue({
                 })
 
             }
+        },
+        deleteProduct(product){
+            api.delete("/api/delete/products/" + product.id)
+                .then(r => r.json())
+                .then(d => {
+                    console.log(d)
+                    app.loadProducts()
+                })
+        },
+        cancelOrder(order){
+            //TODO
+        },
+        loadCartFromCache(){
+            if(localStorage.getItem("smartCanteenCart") !=null){
+                let storageData = JSON.parse(localStorage.getItem("smartCanteenCart"))
+                if(new Date().getTime() - storageData.created <= LOGIN_MAX_CACHE){
+                    this.checkout.cart = storageData.cart
+                }
+            }
+        },
+        storeCartInCache(){
+            localStorage.setItem("smartCanteenCart", JSON.stringify({
+                cart: this.checkout.cart,
+                created: new Date().getTime()
+            }))
         }
+        
         
     },
     computed: {
@@ -264,6 +312,9 @@ var app = new Vue({
         },
         usedCategories: function() {
             return new Set(this.products.map(e => e.categorie).flat())
+        },
+        vendorProducts: function(){
+            return this.products.filter(e => e.vendorId == this.login.vendorId)
         }
     }
 })

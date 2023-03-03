@@ -105,6 +105,7 @@ router.get('/login', async (req, res) => {
             username: user.username,
             password: user.password,
             userId: user.id,
+            vendorId: user.vendorId,
             type: user.type,
             loggedIn: true,
             balance: user.balance

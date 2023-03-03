@@ -212,6 +212,20 @@ body {
     border: 1px solid #000;
     font-size: 22px;
 }
+li[aria-expanded="true"] .dropdown-icon::before {
+    /* content: " \1F845"; */
+    content: " 	\2BC5";
+}
+li[aria-expanded="false"] .dropdown-icon::before {
+    /* content: " \1F847"; */
+    content: " \2BC6";
+}
+
+.vendorProducts {
+    overflow-y: scroll;
+    max-height: 50vh;
+}
+
 dialog {
     min-width: 60%;
     max-width: 60%;
@@ -239,6 +253,17 @@ dialog {
     bottom: 50px;
     opacity: 1;
 }
+.btn {
+    border-radius: 25px;
+}
+.gap-1 {
+    gap:1rem !important;
+}
+
+.vendor-tag {
+    /* TODO */
+}
+
 .badgeOrderHistory {
     top: 10px;
     right: 0;
