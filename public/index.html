@@ -77,6 +77,11 @@
                                                 {{tag}}
                                             </span>
                                         </div>
+                                        <div v-if="vendorData[product.vendorId]" class="tags-wrap">
+                                            <span class="tags rounded fw-bold vendor-tag">
+                                                {{vendorData[product.vendorId].name}}
+                                            </span>
+                                        </div>
                                     </div>
                                     <div class="bottom-container d-flex justify-content-between px-3 mb-2">
                                         <div class="tags-wrap">

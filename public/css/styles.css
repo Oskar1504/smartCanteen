@@ -232,6 +232,10 @@ dialog {
     gap:1rem !important;
 }
 
+.vendor-tag {
+    /* TODO */
+}
+
 
 /* Tablet */
 @media(min-width: 768px)

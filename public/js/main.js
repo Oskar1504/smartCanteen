@@ -50,11 +50,14 @@ var app = new Vue({
                     this.visible = false
                 }, seconds * 1000)
             }
-        }
+        },
+        vendorData : {}
     },
     created(){
         this.loadProducts()
+        this.loadVendors()
         this.loadLoginFromCash()
+        this.loadCartFromCache()
     },
     mounted(){
     },
@@ -75,6 +78,16 @@ var app = new Vue({
                 })
 
                 this.filterProducts()
+            })
+        },
+        loadVendors(){
+            api.get(`/api/getCollection/vendors`)
+            .then(r => r.json())
+            .then(d => {
+                console.log(d)
+                this.vendorData = Object.fromEntries(d.map(vendor => {
+                    return [vendor.id, vendor]
+                }))
             })
         },
         loadOrderHistory(){
@@ -123,6 +136,8 @@ var app = new Vue({
                 productInCart.amount += amount,
                 productInCart.total = (productInCart.price * productInCart.amount).toFixed(2)
             }
+
+            this.storeCartInCache()
         },
         removeFromCart(productId){
             let foundIndex = -1
@@ -147,6 +162,8 @@ var app = new Vue({
             .then(d => {
                 console.log(d)
                 app.signIn("profilePage")
+                app.checkout.cart = []
+                app.storeCartInCache()
             })
         },
         signIn(targetPage = "products"){
@@ -255,7 +272,22 @@ var app = new Vue({
         },
         cancelOrder(order){
             //TODO
+        },
+        loadCartFromCache(){
+            if(localStorage.getItem("smartCanteenCart") !=null){
+                let storageData = JSON.parse(localStorage.getItem("smartCanteenCart"))
+                if(new Date().getTime() - storageData.created <= LOGIN_MAX_CACHE){
+                    this.checkout.cart = storageData.cart
+                }
+            }
+        },
+        storeCartInCache(){
+            localStorage.setItem("smartCanteenCart", JSON.stringify({
+                cart: this.checkout.cart,
+                created: new Date().getTime()
+            }))
         }
+        
         
     },
     computed: {
