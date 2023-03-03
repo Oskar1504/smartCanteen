@@ -39,10 +39,10 @@ var app = new Vue({
         message: {
             visible: false,
             content: "",
-            show(content, seconds = 5){
+            show(content, seconds = 5) {
                 this.content = content
                 this.visible = true
-                setTimeout(()=>{
+                setTimeout(() => {
                     document.getElementById("message").classList.toggle("trans")
                 },100)
 
@@ -53,7 +53,7 @@ var app = new Vue({
         },
         vendorData : {}
     },
-    created(){
+    created() {
         this.loadProducts()
         this.loadVendors()
         this.loadLoginFromCash()
@@ -68,15 +68,14 @@ var app = new Vue({
             .then(d => {
                 console.log(d)
                 this.products = d.map(product => {
-                    if(product.tags != ""){
+                    if (product.tags != "") {
                         product.tags = product.tags.split(",");
-                    }else{
+                    } else {
                         product.tags = []
                     }
                     product.categorie = product.categorie.split(",");
                     return product;
                 })
-
                 this.filterProducts()
             })
         },
@@ -90,7 +89,7 @@ var app = new Vue({
                 }))
             })
         },
-        loadOrderHistory(){
+        loadOrderHistory() {
             api.get(`/api/getOrderHistory`)
             .then(r => r.json())
             .then(d => {
@@ -113,17 +112,16 @@ var app = new Vue({
         },
         navTo(pageName) {
             this.pageName = pageName
-
-            if(this.pageName == "profilePage" && this.login.loggedIn){
+            if (this.pageName == "profilePage" && this.login.loggedIn) {
                 this.loadOrderHistory()
             }
         },
         addToCart(productId, amount = 0){
-            if(amount == 0){
+            if (amount == 0) {
                 amount = parseInt(document.getElementById(`${productId}_cart_amount`).value)
             }
             let productInCart = this.checkout.cart.find(e => e.id == productId)
-            if(productInCart == undefined){
+            if (productInCart == undefined) {
                 let product = this.products.find(e => e.id == productId)
                 this.checkout.cart.push({
                     id: productId,
@@ -132,7 +130,7 @@ var app = new Vue({
                     amount: amount,
                     total: (amount * product.price).toFixed(2)
                 })
-            }else{
+            } else {
                 productInCart.amount += amount,
                 productInCart.total = (productInCart.price * productInCart.amount).toFixed(2)
             }
@@ -142,10 +140,10 @@ var app = new Vue({
         removeFromCart(productId){
             let foundIndex = -1
             this.checkout.cart.find((e,i) =>{
-                if(e.id == productId){
+                if (e.id == productId) {
                     e.amount -= 1;
                     e.total = (e.amount * e.price).toFixed(2);
-                    if(e.amount <= 0){
+                    if (e.amount <= 0) {
                         foundIndex = i
                     }
                     return true
@@ -156,7 +154,7 @@ var app = new Vue({
                 this.checkout.cart.splice(foundIndex, 1)
             }
         },
-        placeOrder(){
+        placeOrder() {
             api.post("/api/placeOrder", this.checkout.cart)
             .then(r => r.json())
             .then(d => {
@@ -173,66 +171,68 @@ var app = new Vue({
             .then(d => {
                 app.login = d
 
-                if(!d.loggedIn){
+                if (!d.loggedIn) {
                     console.log(d)
                     console.log("ERROR LOGIN")
-                }else{
+                } else {
+                    app.message.show("Sie haben sich eingeloggt", 2)
                     app.loadOrderHistory()
                     app.storeLoginInCache()
                     app.navTo(targetPage)
                 }
             })
         },
-        loadLoginFromCash(){
-            if(localStorage.getItem("smartCanteenLogin") !=null){
+        loadLoginFromCash() {
+            if (localStorage.getItem("smartCanteenLogin") != null) {
                 let storageLogin = JSON.parse(localStorage.getItem("smartCanteenLogin"))
-                if(new Date().getTime() - storageLogin.created <= LOGIN_MAX_CACHE){
+                if (new Date().getTime() - storageLogin.created <= LOGIN_MAX_CACHE) {
                     this.login.username = storageLogin.username
                     this.login.password = storageLogin.password
                     this.signIn()
                 }
             }
         },
-        storeLoginInCache(){
+        storeLoginInCache() {
             localStorage.setItem("smartCanteenLogin", JSON.stringify({
                 username: this.login.username,
                 password: this.login.password,
                 created: new Date().getTime()
             }))
         },
-        toggleFilter(type, value){
-            if(this.filters[type].has(value)){
+        toggleFilter(type, value) {
+            if (this.filters[type].has(value)) {
                 this.filters[type].delete(value)
-            }else{
+            } else {
                 this.filters[type].add(value)
             }
-
             this.filterProducts()
         },
-        filterProducts(){
-            if(this.filters.tag.size != 0 || this.filters.categorie.size != 0){
+        filterProducts() {
+            if (this.filters.tag.size != 0 || this.filters.categorie.size != 0) {
                 this.filteredProducts =  this.products.filter(product => {
                     let found = 0
                     this.filters.tag.forEach(tag => {
-                        if(product.tags.includes(tag)){
+                        if (product.tags.includes(tag)) {
                             found = 1
                         }
                     })
                     this.filters.categorie.forEach(categorie => {
-                        if(product.categorie.includes(categorie)){
+                        if (product.categorie.includes(categorie)) {
                             found = 1
                         }
                     })
                     return found
                 })
-            }else{
+            } else {
                 this.filteredProducts = this.products
             }
         },
-        isFilterActive(type, val){
+        isFilterActive(type, val) {
             return this.filters[type].has(val) ? "active": ""
         },
-        logout(){
+        logout() {
+            localStorage.removeItem("smartCanteenLogin");
+            app.message.show("Sie haben sich ausgeloggt", 2)
             this.pageName = "products"
             this.login.username = ""
             this.login.password = ""
@@ -291,24 +291,24 @@ var app = new Vue({
         
     },
     computed: {
-        cartLength: function(){
-            if(this.checkout.cart.length >= 1){
+        cartLength: function() {
+            if (this.checkout.cart.length >= 1) {
                 return this.checkout.cart.map(e => e.amount).reduce((a, b) => a+b)
-            }else{
+            } else {
                 return 0
             }
         },
-        checkoutTotal: function(){
-            if(this.checkout.cart.length >= 1){
+        checkoutTotal: function() {
+            if (this.checkout.cart.length >= 1) {
                 return (this.checkout.cart.map(e => e.price * e.amount).reduce((a, b) => a+b)).toFixed(2)
-            }else{
+            } else {
                 return 0
             }
         },
-        usedTags: function(){
+        usedTags: function() {
             return new Set(this.products.map(e => e.tags).flat())
         },
-        usedCategories: function(){
+        usedCategories: function() {
             return new Set(this.products.map(e => e.categorie).flat())
         },
         vendorProducts: function(){
