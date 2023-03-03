@@ -127,6 +127,9 @@ body {
     border-bottom: 1px solid var(--black);
     outline: none;
 }
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 50px white inset;
+}
 .submitLogin {
     width: 100px;
 }
