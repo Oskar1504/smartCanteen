@@ -212,15 +212,25 @@ body {
     border: 1px solid #000;
     font-size: 22px;
 }
+li[aria-expanded="false"] .dropdown-icon::before,
 li[aria-expanded="true"] .dropdown-icon::before {
-    /* content: " \1F845"; */
-    content: " 	\2BC5";
+    content: "";
+    width: 10px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    border-bottom: 3px solid var(--black);
+    border-right: 3px solid var(--black);
+    transform: rotate(45deg);
+    transition: .3s;
+    top: 5px;
 }
-li[aria-expanded="false"] .dropdown-icon::before {
-    /* content: " \1F847"; */
-    content: " \2BC6";
+li[aria-expanded="true"] .dropdown-icon::before {
+    transform: rotate(-135deg);
+    top: 10px;
 }
-
 .vendorProducts {
     overflow-y: scroll;
     max-height: 50vh;
