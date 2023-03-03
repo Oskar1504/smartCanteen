@@ -174,14 +174,27 @@ body {
     background: var(--lightgreen);
     border-color: #fff;
 }
-
-.dropdown-icon[aria-expanded="true"]::before {
-    /* content: " \1F845"; */
-    content: " 	\2BC5";
+.dropdown-icon {
+    position: relative;
+    cursor: pointer;
 }
-.dropdown-icon[aria-expanded="false"]::before {
-    /* content: " \1F847"; */
-    content: " \2BC6";
+.dropdown-icon::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid var(--black);
+    border-right: 2px solid var(--black);
+    display: block;
+    position: absolute;
+    left: -20px;
+    top: 3px;
+    transform: rotate(45deg);
+    transform-origin: center;
+    transition: .3s;
+}
+.dropdown-icon:not(.collapsed):before {
+    transform: rotate(-135deg);
+    top: 8px;
 }
 .logoutNotification,
 .loginNotification {
