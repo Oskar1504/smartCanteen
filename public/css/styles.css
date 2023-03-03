@@ -127,6 +127,7 @@ body {
     border-bottom: 1px solid var(--black);
     outline: none;
 }
+/* Hebt das Styling für das bereits gefüllte Input Feld aus */
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 50px white inset;
 }
