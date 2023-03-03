@@ -46,6 +46,77 @@ module.exports = class transaction_Handler{
     }
 
 
+    async cancelOrder(user, orderId){
+        
+        let order = await this.db.getOne("orders", orderId);
+
+        //console.log(user)
+        //console.log(order)
+
+        //Cancel BulkOrder
+        if(order.mainorder == "")
+        {
+            //MainOrder only cancleable for owning user or admin
+            if(!(order.user == user || user.type == 3)){
+                return {status: 400, message: "Not authorized to cancle this order"}
+            }
+            //Cancel only in first 10min or by admin
+            if((new Date().getTime()) - order.created >= 10 * 60 * 1000 || user.type == 3){
+                return {status: 400, message: "To late to cancel this order"}
+            }
+            
+            //Backtrack Transactions & Delete Orders
+            //TODO: set Order Status to "Canceled" instead of deleting
+            let subOrders = this.db.GetMany("orders", `mainorder == '${order.id}'`)
+            for(let sO of subOrders){
+                this.#ProcessTransaction(sO.user, sO.total)
+                this.#DeleteOrder(sO.id)
+            }
+            
+            this.#ProcessTransaction(order.user, (-order.total))
+            this.#DeleteOrder(orderID)
+
+            await this.userCollection.loadUser()
+        }
+        //Cancel SubOrder
+        else{
+            //MainOrder only cancleable for owning user or admin
+            let mainOrder = await this.db.getOne("orders", order.mainOrder)
+            let buyer = await this.userCollection.getUser(mainOrder.user)
+            console.log(mainOrder)
+
+            //Cancel only if request by buyer, vendor or admin
+            if(!(user == order.user || user == buyer || user.type == 3)){
+                return {status: 400, message: "Not authorized to cancle this order"}
+            }
+            //Cancel by user only in first 10min
+
+            if((new Date().getTime()) - order.created >= 10 * 60 * 1000 && user == buyer && user.type != 3){
+                return {status: 400, message: "To late to cancel this order"}
+            }
+            
+            let productIds = [] 
+            order.products.map(p => {
+                productIds.push(p.id)
+            })
+            
+            console.log("foo")
+            productIds.forEach(prodId => {
+                
+                console.log("foo")
+                let index = mainOrder.products.findIndex(product => product.id == prodId)
+                mainOrder.products.splice(index,1)
+            })
+
+            this.db.updateOne("order", mainOrder.id, mainOrder)
+
+            this.#ProcessTransaction(buyer, (-order.total))
+            this.#ProcessTransaction(order.user, order.total)
+            this.#DeleteOrder(orderID)
+        }
+
+        return {status: 200, message: "success"}
+    }
 
 
     #EvaluateShopingCart(items){
@@ -92,7 +163,9 @@ module.exports = class transaction_Handler{
 
     }
 
-
+    async #DeleteOrder(orderId){
+        return await this.db.deleteOne("orders", orderId)
+    }
 
     #checkForSufficentBalance(userID, total){
         let user = this.userCollection.getUser(userID);

@@ -2,7 +2,7 @@
 module.exports = class UserCollection{
     constructor(db, maxCacheMinutes = 30){
         this.db = db
-        this.maxCacheMinutes = maxCacheMinutes * 60 * 1000
+        this.maxCacheMinutes = maxCacheMinutes  
         this.loadUser()
         this.userLastFetched = new Date().getTime()
     }

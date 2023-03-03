@@ -7,7 +7,7 @@ module.exports = class db_Connector{
     }
 
     getCollection(collectionName){
-        return fetch(`${this.host}/api/collections/${collectionName}/records`)
+        return fetch(`${this.host}/api/collections/${collectionName}/records?perPage=100`)
             .then(r => r.json())
             .then(d => {
                 if(d.code == 403){
@@ -28,7 +28,19 @@ module.exports = class db_Connector{
                 }
                 return d
             })
-            
+    }
+        
+    getMany(collectionName, filter){
+        console.log(filter)
+        return fetch(`${this.host}/api/collections/${collectionName}/records?filter=(${filter})`)
+            .then(r => r.json())
+            .then(d => {
+                if(d.code == 403){
+                    console.log("[DB_CONNECTOR] error" + d.message)
+                    throw new Error("[DB_CONNECTOR] error" + d.message)
+                }
+                return d
+            })    
     }
 
     insertOne(collectionName, entry){
