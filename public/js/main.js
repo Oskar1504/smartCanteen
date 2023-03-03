@@ -175,7 +175,9 @@ var app = new Vue({
                     console.log(d)
                     console.log("ERROR LOGIN")
                 } else {
-                    app.message.show("Sie haben sich eingeloggt", 2)
+                    //only print message when login using form
+                    //playocerde calls signin to update user balance
+                    targetPage == "products" ? app.message.show("Sie haben sich eingeloggt", 2) : null
                     app.loadOrderHistory()
                     app.storeLoginInCache()
                     app.navTo(targetPage)
