@@ -230,7 +230,6 @@ var app = new Vue({
             }
         },
         isFilterActive(type, val) {
-            console.log("test")
             return this.filters[type].has(val) ? "active": ""
         },
         logout() {
