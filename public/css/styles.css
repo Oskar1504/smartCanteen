@@ -22,9 +22,11 @@
     --blue: rgb(3, 3, 141);
     --lightblue: rgb(240, 240, 254);
 }
-body {
+body,
+html {
     font-family: 'RobotoCondensed-Regular';
     font-size: 18px;
+    height: 100%;
 }
 .logo {
     font-size: 24px;
@@ -42,7 +44,13 @@ body {
     z-index: 99999;
     backdrop-filter: blur(8px);
 }
-.nav-item-wrap {
+.footerOuterWrap {
+    border-top: 1px solid var(--black);
+    margin: 0 -10px;
+    font-size: 16px;
+}
+.nav-item-wrap,
+.footerInnerWrap {
     padding: 15px 10px;
     flex-wrap: wrap;
 }
@@ -291,10 +299,12 @@ dialog {
     .outerWrap {
         margin: 0 100px;
     }
-    .mainNavigation {
+    .mainNavigation,
+    .footerOuterWrap {
         margin: 0 -100px;
     }
-    .nav-item-wrap {
+    .nav-item-wrap,
+    .footerInnerWrap {
         padding: 15px 100px;
     }
     .product-row {
@@ -308,10 +318,12 @@ dialog {
     .outerWrap {
         margin: 0 200px;
     }
-    .mainNavigation {
+    .mainNavigation,
+    .footerOuterWrap {
         margin: 0 -200px;
     }
-    .nav-item-wrap {
+    .nav-item-wrap,
+    .footerInnerWrap {
         padding: 15px 200px;
     }
     .filter-wrap {
