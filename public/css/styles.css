@@ -28,6 +28,38 @@ html {
     font-size: 18px;
     height: 100%;
 }
+.scroll-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--black);
+    transition: .3s;
+    cursor: pointer;
+    transition: .3s;
+}
+.scroll-to-top:hover {
+    background: var(--lightgreen);
+}
+.scroll-to-top:hover,
+.scroll-to-top:hover:before {
+    border-color: var(--white);
+}
+.scroll-to-top:before {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-right: 3px solid var(--black);
+    border-top: 3px solid var(--black);
+    position: absolute;
+    left: 12px;
+    top: 15px;
+    transform: rotate(-45deg);
+    transition: .3s;
+}
 .logo {
     font-size: 24px;
     cursor: pointer;

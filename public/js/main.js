@@ -3,6 +3,19 @@ const HOST = "http://localhost:42069"
 const LOGIN_MAX_CACHE = 30 * 60 * 1000
 let api = new ApiConnector(HOST)
 
+const scrollBtn = document.querySelector(".scroll-to-top");
+
+document.addEventListener("scroll", () => {
+    scrollBtn.style.opacity = (window.scrollY > 200) ? "100%" : "0%";
+});
+
+scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
 var app = new Vue({
     el: '#app',
     data: {
