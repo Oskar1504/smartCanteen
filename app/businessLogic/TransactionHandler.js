@@ -50,15 +50,12 @@ module.exports = class transaction_Handler{
         
         let order = await this.db.getOne("orders", orderId);
 
-        //console.log(user)
-        //console.log(order)
-
         //Cancel BulkOrder
         if(order.mainorder == "")
         {
             //MainOrder only cancleable for owning user or admin
             if(!(order.user == user || user.type == 3)){
-                return {status: 400, message: "Not authorized to cancle this order"}
+                return {status: 400, message: "Not authorized to cancel this order"}
             }
             //Cancel only in first 10min or by admin
             if((new Date().getTime()) - order.created >= 10 * 60 * 1000 || user.type == 3){
@@ -80,45 +77,49 @@ module.exports = class transaction_Handler{
         }
         //Cancel SubOrder
         else{
-            //MainOrder only cancleable for owning user or admin
-            let mainOrder = await this.db.getOne("orders", order.mainOrder)
+            let mainOrder = await this.db.getOne("orders", order.mainorder)
             let buyer = await this.userCollection.getUser(mainOrder.user)
-            console.log(mainOrder)
 
-            //Cancel only if request by buyer, vendor or admin
+            //Cancel only if request by vendor, buyer or admin
             if(!(user == order.user || user == buyer || user.type == 3)){
                 return {status: 400, message: "Not authorized to cancle this order"}
             }
-            //Cancel by user only in first 10min
-
+            
+            //Cancel by buyer only in first 10min
             if((new Date().getTime()) - order.created >= 10 * 60 * 1000 && user == buyer && user.type != 3){
                 return {status: 400, message: "To late to cancel this order"}
             }
             
+            //Get all Product Ids from Main
             let productIds = [] 
             order.products.map(p => {
                 productIds.push(p.id)
             })
             
-            console.log("foo")
+            //Remove all Products of the subOrder from the MainOrder
             productIds.forEach(prodId => {
-                
-                console.log("foo")
                 let index = mainOrder.products.findIndex(product => product.id == prodId)
                 mainOrder.products.splice(index,1)
             })
+            mainOrder.total -= order.total
+            
+            //If all SubOrders are canceled the MainOrder is Deleted
+            if(mainOrder.total <= 0 || mainOrder.products.length == 0){
+                this.#DeleteOrder(mainOrder.id)
+            }
+            else{
+                this.db.updateOne("orders", mainOrder.id, mainOrder)
+            }
 
-            this.db.updateOne("order", mainOrder.id, mainOrder)
-
-            this.#ProcessTransaction(buyer, (-order.total))
+            this.#ProcessTransaction(buyer.id, (-order.total))
             this.#ProcessTransaction(order.user, order.total)
-            this.#DeleteOrder(orderID)
+            this.#DeleteOrder(orderId)
         }
 
         return {status: 200, message: "success"}
     }
 
-
+    // # means private
     #EvaluateShopingCart(items){
         let total = 0;
         let vendorOrders = [];
