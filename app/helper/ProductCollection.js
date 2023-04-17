@@ -37,6 +37,5 @@ module.exports = class productCollection{
         return Array.isArray(items) ?
             items.every(item => this.productsArray.find(prod => prod.id == item.id)) :
             this.productsArray.find(prod => prod.id == items.id);
-        
     }
 }

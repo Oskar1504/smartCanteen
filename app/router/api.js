@@ -18,9 +18,9 @@ const transactionHandler = new transaction_Handler(db, productCollection, userCo
 //TODO getproducts should always work
 let routeMapping = new RouteMapping({
     "3": ["insert"],
-    "2": ["delete","insertOne/products","insertMany/products","update"],
+    "2": ["delete", "insertOne/products", "insertMany/products", "update"],
     "1": ["getCollection"],
-    "0":[]
+    "0": []
 }).get()
 
 
@@ -33,21 +33,21 @@ router.use(function (req, res, next) {
                     let user = userCollection.login(req.headers["ope-auth-username"], req.headers["ope-auth-password"])
                     let allowed = false
                     routeMapping[user.type].forEach(routePart => {
-                        if(req.originalUrl.includes(routePart)){
+                        if (req.originalUrl.includes(routePart)) {
                             allowed = true
                         }
                     });
 
-                    if(allowed){
+                    if (allowed) {
                         next()
-                    }else{
+                    } else {
                         res.json({
                             status: 500,
                             message: "user not allowed to perform this action"
                         })
 
                     }
-                } catch (error) { 
+                } catch (error) {
                     res.json(error.toString())
                 }
             } else {
@@ -63,7 +63,7 @@ router.use(function (req, res, next) {
             })
         }
     }
-    else{
+    else {
         next()
     }
 })
@@ -85,7 +85,7 @@ router.get('/getCollection/:CollectionName', async (req, res) => {
 })
 
 router.get('/getEntry/:CollectionName/:id', async (req, res) => {
-    try{
+    try {
         db.getOne(req.params.CollectionName, req.params.id)
             .then(d => {
                 res.json(d)
@@ -96,7 +96,23 @@ router.get('/getEntry/:CollectionName/:id', async (req, res) => {
     }
     catch (e) {
         res.json(e)
-    }})
+    }
+})
+
+router.post('/getMany/:CollectionName', async (req, res) => {
+    try {
+        db.getMany(req.params.CollectionName, req.body.filter)
+            .then(d => {
+                res.json(d)
+            })
+            .catch(e => {
+                res.json(e.toString())
+            })
+    }
+    catch (e) {
+        res.json(e)
+    }
+})
 
 router.get('/login', async (req, res) => {
     try {
@@ -119,12 +135,12 @@ router.get('/getOrderHistory', async (req, res) => {
     try {
         let user = userCollection.login(req.headers["ope-auth-username"], req.headers["ope-auth-password"])
         db.getCollection("orders")
-        .then(orders => {
-            res.json(orders.items.filter(e => e.user == user.id))
-        })
-        .catch(e => {
-            res.json(e.toString())
-        })
+            .then(orders => {
+                res.json(orders.items.filter(e => e.user == user.id))
+            })
+            .catch(e => {
+                res.json(e.toString())
+            })
     }
     catch (e) {
         res.json(e)
@@ -163,7 +179,7 @@ router.post('/insertMany/:collectionName', async (req, res) => {
 })
 
 router.patch('/update/:collectionName/:id', async (req, res) => {
-    try{
+    try {
         db.updateOne(req.params.collectionName, req.params.id, req.body)
             .then(d => {
                 res.json(d)
@@ -178,7 +194,7 @@ router.patch('/update/:collectionName/:id', async (req, res) => {
 })
 
 router.delete('/delete/:collectionName/:id', async (req, res) => {
-    try{
+    try {
         db.deleteOne(req.params.collectionName, req.params.id)
             .then(d => {
                 res.json(d)
@@ -203,5 +219,19 @@ router.post('/placeOrder', async (req, res) => {
         res.json(e.toString())
     }
 })
+
+router.post('/cancelOrder', async (req, res) => {
+    try {
+        let user = userCollection.login(req.headers["ope-auth-username"], req.headers["ope-auth-password"])
+        res.json(
+            await transactionHandler.cancelOrder(user, req.body.orderId)
+        )
+    }
+    catch (e) {
+        res.json(e.toString())
+    }
+
+})
+
 
 module.exports = router;
