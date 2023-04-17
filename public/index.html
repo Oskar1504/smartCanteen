@@ -41,7 +41,6 @@
                 </ul>
             </nav>
             <main>
-
                 <div v-if="pageName == 'products'" id="products">
                     <h1 class="my-4">Produkte</h1>
                     <div class="filter-wrap">
@@ -100,8 +99,6 @@
                         </ul>
                     </div>
                 </div>
-
-
                 <div v-if="pageName == 'loginPage'" id="loginPage">
                     <h1 class="my-4">Login</h1>
                     <div class="container-fluid p-0">
@@ -116,19 +113,15 @@
                         <button class="submitLogin mt-4 rounded" @click="signIn()" id="submitLogin" type="submit">Login</button>
                     </div>
                 </div>
-
-
                 <div v-if="pageName == 'profilePage'" id="profilePage"  class="container-fluid p-0">
                     <h1 class="my-4">Profil</h1>
                     <div>
-
                         <h2 class="mt-4">Allgemeine Daten</h2>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Username: {{this.login.username}}</li>
                             <li class="list-group-item">Bestellungen: {{userOrderHistory.length}}</li>
                             <li class="list-group-item">Kontostand: {{this.login.balance}} €</li>
                         </ul>
-
                         <h2 class="mt-4">Bestellhistorie</h2>
                         <ul class="list-group list-group-flush">
                             <li v-for="order in userOrderHistory" class="list-group-item position-relative pe-0" data-bs-toggle="collapse" :href="'#order_' + order.id" aria-expanded="false">
@@ -147,11 +140,8 @@
                               <span class="badgeOrderHistory badge rounded-pill position-absolute">{{order.total}} €</span>
                             </li>
                         </ul>
-                        
                     </div>
                 </div>
-
-                
                 <div v-if="pageName == 'checkout'" id="checkout" class="container-fluid p-0">
                     <h1 class="my-4">Warenkorb</h1>
                     <div class="row" v-if="cartLength >= 1">
@@ -192,7 +182,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div v-if="pageName == 'vendorProfile'" v-if="login.type == 2" id="vendorProfile" class="container-fluid p-0">
                     <h1 class="my-4">vendorProfile</h1>
                     <div>
@@ -266,6 +255,5 @@
     <script src="./js/formSchema.js"></script>
     <script src="./js/api.js"></script>
     <script src="./js/main.js"></script>
-
 </body>
 </html>
