@@ -5,11 +5,11 @@ let api = new ApiConnector(HOST)
 
 const scrollBtn = document.querySelector(".scroll-to-top");
 
-document.addEventListener("scroll", () => {
+document.addEventListener("scroll", e => {
     scrollBtn.style.opacity = (window.scrollY > 200) ? "100%" : "0%";
 });
 
-scrollBtn.addEventListener("click", () => {
+scrollBtn.addEventListener("click", e => {
     window.scrollTo({
         top: 0,
         behavior: "smooth"
