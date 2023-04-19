@@ -28,6 +28,13 @@ html {
     font-size: 18px;
     height: 100%;
 }
+.vendorProducts .item {
+    max-height: 200px;
+}
+.vendorProducts button {
+    top: 6px;
+    right: 0;
+}
 .scroll-to-top {
     position: fixed;
     bottom: 40px;
@@ -276,11 +283,6 @@ li[aria-expanded="true"] .dropdown-icon::before {
     transform: rotate(-135deg);
     top: 10px;
 }
-.vendorProducts {
-    overflow-y: scroll;
-    max-height: 50vh;
-}
-
 dialog {
     min-width: 60%;
     max-width: 60%;
